@@ -149,12 +149,12 @@ awful.keyboard.append_global_keybindings({
 
 	--- Brightness Control
 	awful.key({}, "XF86MonBrightnessUp", function()
-		awful.spawn("brightnessctl set 5%+ -q", false)
+		awful.spawn("xbacklight -inc 5", false)
 		awesome.emit_signal("widget::brightness")
 		awesome.emit_signal("module::brightness_osd:show", true)
 	end, { description = "increase brightness", group = "hotkeys" }),
 	awful.key({}, "XF86MonBrightnessDown", function()
-		awful.spawn("brightnessctl set 5%- -q", false)
+		awful.spawn("xbacklight -dec 5", false)
 		awesome.emit_signal("widget::brightness")
 		awesome.emit_signal("module::brightness_osd:show", true)
 	end, { description = "decrease brightness", group = "hotkeys" }),
@@ -300,7 +300,7 @@ client.connect_signal("request::default_keybindings", function()
 		end, { description = "minimize", group = "client" }),
 
 		--- Un-minimize windows
-		awful.key({ mod, ctrl }, "n", function()
+		awful.key({ mod, shift }, "n", function()
 			local c = awful.client.restore()
 			-- Focus restored client
 			if c then

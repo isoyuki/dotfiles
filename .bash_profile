@@ -1,1 +1,0 @@
-common/bash/.bash_profile
