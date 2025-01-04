@@ -1,5 +1,3 @@
-.PHONY: common
-
 init:
 	sow -v -t ~ systemd
 	systemctl --user enable dotfiles-git.service
