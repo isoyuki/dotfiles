@@ -1,0 +1,8 @@
+[Unit]
+Description="Auto commit and push dotfile contents"
+
+[Service]
+ExecStart=/usr/local/bin/git-push-all.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Unit]
+Description="Monitor dotfiles directory"
+
+[Path]
+PathModified=/home/wren/dotfiles/
+Unit=dotfiles-git.service
+
+[Install]
+WantedBy=multi-user.target
