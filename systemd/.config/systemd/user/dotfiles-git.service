@@ -2,7 +2,8 @@
 Description="Auto commit and push dotfile contents"
 
 [Service]
-ExecStart=/usr/local/bin/git-push-all.sh
+ExecStart=/usr/local/bin/git-push-all.sh /home/wren/dotfiles/
+TimeoutSec=900
 
 [Install]
 WantedBy=multi-user.target
