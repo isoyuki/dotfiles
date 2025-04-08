@@ -1,0 +1,25 @@
+# [general]
+import = [
+    "~/.config/alacritty/themes/themes/dracula_plus.toml"
+]
+
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "zellij"]
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
