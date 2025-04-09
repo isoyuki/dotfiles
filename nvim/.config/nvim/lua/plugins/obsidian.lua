@@ -24,5 +24,6 @@ return {
 				path = "~/Documents/vault/",
 			},
 		},
+		ui = { enable = false },
 	},
 }
