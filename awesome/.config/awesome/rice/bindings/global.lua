@@ -381,7 +381,7 @@ local global_bindings = {
 		path = "Volume",
 		description = "Change volume",
 		on_press = function(trigger)
-			services.volume.change_volume(trigger.direction * 5)
+			services.volume.change_volume(trigger.direction * 2)
 		end,
 	}),
 
