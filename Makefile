@@ -1,15 +1,24 @@
+# Define system-specific directories that are managed by the 'system' target.
 SYSTEM_DIRS := incron usr-bin
 
-ALL_DIRS := $(wildcard *)
-USER_DIRS := $(filter-out $(SYSTEM_DIRS), $(ALL_DIRS))
+ALL_DIRS := $(wildcard */)
+SYSTEM_DIRS_WITH_SLASH := $(addsuffix /, $(SYSTEM_DIRS))
+USER_DIRS := $(patsubst %/,%,$(filter-out $(SYSTEM_DIRS_WITH_SLASH), $(ALL_DIRS)))
 
-.PHONY: system all
+.PHONY: all system
 
 system:
-	sudo stow -v -t / $(SYSTEM_DIRS)
+	@echo "--- Stowing system directories one by one ---"
+	@for dir in $(SYSTEM_DIRS); do \
+		echo "==> Stowing $$dir to /"; \
+		sudo stow -v -t / $$dir; \
+	done
 
 all:
-	stow -v -t ~ $(USER_DIRS)
+	@for dir in $(USER_DIRS); do \
+		echo "==> Stowing $$dir to ~"; \
+		stow -v -t ~ $$dir; \
+	done
 
 init:
 	sow -v -t ~ systemd
