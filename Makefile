@@ -14,7 +14,7 @@ system:
 		sudo stow -v -t / $$dir; \
 	done
 
-all:
+user:
 	@for dir in $(USER_DIRS); do \
 		echo "==> Stowing $$dir to ~"; \
 		stow -v -t ~ $$dir; \
