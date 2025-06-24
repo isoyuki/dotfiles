@@ -150,7 +150,7 @@ theme.wibar = {
 	paddings = hui.new({ dpi(8), dpi(16) }),
 }
 
-theme.wibar.item_height = dpi(30)
+theme.wibar.item_height = dpi(28)
 theme.wibar.height = theme.wibar.item_height + theme.wibar.paddings.top + theme.wibar.paddings.bottom
 
 -- TODO: Rename `theme.wibar.build_placement`
@@ -177,7 +177,7 @@ theme.capsule = {
 	item_content_spacing = dpi(8),
 	item_spacing = dpi(16),
 	bar_width = dpi(80),
-	bar_height = dpi(12),
+	bar_height = dpi(8),
 	border_radius = dpi(8),
 }
 
