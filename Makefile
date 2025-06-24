@@ -20,6 +20,8 @@ user:
 		stow -v -t ~ $$dir; \
 	done
 
+all: user system
+
 init:
 	sow -v -t ~ systemd
 	systemctl --user enable dotfiles-git.service
