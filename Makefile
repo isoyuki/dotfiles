@@ -1,4 +1,3 @@
-# Define system-specific directories that are managed by the 'system' target.
 SYSTEM_DIRS := incron usr-bin
 
 ALL_DIRS := $(wildcard */)
