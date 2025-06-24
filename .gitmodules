@@ -1,3 +1,6 @@
 [submodule "alacritty/.config/alacritty/themes"]
 	path = alacritty/.config/alacritty/themes
 	url = https://github.com/alacritty/alacritty-theme
+[submodule "awesome/.config/awesome/layouts/machi"]
+	path = awesome/.config/awesome/layouts/machi
+	url = https://github.com/xinhaoyuan/layout-machi.git
