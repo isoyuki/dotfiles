@@ -1,3 +1,3 @@
 return {
-    tilted = require("layouts.tilted"),
+	tilted = require("layouts.tilted"),
 }
