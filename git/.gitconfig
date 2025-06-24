@@ -12,3 +12,5 @@
 [credential "https://git.kagero.sh"]
 	helper = 
 	helper = !/usr/bin/glab auth git-credential
+[alias]
+	autocommit = git status commit -m \"auto-commit:2025-06-24 16:27:45\"
