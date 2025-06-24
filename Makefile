@@ -5,5 +5,8 @@ init:
 	systemctl --user enable dotfiles-monitor.path
 	systemctl --uesr start dotfiles-monitor.path
 
+system:
+	sudo stow -v -t / incron
+
 all:
 	stow -v -t ~ *
