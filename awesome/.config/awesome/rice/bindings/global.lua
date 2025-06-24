@@ -109,7 +109,7 @@ local global_bindings = {
 
 	binding.new({
 		modifiers = { mod.super },
-		triggers = "a",
+		triggers = "p",
 		path = "Launcher",
 		description = "Launcher",
 		on_press = function()
