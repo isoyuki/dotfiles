@@ -1,1 +1,1 @@
-/home/wren/dotfiles IN_MODIFY,recursive=true /usr/local/bin/git-push-all.sh $@
+/home/wren/dotfiles IN_MODIFY,IN_CREATE,IN_DELETE,IN_MOVED_TO,IN_MOVED_FROM,recursive=true /usr/local/bin/git-push-all.sh $@
