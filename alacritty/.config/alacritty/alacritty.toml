@@ -5,7 +5,7 @@ import = [
 
 [shell]
 program = "/bin/zsh"
-args = ["-l", "-c", "zellij"]
+args = ["-c", "tmux a -t main || tmux new -s main"]
 
 [font.bold]
 family = "Source Code Pro"
