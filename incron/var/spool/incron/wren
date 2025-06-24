@@ -1,1 +1,1 @@
-/home/wren/dotfiles IN_MODIFY,recursive=true sleep 5 && cd /home/wren/dotfiles && git add --all && git commit -m "auto-commit:$(date '+%Y-%m-%d %H:%M:%S')" && git push
+/home/wren/dotfiles IN_MODIFY,recursive=true sleep 5 && cd /home/wren/dotfiles && git add --all && git autocommit  && git push
