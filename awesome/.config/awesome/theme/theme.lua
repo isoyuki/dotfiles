@@ -870,11 +870,6 @@ theme.layouts = {
 		text = "Tiling",
 		icon = theme.icon("layouts/tiling.right.svg"),
 	},
-	splitcolumn = {
-		text = "Tiling 2",
-		icon = theme.icon("layouts/tiling.right.svg"),
-	},
-
 	floating = {
 		text = "Floating",
 		icon = theme.icon("layouts/floating.svg"),
