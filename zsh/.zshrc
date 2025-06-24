@@ -112,6 +112,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="nvim"
 alias cat="bat"
+alias emacs="emacsclient -a '' -c -nw"
+alias o="xdg-open"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -133,3 +135,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64
 export PATH=$PATH:$CUDA_HOME/bin
+export PATH=$PATH:/usr/local/bin
+
+export PATH=$PATH:~/.config/emacs/bin
