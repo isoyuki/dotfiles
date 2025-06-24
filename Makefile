@@ -7,6 +7,7 @@ init:
 
 system:
 	sudo stow -v -t / incron
+	sudo stow -v -t / usr-bin
 
 all:
 	stow -v -t ~ *
