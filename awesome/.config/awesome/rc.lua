@@ -7,6 +7,7 @@ require("theme")
 require("rice")
 require("services")
 require("ui")
+require("autostart")
 
 ---@diagnostic disable: param-type-mismatch
 collectgarbage("setpause", 110)
