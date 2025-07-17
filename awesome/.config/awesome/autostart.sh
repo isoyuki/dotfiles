@@ -6,7 +6,7 @@ run() {
     fi
 }
 
-run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+# run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 run "nm-applet"
 run "ibus-daemon" -drxR
 run "blueman-applet"
