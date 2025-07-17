@@ -28,12 +28,12 @@ local terminal = "alacritty"
 local terminal_execute = terminal .. " -e "
 
 config.apps = {
-	shell = "bash",
+	shell = "zsh",
 	terminal = terminal,
 	editor = terminal_execute .. "micro",
 	browser = "firefox",
 	private_browser = "firefox --private-window",
-	file_manager = terminal_execute .. "lf",
+	file_manager = terminal_execute .. "thunar",
 	calculator = "speedcrunch",
 	mixer = terminal_execute .. "pulsemixer",
 	bluetooth_control = terminal_execute .. "bluetoothctl",
