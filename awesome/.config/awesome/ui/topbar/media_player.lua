@@ -404,181 +404,181 @@ local function initialize_signals(self)
 		update_all(self, player_data)
 	end)
 end
-
----@param wibar unknown
----@return MediaPlayer
-function M.new(wibar)
-	local self = wibox.widget({
-		layout = wibox.layout.stack,
-		{
-			id = "no_player_button",
-			widget = capsule,
-			margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
-			{
-				layout = wibox.layout.fixed.horizontal,
-				spacing = beautiful.capsule.item_content_spacing,
-				{
-					id = "#no_player_button.icon",
-					widget = wibox.widget.imagebox,
-					image = beautiful.icon("music.svg"),
-					resize = true,
-				},
-				{
-					widget = wibox.widget.textbox,
-					text = "No Player",
-				},
-			},
-		},
-		{
-			id = "player_container",
-			widget = wibox.container.constraint,
-			strategy = "max",
-			width = dpi(600),
-			{
-				layout = wibox.layout.align.horizontal,
-				expand = "inside",
-				{
-					id = "#app",
-					widget = capsule,
-					margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
-					paddings = thickness.new({ dpi(5), beautiful.capsule.default_style.paddings.right }),
-					shape = left_shape,
-					buttons = binding.awful_buttons({
-						binding.awful({}, btn.left, function()
-							local player_data = media_player:get_primary_player_data()
-							if not player_data then
-								return
-							end
-							for _, client in ipairs(capi.client.get()) do
-								if string.lower(client.class) == string.lower(player_data.name) then
-									client:activate({
-										switch_to_tag = true,
-										raise = true,
-									})
-									break
-								end
-							end
-						end),
-					}),
-					{
-						id = "#icon",
-						widget = wibox.widget.imagebox,
-						image = beautiful.icon("music.svg"),
-						resize = true,
-					},
-				},
-				{
-					id = "#content_container",
-					widget = capsule,
-					enable_overlay = false,
-					margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
-					shape = false,
-					{
-						layout = wibox.layout.fixed.horizontal,
-						reverse = true,
-						fill_space = true,
-						spacing = beautiful.capsule.item_spacing,
-						{
-							id = "#text",
-							widget = wibox.widget.textbox,
-							halign = "left",
-						},
-						{
-							id = "#time",
-							widget = wibox.widget.textbox,
-							halign = "right",
-						},
-					},
-				},
-				{
-					layout = wibox.layout.fixed.horizontal,
-					{
-						id = "#previous",
-						widget = capsule,
-						margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
-						paddings = thickness.new({ dpi(6), left = beautiful.capsule.default_style.paddings.left }),
-						shape = false,
-						buttons = binding.awful_buttons({
-							binding.awful({}, btn.left, function()
-								media_player:previous()
-							end),
-						}),
-						{
-							widget = wibox.widget.imagebox,
-							image = beautiful.icon("skip-previous.svg"),
-							resize = true,
-						},
-					},
-					{
-						id = "#play_pause",
-						widget = capsule,
-						margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
-						paddings = thickness.new({
-							dpi(6),
-							left = beautiful.capsule.default_style.paddings.left,
-							right = beautiful.capsule.default_style.paddings.right,
-						}),
-						shape = false,
-						buttons = binding.awful_buttons({
-							binding.awful({}, btn.left, function()
-								media_player:play_pause()
-							end),
-						}),
-						{
-							widget = wibox.widget.imagebox,
-							resize = true,
-						},
-					},
-					{
-						id = "#next",
-						widget = capsule,
-						margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
-						paddings = thickness.new({ dpi(6), right = beautiful.capsule.default_style.paddings.right }),
-						shape = right_shape,
-						buttons = binding.awful_buttons({
-							binding.awful({}, btn.left, function()
-								media_player:next()
-							end),
-						}),
-						{
-							widget = wibox.widget.imagebox,
-							image = beautiful.icon("skip-next.svg"),
-							resize = true,
-						},
-					},
-				},
-			},
-		},
-	})
-	---@cast self MediaPlayer
-
-	gtable.crush(self, M.object, true)
-
-	self._private.wibar = wibar
-
-	self._private.menu = mebox(media_player_menu_template.shared)
-
-	self.player_container.buttons = binding.awful_buttons({
-		binding.awful({}, btn.right, function()
-			self._private.menu:toggle({
-				placement = beautiful.wibar.build_placement(self, self._private.wibar),
-			})
-		end),
-		binding.awful({}, btn.middle, function()
-			if not self.player_container.visible then
-				return
-			end
-			media_player:play_pause()
-		end),
-	})
-
-	initialize_content_container(self)
-	initialize_buttons(self)
-	initialize_signals(self)
-
-	update_all(self, media_player:get_primary_player_data())
-
-	return self
-end
+--
+-- ---@param wibar unknown
+-- ---@return MediaPlayer
+-- function M.new(wibar)
+-- 	local self = wibox.widget({
+-- 		layout = wibox.layout.stack,
+-- 		{
+-- 			id = "no_player_button",
+-- 			widget = capsule,
+-- 			margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
+-- 			{
+-- 				layout = wibox.layout.fixed.horizontal,
+-- 				spacing = beautiful.capsule.item_content_spacing,
+-- 				{
+-- 					id = "#no_player_button.icon",
+-- 					widget = wibox.widget.imagebox,
+-- 					image = beautiful.icon("music.svg"),
+-- 					resize = true,
+-- 				},
+-- 				{
+-- 					widget = wibox.widget.textbox,
+-- 					text = "No Player",
+-- 				},
+-- 			},
+-- 		},
+-- 		{
+-- 			id = "player_container",
+-- 			widget = wibox.container.constraint,
+-- 			strategy = "max",
+-- 			width = dpi(600),
+-- 			{
+-- 				layout = wibox.layout.align.horizontal,
+-- 				expand = "inside",
+-- 				{
+-- 					id = "#app",
+-- 					widget = capsule,
+-- 					margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
+-- 					paddings = thickness.new({ dpi(5), beautiful.capsule.default_style.paddings.right }),
+-- 					shape = left_shape,
+-- 					buttons = binding.awful_buttons({
+-- 						binding.awful({}, btn.left, function()
+-- 							local player_data = media_player:get_primary_player_data()
+-- 							if not player_data then
+-- 								return
+-- 							end
+-- 							for _, client in ipairs(capi.client.get()) do
+-- 								if string.lower(client.class) == string.lower(player_data.name) then
+-- 									client:activate({
+-- 										switch_to_tag = true,
+-- 										raise = true,
+-- 									})
+-- 									break
+-- 								end
+-- 							end
+-- 						end),
+-- 					}),
+-- 					{
+-- 						id = "#icon",
+-- 						widget = wibox.widget.imagebox,
+-- 						image = beautiful.icon("music.svg"),
+-- 						resize = true,
+-- 					},
+-- 				},
+-- 				{
+-- 					id = "#content_container",
+-- 					widget = capsule,
+-- 					enable_overlay = false,
+-- 					margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
+-- 					shape = false,
+-- 					{
+-- 						layout = wibox.layout.fixed.horizontal,
+-- 						reverse = true,
+-- 						fill_space = true,
+-- 						spacing = beautiful.capsule.item_spacing,
+-- 						{
+-- 							id = "#text",
+-- 							widget = wibox.widget.textbox,
+-- 							halign = "left",
+-- 						},
+-- 						{
+-- 							id = "#time",
+-- 							widget = wibox.widget.textbox,
+-- 							halign = "right",
+-- 						},
+-- 					},
+-- 				},
+-- 				{
+-- 					layout = wibox.layout.fixed.horizontal,
+-- 					{
+-- 						id = "#previous",
+-- 						widget = capsule,
+-- 						margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
+-- 						paddings = thickness.new({ dpi(6), left = beautiful.capsule.default_style.paddings.left }),
+-- 						shape = false,
+-- 						buttons = binding.awful_buttons({
+-- 							binding.awful({}, btn.left, function()
+-- 								media_player:previous()
+-- 							end),
+-- 						}),
+-- 						{
+-- 							widget = wibox.widget.imagebox,
+-- 							image = beautiful.icon("skip-previous.svg"),
+-- 							resize = true,
+-- 						},
+-- 					},
+-- 					{
+-- 						id = "#play_pause",
+-- 						widget = capsule,
+-- 						margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
+-- 						paddings = thickness.new({
+-- 							dpi(6),
+-- 							left = beautiful.capsule.default_style.paddings.left,
+-- 							right = beautiful.capsule.default_style.paddings.right,
+-- 						}),
+-- 						shape = false,
+-- 						buttons = binding.awful_buttons({
+-- 							binding.awful({}, btn.left, function()
+-- 								media_player:play_pause()
+-- 							end),
+-- 						}),
+-- 						{
+-- 							widget = wibox.widget.imagebox,
+-- 							resize = true,
+-- 						},
+-- 					},
+-- 					{
+-- 						id = "#next",
+-- 						widget = capsule,
+-- 						margins = thickness.new({ beautiful.wibar.paddings.top, 0, beautiful.wibar.paddings.bottom }),
+-- 						paddings = thickness.new({ dpi(6), right = beautiful.capsule.default_style.paddings.right }),
+-- 						shape = right_shape,
+-- 						buttons = binding.awful_buttons({
+-- 							binding.awful({}, btn.left, function()
+-- 								media_player:next()
+-- 							end),
+-- 						}),
+-- 						{
+-- 							widget = wibox.widget.imagebox,
+-- 							image = beautiful.icon("skip-next.svg"),
+-- 							resize = true,
+-- 						},
+-- 					},
+-- 				},
+-- 			},
+-- 		},
+-- 	})
+-- 	---@cast self MediaPlayer
+--
+-- 	gtable.crush(self, M.object, true)
+--
+-- 	self._private.wibar = wibar
+--
+-- 	self._private.menu = mebox(media_player_menu_template.shared)
+--
+-- 	self.player_container.buttons = binding.awful_buttons({
+-- 		binding.awful({}, btn.right, function()
+-- 			self._private.menu:toggle({
+-- 				placement = beautiful.wibar.build_placement(self, self._private.wibar),
+-- 			})
+-- 		end),
+-- 		binding.awful({}, btn.middle, function()
+-- 			if not self.player_container.visible then
+-- 				return
+-- 			end
+-- 			media_player:play_pause()
+-- 		end),
+-- 	})
+--
+-- 	initialize_content_container(self)
+-- 	initialize_buttons(self)
+-- 	initialize_signals(self)
+--
+-- 	update_all(self, media_player:get_primary_player_data())
+--
+-- 	return self
+-- end
 
 return setmetatable(M, M.mt)

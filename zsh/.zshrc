@@ -44,3 +44,5 @@ complete -o nospace -C /usr/bin/terraform terraform
 
 export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64
+
+export GTK_THEME=Adwaita:dark

@@ -66,9 +66,9 @@ capi.screen.connect_signal("request::desktop_decoration", function(screen)
 	local left = wibar:get_children_by_id("#left")[1]
 	left:add(layoutbox_widget.new(wibar))
 	left:add(screen.topbar.clientlist)
-	if is_primary then
-		left:add(media_player_widget.new(wibar))
-	end
+	-- if is_primary then
+	-- 	left:add(media_player_widget.new(wibar))
+	-- end
 
 	local middle = wibar:get_children_by_id("#middle")[1]
 	middle:add(screen.topbar.taglist)
