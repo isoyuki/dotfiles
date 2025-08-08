@@ -478,20 +478,20 @@ theme.bindbox.default_style = setmetatable({
 
 ----------------------------------------------------------------------------------------------------
 
-theme.media_player = {}
-
-theme.media_player.content_styles = {
-	normal = setmetatable({
-		bg = theme.common.bg_105,
-		fg = theme.common.fg,
-		border_width = 0,
-	}, { __index = theme.capsule.styles.normal }),
-	disabled = setmetatable({
-		bg = theme.common.bg_105,
-		fg = theme.common.fg_50,
-		border_width = 0,
-	}, { __index = theme.capsule.styles.disabled }),
-}
+-- theme.media_player = {}
+--
+-- theme.media_player.content_styles = {
+-- 	normal = setmetatable({
+-- 		bg = theme.common.bg_105,
+-- 		fg = theme.common.fg,
+-- 		border_width = 0,
+-- 	}, { __index = theme.capsule.styles.normal }),
+-- 	disabled = setmetatable({
+-- 		bg = theme.common.bg_105,
+-- 		fg = theme.common.fg_50,
+-- 		border_width = 0,
+-- 	}, { __index = theme.capsule.styles.disabled }),
+-- }
 
 ----------------------------------------------------------------------------------------------------
 
