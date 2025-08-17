@@ -16,8 +16,8 @@ capi.awesome.connect_signal("tag::build", function(tag, args)
 	tag.layout = layouts.list[1]
 	tag.gap_single_client = false
 	tag.master_fill_policy = "master_width_factor"
-	tag.master_width_factor = 0.7
-	tag.volatile = true
+	tag.master_width_factor = 1
+	tag.volatile = false
 end)
 
 capi.screen.connect_signal("request::desktop_decoration", function(screen)
