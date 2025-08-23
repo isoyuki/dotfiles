@@ -24,7 +24,7 @@ all: user system
 init:
 	# sow -v -t ~ systemd
 	systemctl --user enable dotfiles-git.service
-	systemctl --user start dotfiles-git.service
+	systemctl start dotfiles-git.service
 	systemctl --user enable dotfiles-monitor.path
-	systemctl --uesr start dotfiles-monitor.path
+	systemctl start dotfiles-monitor.path
 
