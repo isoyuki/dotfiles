@@ -6,4 +6,5 @@ PathModified=/home/wren/dotfiles/
 Unit=dotfiles-git.service
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
+
