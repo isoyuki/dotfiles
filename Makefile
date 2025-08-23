@@ -22,7 +22,7 @@ user:
 all: user system
 
 init:
-	sow -v -t ~ systemd
+	# sow -v -t ~ systemd
 	systemctl --user enable dotfiles-git.service
 	systemctl --user start dotfiles-git.service
 	systemctl --user enable dotfiles-monitor.path
