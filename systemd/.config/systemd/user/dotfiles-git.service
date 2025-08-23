@@ -6,4 +6,4 @@ ExecStart=/usr/local/bin/git-push-all.sh /home/wren/dotfiles/
 TimeoutSec=900
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
