@@ -127,14 +127,9 @@ return {
             '--offset-encoding=utf-16',
           },
         },
-        -- gopls = {},
+        gopls = {},
         pyright = {},
         texlab = {},
-        rust_analyzer = {
-          inlay_hints = {
-            enabled = true,
-          },
-        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
