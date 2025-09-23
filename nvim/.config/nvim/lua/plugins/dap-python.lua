@@ -8,4 +8,11 @@ return {
   dependencies = {
     "mfussenegger/nvim-dap",
   },
+  keys = {
+    {
+      "<leader>dpr",
+      function() require("dap-python").run_python() end,
+      desc = "Run Python debugger"
+    },
+  },
 }
