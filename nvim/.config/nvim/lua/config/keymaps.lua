@@ -29,8 +29,15 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<space>fb', ':Telescope file_browser<CR>')
-
 -- open file_browser with the path of the current buffer
 vim.keymap.set('n', '<space>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>')
 
+-- DAP keymaps
+vim.keymap.set('n', '<leader>dt', function() require('dap').toggle_breakpoint() end, { desc = 'Toggle [D]AP Breakpoin[t]' })
+vim.keymap.set('n', '<leader>dc', function() require('dap').continue() end, { desc = '[D]AP [C]ontinue' })
+vim.keymap.set('n', '<leader>di', function() require('dap').step_into() end, { desc = '[D]AP Step [I]nto' })
+vim.keymap.set('n', '<leader>do', function() require('dap').step_over() end, { desc = '[D]AP Step [O]ver' })
+vim.keymap.set('n', '<leader>dO', function() require('dap').step_out() end, { desc = '[D]AP Step [O]ut' })
+vim.keymap.set('n', '<leader>dr', function() require('dap').repl.open() end, { desc = '[D]AP Open [R]epl' })
+vim.keymap.set('n', '<leader>dq', function() require('dap').terminate() end, { desc = '[D]AP [Q]uit' })
+vim.keymap.set('n', '<leader>du', function() require('dapui').toggle() end, { desc = '[D]AP [U]I Toggle' })
