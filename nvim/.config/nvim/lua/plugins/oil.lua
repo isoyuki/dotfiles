@@ -9,5 +9,8 @@ return {
     config = function(_, opts)
       require('oil').setup(opts)
     end,
+    keys = {
+      { "<leader>o", "<cmd>Oil<CR>", desc = "Open Oil" },
+    },
   },
 }

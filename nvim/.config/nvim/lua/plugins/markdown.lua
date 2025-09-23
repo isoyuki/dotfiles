@@ -6,4 +6,11 @@ return {
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
 	opts = {},
+  keys = {
+    {
+      "<leader>mt",
+      function() require("render-markdown").toggle() end,
+      desc = "Toggle markdown rendering"
+    },
+  },
 }

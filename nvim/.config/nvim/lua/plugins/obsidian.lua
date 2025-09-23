@@ -26,4 +26,10 @@ return {
 		},
 		ui = { enable = false },
 	},
+  keys = {
+    { "<leader>oo", "<cmd>ObsidianOpen<CR>", desc = "Open Obsidian" },
+    { "<leader>on", "<cmd>ObsidianNew<CR>", desc = "New Note" },
+    { "<leader>os", "<cmd>ObsidianSearch<CR>", desc = "Search Note" },
+    { "<leader>ot", "<cmd>ObsidianTodo<CR>", desc = "Toggle Todo" },
+  },
 }
