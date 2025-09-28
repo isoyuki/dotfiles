@@ -1,16 +1,17 @@
 return {
-  {
-    'stevearc/oil.nvim',
-    tag = 'v2.13.0',
-    opts = {},
-    -- Optional dependencies
-    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-    config = function(_, opts)
-      require('oil').setup(opts)
-    end,
-    keys = {
-      { "<leader>o", "<cmd>Oil<CR>", desc = "Open Oil" },
-    },
-  },
+	{
+		"stevearc/oil.nvim",
+		tag = "v2.13.0",
+		opts = {},
+		-- Optional dependencies
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+		config = function(_, opts)
+			require("oil").setup(opts)
+		end,
+		keys = {
+			{ "<leader>o", "<cmd>Oil<CR>", desc = "Open Oil" },
+		},
+	},
 }
+
