@@ -24,7 +24,4 @@ return {
       },
     },
   },
-  keys = {
-    { "<leader>p", "<cmd>BqfTogglePreview<CR>", desc = "Toggle Preview" },
-  },
 }
