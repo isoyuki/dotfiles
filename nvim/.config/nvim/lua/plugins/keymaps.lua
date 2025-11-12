@@ -14,15 +14,15 @@ return {
   {
     "mfussenegger/nvim-dap",
     keys = {
-      { "<leader>dt", function() require("dap").toggle_breakpoint() end, desc = "DAP: Toggle Breakpoint" },
+      { "<leader>dt", function() require("dap").toggle_breakpoint() end,                                    desc = "DAP: Toggle Breakpoint" },
       { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "DAP: Set Conditional Breakpoint" },
-      { "<leader>dc", function() require("dap").continue() end, desc = "DAP: Continue" },
-      { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "DAP: Run to Cursor" },
-      { "<leader>di", function() require("dap").step_into() end, desc = "DAP: Step Into" },
-      { "<leader>do", function() require("dap").step_over() end, desc = "DAP: Step Over" },
-      { "<leader>dO", function() require("dap").step_out() end, desc = "DAP: Step Out" },
-      { "<leader>dr", function() require("dap").repl.open() end, desc = "DAP: Open Repl" },
-      { "<leader>dq", function() require("dap").terminate() end, desc = "DAP: Quit" },
+      { "<leader>dc", function() require("dap").continue() end,                                             desc = "DAP: Continue" },
+      { "<leader>dC", function() require("dap").run_to_cursor() end,                                        desc = "DAP: Run to Cursor" },
+      { "<leader>di", function() require("dap").step_into() end,                                            desc = "DAP: Step Into" },
+      { "<leader>do", function() require("dap").step_over() end,                                            desc = "DAP: Step Over" },
+      { "<leader>dO", function() require("dap").step_out() end,                                             desc = "DAP: Step Out" },
+      { "<leader>dr", function() require("dap").repl.open() end,                                            desc = "DAP: Open Repl" },
+      { "<leader>dq", function() require("dap").terminate() end,                                            desc = "DAP: Quit" },
     },
   },
   {
@@ -57,34 +57,34 @@ return {
   {
     "folke/flash.nvim",
     keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+      { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+      { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
     },
   },
   {
     "tpope/vim-fugitive",
     keys = {
-      { "<leader>gs", "<cmd>Git<CR>", desc = "Git Status" },
+      { "<leader>gs", "<cmd>Git<CR>",        desc = "Git Status" },
       { "<leader>gc", "<cmd>Git commit<CR>", desc = "Git Commit" },
-      { "<leader>gb", "<cmd>Git blame<CR>", desc = "Git Blame" },
-      { "<leader>gl", "<cmd>Git log<CR>", desc = "Git Log" },
+      { "<leader>gb", "<cmd>Git blame<CR>",  desc = "Git Blame" },
+      { "<leader>gl", "<cmd>Git log<CR>",    desc = "Git Log" },
     },
   },
   {
     "lewis6991/gitsigns.nvim",
     keys = {
-      { "<leader>gh", "<cmd>Gitsigns preview_hunk<CR>", desc = "Preview Hunk" },
-      { "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "Reset Hunk" },
-      { "<leader>gS", "<cmd>Gitsigns stage_hunk<CR>", desc = "Stage Hunk" },
-      { "<leader>gSb", "<cmd>Gitsigns stage_buffer<CR>", desc = "Stage Buffer" },
-      { "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", desc = "Undo Stage Hunk" },
-      { "<leader>gB", function() require("gitsigns").blame_line({ full = true }) end, desc = "Gitsigns: Blame Line" },
-      { "<leader>gD", "<cmd>Gitsigns diffthis '~'<CR>", desc = "Gitsigns: Diff This" },
-      { "]h", "<cmd>Gitsigns next_hunk<CR>", desc = "Next Hunk" },
-      { "[h", "<cmd>Gitsigns prev_hunk<CR>", desc = "Previous Hunk" },
+      { "<leader>gh",  "<cmd>Gitsigns preview_hunk<CR>",                               desc = "Preview Hunk" },
+      { "<leader>gr",  "<cmd>Gitsigns reset_hunk<CR>",                                 desc = "Reset Hunk" },
+      { "<leader>gS",  "<cmd>Gitsigns stage_hunk<CR>",                                 desc = "Stage Hunk" },
+      { "<leader>gab", "<cmd>Gitsigns stage_buffer<CR>",                               desc = "Stage Buffer" },
+      { "<leader>gu",  "<cmd>Gitsigns undo_stage_hunk<CR>",                            desc = "Undo Stage Hunk" },
+      { "<leader>gB",  function() require("gitsigns").blame_line({ full = true }) end, desc = "Gitsigns: Blame Line" },
+      { "<leader>gD",  "<cmd>Gitsigns diffthis '~'<CR>",                               desc = "Gitsigns: Diff This" },
+      { "]h",          "<cmd>Gitsigns next_hunk<CR>",                                  desc = "Next Hunk" },
+      { "[h",          "<cmd>Gitsigns prev_hunk<CR>",                                  desc = "Previous Hunk" },
     },
   },
   {
@@ -102,15 +102,15 @@ return {
             end
 
             require("telescope.pickers")
-              .new({}, {
-                prompt_title = "Harpoon",
-                finder = require("telescope.finders").new_table({
-                  results = file_paths,
-                }),
-                previewer = conf.file_previewer({}),
-                sorter = conf.generic_sorter({}),
-              })
-              :find()
+                .new({}, {
+                  prompt_title = "Harpoon",
+                  finder = require("telescope.finders").new_table({
+                    results = file_paths,
+                  }),
+                  previewer = conf.file_previewer({}),
+                  sorter = conf.generic_sorter({}),
+                })
+                :find()
           end
           toggle_telescope(harpoon:list())
         end,
@@ -170,7 +170,7 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     keys = {
-      { "<leader>E", "<cmd>Neotree toggle<CR>", desc = "Toggle Neotree" },
+      { "<leader>E",  "<cmd>Neotree toggle<CR>", desc = "Toggle Neotree" },
       { "<leader>ef", "<cmd>Neotree reveal<CR>", desc = "Neotree: Reveal file" },
     },
   },
@@ -183,13 +183,13 @@ return {
   {
     "ThePrimeagen/refactoring.nvim",
     keys = {
-      { "<leader>re", ":Refactor extract ", mode = "x", desc = "Refactor: Extract" },
-      { "<leader>rf", ":Refactor extract_to_file ", mode = "x", desc = "Refactor: Extract to file" },
-      { "<leader>rv", ":Refactor extract_var ", mode = "x", desc = "Refactor: Extract var" },
-      { "<leader>ri", ":Refactor inline_var", mode = { "n", "x" }, desc = "Refactor: Inline var" },
-      { "<leader>rI", ":Refactor inline_func", mode = "n", desc = "Refactor: Inline func" },
-      { "<leader>rb", ":Refactor extract_block", mode = "n", desc = "Refactor: Extract block" },
-      { "<leader>rbf", ":Refactor extract_block_to_file", mode = "n", desc = "Refactor: Extract block to file" },
+      { "<leader>re",  ":Refactor extract ",              mode = "x",          desc = "Refactor: Extract" },
+      { "<leader>rf",  ":Refactor extract_to_file ",      mode = "x",          desc = "Refactor: Extract to file" },
+      { "<leader>rv",  ":Refactor extract_var ",          mode = "x",          desc = "Refactor: Extract var" },
+      { "<leader>ri",  ":Refactor inline_var",            mode = { "n", "x" }, desc = "Refactor: Inline var" },
+      { "<leader>rI",  ":Refactor inline_func",           mode = "n",          desc = "Refactor: Inline func" },
+      { "<leader>rb",  ":Refactor extract_block",         mode = "n",          desc = "Refactor: Extract block" },
+      { "<leader>rbf", ":Refactor extract_block_to_file", mode = "n",          desc = "Refactor: Extract block to file" },
       {
         "<leader>rr",
         function()
@@ -339,7 +339,7 @@ return {
   {
     "folke/todo-comments.nvim",
     keys = {
-      { "<leader>st", "<cmd>TodoTelescope<CR>", desc = "Find all todo comments" },
+      { "<leader>st", "<cmd>TodoTelescope<CR>",                         desc = "Find all todo comments" },
       { "<leader>sx", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<CR>", desc = "Find all todo comments in current buffer" },
     },
   },
