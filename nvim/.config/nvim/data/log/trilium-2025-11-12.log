@@ -1,0 +1,1429 @@
+12:37:13.438 Generated session secret
+12:37:13.542 
+ _____     _ _ _
+|_   _| __(_) (_)_   _ _ __ ___   | \ | | ___ | |_ ___  ___
+  | || '__| | | | | | | '_ ` _ \  |  \| |/ _ \| __/ _ \/ __|
+  | || |  | | | | |_| | | | | | | | |\  | (_) | ||  __/\__ \
+  |_||_|  |_|_|_|\__,_|_| |_| |_| |_| \_|\___/ \__\___||___/ 0.99.5
+
+12:37:13.542 📦 Versions:    app=0.99.5 db=233 sync=36 clipper=1.0
+12:37:13.542 🔧 Build:       2025-11-11 20:25:05 (25563c6687)
+12:37:13.542 📂 Data dir:    /home/node/trilium-data
+12:37:13.542 ⏰ UTC time:    2025-11-12 12:37:13
+12:37:13.545 💻 CPU:         11th Gen Intel(R) Core(TM) i7-11850H @ 2.50GHz (16-core @ 2672 Mhz)
+12:37:13.545 💾 DB size:     4 KiB
+12:37:13.545 
+12:37:13.548 DB not initialized, please visit setup page - http://[your-server-host]:8080 to see instructions on how to initialize Trilium.
+12:37:13.566 Trusted reverse proxy: false
+12:37:13.567 App HTTP server starting up at port 8080
+12:37:13.574 Listening on port 8080
+12:37:17.977 200 GET /api/health-check with 15 bytes took 5ms
+12:37:37.580 Creating database schema ...
+12:37:37.582 Becca (note cache) load took 1ms
+12:37:37.582 Creating root note ...
+12:37:37.609 Created option "revisionSnapshotTimeInterval" with default value "600"
+12:37:37.609 Created option "revisionSnapshotTimeIntervalTimeScale" with default value "60"
+12:37:37.609 Created option "revisionSnapshotNumberLimit" with default value "-1"
+12:37:37.609 Created option "protectedSessionTimeout" with default value "600"
+12:37:37.609 Created option "protectedSessionTimeoutTimeScale" with default value "60"
+12:37:37.609 Created option "zoomFactor" with default value "1.0"
+12:37:37.609 Created option "overrideThemeFonts" with default value "false"
+12:37:37.609 Created option "mainFontFamily" with default value "theme"
+12:37:37.610 Created option "mainFontSize" with default value "100"
+12:37:37.610 Created option "treeFontFamily" with default value "theme"
+12:37:37.610 Created option "treeFontSize" with default value "100"
+12:37:37.610 Created option "detailFontFamily" with default value "theme"
+12:37:37.610 Created option "detailFontSize" with default value "110"
+12:37:37.610 Created option "monospaceFontFamily" with default value "theme"
+12:37:37.610 Created option "monospaceFontSize" with default value "110"
+12:37:37.610 Created option "spellCheckEnabled" with default value "true"
+12:37:37.610 Created option "spellCheckLanguageCode" with default value "en-US"
+12:37:37.610 Created option "imageMaxWidthHeight" with default value "2000"
+12:37:37.610 Created option "imageJpegQuality" with default value "75"
+12:37:37.611 Created option "autoFixConsistencyIssues" with default value "true"
+12:37:37.611 Created option "vimKeymapEnabled" with default value "false"
+12:37:37.611 Created option "codeLineWrapEnabled" with default value "true"
+12:37:37.611 Created option "codeNotesMimeTypes" with default value "["text/x-csrc","text/x-c++src","text/x-csharp","text/css","text/x-elixir","text/x-go","text/x-groovy","text/x-haskell","text/html","message/http","text/x-java","application/javascript;env=frontend","application/javascript;env=backend","application/json","text/x-kotlin","text/x-markdown","text/x-perl","text/x-php","text/x-python","text/x-ruby",null,"text/x-sql","text/x-sqlite;schema=trilium","text/x-swift","text/xml","text/x-yaml","text/x-sh","application/typescript"]"
+12:37:37.611 Created option "leftPaneWidth" with default value "25"
+12:37:37.611 Created option "leftPaneVisible" with default value "true"
+12:37:37.611 Created option "rightPaneWidth" with default value "25"
+12:37:37.611 Created option "rightPaneVisible" with default value "true"
+12:37:37.612 Created option "nativeTitleBarVisible" with default value "false"
+12:37:37.612 Created option "eraseEntitiesAfterTimeInSeconds" with default value "604800"
+12:37:37.612 Created option "eraseEntitiesAfterTimeScale" with default value "86400"
+12:37:37.612 Created option "hideArchivedNotes_main" with default value "false"
+12:37:37.612 Created option "debugModeEnabled" with default value "false"
+12:37:37.612 Created option "headingStyle" with default value "underline"
+12:37:37.612 Created option "autoCollapseNoteTree" with default value "true"
+12:37:37.612 Created option "autoReadonlySizeText" with default value "32000"
+12:37:37.612 Created option "autoReadonlySizeCode" with default value "64000"
+12:37:37.612 Created option "dailyBackupEnabled" with default value "true"
+12:37:37.613 Created option "weeklyBackupEnabled" with default value "true"
+12:37:37.613 Created option "monthlyBackupEnabled" with default value "true"
+12:37:37.613 Created option "maxContentWidth" with default value "1200"
+12:37:37.613 Created option "centerContent" with default value "false"
+12:37:37.613 Created option "compressImages" with default value "true"
+12:37:37.613 Created option "downloadImagesAutomatically" with default value "true"
+12:37:37.613 Created option "minTocHeadings" with default value "5"
+12:37:37.613 Created option "highlightsList" with default value "["underline","color","bgColor"]"
+12:37:37.613 Created option "checkForUpdates" with default value "true"
+12:37:37.613 Created option "disableTray" with default value "false"
+12:37:37.613 Created option "eraseUnusedAttachmentsAfterSeconds" with default value "2592000"
+12:37:37.613 Created option "eraseUnusedAttachmentsAfterTimeScale" with default value "86400"
+12:37:37.614 Created option "logRetentionDays" with default value "90"
+12:37:37.614 Created option "customSearchEngineName" with default value "DuckDuckGo"
+12:37:37.614 Created option "customSearchEngineUrl" with default value "https://duckduckgo.com/?q={keyword}"
+12:37:37.614 Created option "promotedAttributesOpenInRibbon" with default value "true"
+12:37:37.614 Created option "editedNotesOpenInRibbon" with default value "true"
+12:37:37.614 Created option "mfaEnabled" with default value "false"
+12:37:37.614 Created option "mfaMethod" with default value "totp"
+12:37:37.614 Created option "encryptedRecoveryCodes" with default value "false"
+12:37:37.614 Created option "userSubjectIdentifierSaved" with default value "false"
+12:37:37.614 Created option "splitEditorOrientation" with default value "horizontal"
+12:37:37.614 Created option "codeNoteTheme" with default value "default:vs-code-dark"
+12:37:37.614 Created option "motionEnabled" with default value "true"
+12:37:37.615 Created option "shadowsEnabled" with default value "true"
+12:37:37.615 Created option "backdropEffectsEnabled" with default value "true"
+12:37:37.615 Created option "smoothScrollEnabled" with default value "true"
+12:37:37.615 Created option "locale" with default value "en"
+12:37:37.615 Created option "formattingLocale" with default value ""
+12:37:37.615 Created option "firstDayOfWeek" with default value "1"
+12:37:37.615 Created option "firstWeekOfYear" with default value "0"
+12:37:37.616 Created option "minDaysInFirstWeek" with default value "4"
+12:37:37.616 Created option "languages" with default value "[]"
+12:37:37.616 Created option "codeBlockTheme" with default value "default:stackoverflow-dark"
+12:37:37.616 Created option "codeBlockWordWrap" with default value "false"
+12:37:37.616 Created option "textNoteEditorMultilineToolbar" with default value "false"
+12:37:37.616 Created option "textNoteEmojiCompletionEnabled" with default value "true"
+12:37:37.616 Created option "textNoteCompletionEnabled" with default value "true"
+12:37:37.616 Created option "textNoteSlashCommandsEnabled" with default value "true"
+12:37:37.617 Created option "layoutOrientation" with default value "vertical"
+12:37:37.617 Created option "backgroundEffects" with default value "true"
+12:37:37.617 Created option "allowedHtmlTags" with default value "["h1","h2","h3","h4","h5","h6","blockquote","p","a","ul","ol","li","b","i","strong","em","strike","s","del","abbr","code","hr","br","div","table","thead","caption","tbody","tfoot","tr","th","td","pre","section","img","figure","figcaption","span","label","input","details","summary","address","aside","footer","header","hgroup","main","nav","dl","dt","menu","bdi","bdo","dfn","kbd","mark","q","time","var","wbr","area","map","track","video","audio","picture","del","ins","en-media","acronym","article","big","button","cite","col","colgroup","data","dd","fieldset","form","legend","meter","noscript","option","progress","rp","samp","small","sub","sup","template","textarea","tt"]"
+12:37:37.617 Created option "redirectBareDomain" with default value "false"
+12:37:37.617 Created option "showLoginInShareTheme" with default value "false"
+12:37:37.617 Created option "aiEnabled" with default value "false"
+12:37:37.617 Created option "openaiApiKey" with default value ""
+12:37:37.617 Created option "openaiDefaultModel" with default value ""
+12:37:37.617 Created option "openaiBaseUrl" with default value "https://api.openai.com/v1"
+12:37:37.618 Created option "anthropicApiKey" with default value ""
+12:37:37.618 Created option "anthropicDefaultModel" with default value ""
+12:37:37.618 Created option "voyageApiKey" with default value ""
+12:37:37.618 Created option "anthropicBaseUrl" with default value "https://api.anthropic.com/v1"
+12:37:37.618 Created option "ollamaEnabled" with default value "false"
+12:37:37.618 Created option "ollamaDefaultModel" with default value ""
+12:37:37.618 Created option "ollamaBaseUrl" with default value "http://localhost:11434"
+12:37:37.618 Created option "aiTemperature" with default value "0.7"
+12:37:37.618 Created option "aiSystemPrompt" with default value ""
+12:37:37.618 Created option "aiSelectedProvider" with default value "openai"
+12:37:37.618 Created option "seenCallToActions" with default value "[]"
+12:37:37.618 Created option "keyboardShortcutsBackInNoteHistory" with default value "["Alt+Left"]"
+12:37:37.619 Created option "keyboardShortcutsForwardInNoteHistory" with default value "["Alt+Right"]"
+12:37:37.619 Created option "keyboardShortcutsJumpToNote" with default value "["Ctrl+J"]"
+12:37:37.619 Created option "keyboardShortcutsOpenTodayNote" with default value "[]"
+12:37:37.619 Created option "keyboardShortcutsCommandPalette" with default value "["Ctrl+Shift+J"]"
+12:37:37.619 Created option "keyboardShortcutsScrollToActiveNote" with default value "["Ctrl+."]"
+12:37:37.619 Created option "keyboardShortcutsQuickSearch" with default value "["Ctrl+S"]"
+12:37:37.619 Created option "keyboardShortcutsSearchInSubtree" with default value "["Ctrl+Shift+S"]"
+12:37:37.619 Created option "keyboardShortcutsExpandSubtree" with default value "[]"
+12:37:37.620 Created option "keyboardShortcutsCollapseTree" with default value "["Alt+C"]"
+12:37:37.620 Created option "keyboardShortcutsCollapseSubtree" with default value "["Alt+-"]"
+12:37:37.620 Created option "keyboardShortcutsSortChildNotes" with default value "["Alt+S"]"
+12:37:37.620 Created option "keyboardShortcutsCreateNoteAfter" with default value "["Ctrl+O"]"
+12:37:37.620 Created option "keyboardShortcutsCreateNoteInto" with default value "["Ctrl+P"]"
+12:37:37.620 Created option "keyboardShortcutsCreateNoteIntoInbox" with default value "["global:Ctrl+Alt+P"]"
+12:37:37.620 Created option "keyboardShortcutsDeleteNotes" with default value "["Delete"]"
+12:37:37.620 Created option "keyboardShortcutsMoveNoteUp" with default value "["Ctrl+Up"]"
+12:37:37.620 Created option "keyboardShortcutsMoveNoteDown" with default value "["Ctrl+Down"]"
+12:37:37.620 Created option "keyboardShortcutsMoveNoteUpInHierarchy" with default value "["Ctrl+Left"]"
+12:37:37.620 Created option "keyboardShortcutsMoveNoteDownInHierarchy" with default value "["Ctrl+Right"]"
+12:37:37.621 Created option "keyboardShortcutsEditNoteTitle" with default value "["Enter"]"
+12:37:37.621 Created option "keyboardShortcutsEditBranchPrefix" with default value "["F2"]"
+12:37:37.621 Created option "keyboardShortcutsCloneNotesTo" with default value "["Ctrl+Shift+C"]"
+12:37:37.621 Created option "keyboardShortcutsMoveNotesTo" with default value "["Ctrl+Shift+X"]"
+12:37:37.621 Created option "keyboardShortcutsCopyNotesToClipboard" with default value "["Ctrl+C"]"
+12:37:37.621 Created option "keyboardShortcutsPasteNotesFromClipboard" with default value "["Ctrl+V"]"
+12:37:37.621 Created option "keyboardShortcutsCutNotesToClipboard" with default value "["Ctrl+X"]"
+12:37:37.621 Created option "keyboardShortcutsSelectAllNotesInParent" with default value "["Ctrl+A"]"
+12:37:37.622 Created option "keyboardShortcutsAddNoteAboveToSelection" with default value "["Shift+Up"]"
+12:37:37.622 Created option "keyboardShortcutsAddNoteBelowToSelection" with default value "["Shift+Down"]"
+12:37:37.622 Created option "keyboardShortcutsDuplicateSubtree" with default value "[]"
+12:37:37.622 Created option "keyboardShortcutsOpenNewTab" with default value "[]"
+12:37:37.622 Created option "keyboardShortcutsCloseActiveTab" with default value "[]"
+12:37:37.622 Created option "keyboardShortcutsReopenLastTab" with default value "[]"
+12:37:37.622 Created option "keyboardShortcutsActivateNextTab" with default value "[]"
+12:37:37.622 Created option "keyboardShortcutsActivatePreviousTab" with default value "[]"
+12:37:37.622 Created option "keyboardShortcutsOpenNewWindow" with default value "[]"
+12:37:37.622 Created option "keyboardShortcutsToggleTray" with default value "[]"
+12:37:37.623 Created option "keyboardShortcutsToggleZenMode" with default value "["F9"]"
+12:37:37.623 Created option "keyboardShortcutsFirstTab" with default value "["Ctrl+1"]"
+12:37:37.623 Created option "keyboardShortcutsSecondTab" with default value "["Ctrl+2"]"
+12:37:37.623 Created option "keyboardShortcutsThirdTab" with default value "["Ctrl+3"]"
+12:37:37.623 Created option "keyboardShortcutsFourthTab" with default value "["Ctrl+4"]"
+12:37:37.623 Created option "keyboardShortcutsFifthTab" with default value "["Ctrl+5"]"
+12:37:37.623 Created option "keyboardShortcutsSixthTab" with default value "["Ctrl+6"]"
+12:37:37.623 Created option "keyboardShortcutsSeventhTab" with default value "["Ctrl+7"]"
+12:37:37.623 Created option "keyboardShortcutsEigthTab" with default value "["Ctrl+8"]"
+12:37:37.623 Created option "keyboardShortcutsNinthTab" with default value "["Ctrl+9"]"
+12:37:37.623 Created option "keyboardShortcutsLastTab" with default value "["Ctrl+0"]"
+12:37:37.624 Created option "keyboardShortcutsShowNoteSource" with default value "[]"
+12:37:37.624 Created option "keyboardShortcutsShowOptions" with default value "[]"
+12:37:37.624 Created option "keyboardShortcutsShowRevisions" with default value "[]"
+12:37:37.624 Created option "keyboardShortcutsShowRecentChanges" with default value "[]"
+12:37:37.624 Created option "keyboardShortcutsShowSQLConsole" with default value "["Alt+O"]"
+12:37:37.624 Created option "keyboardShortcutsShowBackendLog" with default value "[]"
+12:37:37.624 Created option "keyboardShortcutsShowHelp" with default value "["F1"]"
+12:37:37.624 Created option "keyboardShortcutsShowCheatsheet" with default value "["Shift+F1"]"
+12:37:37.624 Created option "keyboardShortcutsAddLinkToText" with default value "["Ctrl+L"]"
+12:37:37.624 Created option "keyboardShortcutsFollowLinkUnderCursor" with default value "["Ctrl+Enter"]"
+12:37:37.624 Created option "keyboardShortcutsInsertDateTimeToText" with default value "["Alt+T"]"
+12:37:37.625 Created option "keyboardShortcutsPasteMarkdownIntoText" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsCutIntoNote" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsAddIncludeNoteToText" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsEditReadOnlyNote" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsAddNewLabel" with default value "["Alt+L"]"
+12:37:37.625 Created option "keyboardShortcutsAddNewRelation" with default value "["Alt+R"]"
+12:37:37.625 Created option "keyboardShortcutsToggleRibbonTabClassicEditor" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsToggleRibbonTabBasicProperties" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsToggleRibbonTabBookProperties" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsToggleRibbonTabFileProperties" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsToggleRibbonTabImageProperties" with default value "[]"
+12:37:37.625 Created option "keyboardShortcutsToggleRibbonTabOwnedAttributes" with default value "["Alt+A"]"
+12:37:37.626 Created option "keyboardShortcutsToggleRibbonTabInheritedAttributes" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsToggleRibbonTabPromotedAttributes" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsToggleRibbonTabNoteMap" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsToggleRibbonTabNoteInfo" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsToggleRibbonTabNotePaths" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsToggleRibbonTabSimilarNotes" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsToggleRightPane" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsPrintActiveNote" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsExportAsPdf" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsOpenNoteExternally" with default value "[]"
+12:37:37.626 Created option "keyboardShortcutsRenderActiveNote" with default value "[]"
+12:37:37.627 Created option "keyboardShortcutsRunActiveNote" with default value "["Ctrl+Enter"]"
+12:37:37.627 Created option "keyboardShortcutsToggleNoteHoisting" with default value "["Alt+H"]"
+12:37:37.627 Created option "keyboardShortcutsUnhoist" with default value "["Alt+U"]"
+12:37:37.627 Created option "keyboardShortcutsReloadFrontendApp" with default value "["F5","Ctrl+R"]"
+12:37:37.627 Created option "keyboardShortcutsOpenDevTools" with default value "[]"
+12:37:37.627 Created option "keyboardShortcutsFindInText" with default value "[]"
+12:37:37.627 Created option "keyboardShortcutsToggleLeftPane" with default value "[]"
+12:37:37.627 Created option "keyboardShortcutsToggleFullscreen" with default value "["F11"]"
+12:37:37.627 Created option "keyboardShortcutsZoomOut" with default value "[]"
+12:37:37.627 Created option "keyboardShortcutsZoomIn" with default value "[]"
+12:37:37.628 Created option "keyboardShortcutsZoomReset" with default value "[]"
+12:37:37.628 Created option "keyboardShortcutsCopyWithoutFormatting" with default value "["Ctrl+Alt+C"]"
+12:37:37.628 Created option "keyboardShortcutsForceSaveRevision" with default value "[]"
+12:37:37.645 Created new note '_hidden', branch 'root__hidden' of type 'doc', mime ''
+12:37:37.648 Created new note '_search', branch '_hidden__search' of type 'doc', mime ''
+12:37:37.649 Created new note '_globalNoteMap', branch '_hidden__globalNoteMap' of type 'noteMap', mime ''
+12:37:37.650 Created new note '_sqlConsole', branch '_hidden__sqlConsole' of type 'doc', mime ''
+12:37:37.650 Created new note '_share', branch '_hidden__share' of type 'doc', mime ''
+12:37:37.651 Created new note '_bulkAction', branch '_hidden__bulkAction' of type 'doc', mime ''
+12:37:37.652 Created new note '_backendLog', branch '_hidden__backendLog' of type 'contentWidget', mime ''
+12:37:37.653 Created new note '_userHidden', branch '_hidden__userHidden' of type 'doc', mime ''
+12:37:37.654 Created new note '_lbTplRoot', branch '_hidden__lbTplRoot' of type 'doc', mime ''
+12:37:37.655 Created new note '_lbTplBase', branch '_lbTplRoot__lbTplBase' of type 'doc', mime ''
+12:37:37.655 Created new note '_lbTplLauncherCommand', branch '_lbTplRoot__lbTplLauncherCommand' of type 'doc', mime ''
+12:37:37.656 Created new note '_lbTplLauncherNote', branch '_lbTplRoot__lbTplLauncherNote' of type 'doc', mime ''
+12:37:37.658 Created new note '_lbTplLauncherScript', branch '_lbTplRoot__lbTplLauncherScript' of type 'doc', mime ''
+12:37:37.659 Created new note '_lbTplLauncherWidget', branch '_lbTplRoot__lbTplLauncherWidget' of type 'doc', mime ''
+12:37:37.660 Created new note '_lbTplSpacer', branch '_lbTplRoot__lbTplSpacer' of type 'doc', mime ''
+12:37:37.662 Created new note '_lbTplCustomWidget', branch '_lbTplRoot__lbTplCustomWidget' of type 'doc', mime ''
+12:37:37.663 Created new note '_lbRoot', branch '_hidden__lbRoot' of type 'doc', mime ''
+12:37:37.664 Created new note '_lbAvailableLaunchers', branch '_lbRoot__lbAvailableLaunchers' of type 'doc', mime ''
+12:37:37.665 Created new note '_lbBackInHistory', branch '_lbAvailableLaunchers__lbBackInHistory' of type 'launcher', mime ''
+12:37:37.667 Created new note '_lbForwardInHistory', branch '_lbAvailableLaunchers__lbForwardInHistory' of type 'launcher', mime ''
+12:37:37.668 Created new note '_commandPalette', branch '_lbAvailableLaunchers__commandPalette' of type 'launcher', mime ''
+12:37:37.685 Created new note '_lbBackendLog', branch '_lbAvailableLaunchers__lbBackendLog' of type 'launcher', mime ''
+12:37:37.692 Created new note '_zenMode', branch '_lbAvailableLaunchers__zenMode' of type 'launcher', mime ''
+12:37:37.693 Created new note '_lbVisibleLaunchers', branch '_lbRoot__lbVisibleLaunchers' of type 'doc', mime ''
+12:37:37.694 Created new note '_lbNewNote', branch '_lbVisibleLaunchers__lbNewNote' of type 'launcher', mime ''
+12:37:37.695 Created new note '_lbSearch', branch '_lbVisibleLaunchers__lbSearch' of type 'launcher', mime ''
+12:37:37.696 Created new note '_lbJumpTo', branch '_lbVisibleLaunchers__lbJumpTo' of type 'launcher', mime ''
+12:37:37.697 Created new note '_lbNoteMap', branch '_lbVisibleLaunchers__lbNoteMap' of type 'launcher', mime ''
+12:37:37.698 Created new note '_lbLlmChat', branch '_lbVisibleLaunchers__lbLlmChat' of type 'launcher', mime ''
+12:37:37.700 Created new note '_lbCalendar', branch '_lbVisibleLaunchers__lbCalendar' of type 'launcher', mime ''
+12:37:37.700 Created new note '_lbRecentChanges', branch '_lbVisibleLaunchers__lbRecentChanges' of type 'launcher', mime ''
+12:37:37.702 Created new note '_lbSpacer1', branch '_lbVisibleLaunchers__lbSpacer1' of type 'launcher', mime ''
+12:37:37.703 Created new note '_lbBookmarks', branch '_lbVisibleLaunchers__lbBookmarks' of type 'launcher', mime ''
+12:37:37.704 Created new note '_lbToday', branch '_lbVisibleLaunchers__lbToday' of type 'launcher', mime ''
+12:37:37.705 Created new note '_lbSpacer2', branch '_lbVisibleLaunchers__lbSpacer2' of type 'launcher', mime ''
+12:37:37.706 Created new note '_lbQuickSearch', branch '_lbVisibleLaunchers__lbQuickSearch' of type 'launcher', mime ''
+12:37:37.707 Created new note '_lbProtectedSession', branch '_lbVisibleLaunchers__lbProtectedSession' of type 'launcher', mime ''
+12:37:37.708 Created new note '_lbSyncStatus', branch '_lbVisibleLaunchers__lbSyncStatus' of type 'launcher', mime ''
+12:37:37.709 Created new note '_lbSettings', branch '_lbVisibleLaunchers__lbSettings' of type 'launcher', mime ''
+12:37:37.710 Created new note '_lbMobileRoot', branch '_hidden__lbMobileRoot' of type 'doc', mime ''
+12:37:37.732 Created new note '_lbMobileAvailableLaunchers', branch '_lbMobileRoot__lbMobileAvailableLaunchers' of type 'doc', mime ''
+12:37:37.733 Created new note '_lbMobileNewNote', branch '_lbMobileAvailableLaunchers__lbMobileNewNote' of type 'launcher', mime ''
+12:37:37.734 Created new note '_lbMobileToday', branch '_lbMobileAvailableLaunchers__lbMobileToday' of type 'launcher', mime ''
+12:37:37.735 Created new note '_lbMobileVisibleLaunchers', branch '_lbMobileRoot__lbMobileVisibleLaunchers' of type 'doc', mime ''
+12:37:37.736 Created new note '_lbMobileBackInHistory', branch '_lbMobileVisibleLaunchers__lbMobileBackInHistory' of type 'launcher', mime ''
+12:37:37.738 Created new note '_lbMobileForwardInHistory', branch '_lbMobileVisibleLaunchers__lbMobileForwardInHistory' of type 'launcher', mime ''
+12:37:37.739 Created new note '_lbMobileJumpTo', branch '_lbMobileVisibleLaunchers__lbMobileJumpTo' of type 'launcher', mime ''
+12:37:37.740 Created new note '_lbMobileCalendar', branch '_lbMobileVisibleLaunchers__lbMobileCalendar' of type 'launcher', mime ''
+12:37:37.741 Created new note '_lbMobileRecentChanges', branch '_lbMobileVisibleLaunchers__lbMobileRecentChanges' of type 'launcher', mime ''
+12:37:37.743 Created new note '_options', branch '_hidden__options' of type 'book', mime ''
+12:37:37.743 Created new note '_optionsAppearance', branch '_options__optionsAppearance' of type 'contentWidget', mime ''
+12:37:37.744 Created new note '_optionsShortcuts', branch '_options__optionsShortcuts' of type 'contentWidget', mime ''
+12:37:37.745 Created new note '_optionsTextNotes', branch '_options__optionsTextNotes' of type 'contentWidget', mime ''
+12:37:37.746 Created new note '_optionsCodeNotes', branch '_options__optionsCodeNotes' of type 'contentWidget', mime ''
+12:37:37.746 Created new note '_optionsImages', branch '_options__optionsImages' of type 'contentWidget', mime ''
+12:37:37.747 Created new note '_optionsSpellcheck', branch '_options__optionsSpellcheck' of type 'contentWidget', mime ''
+12:37:37.748 Created new note '_optionsPassword', branch '_options__optionsPassword' of type 'contentWidget', mime ''
+12:37:37.748 Created new note '_optionsMFA', branch '_options__optionsMFA' of type 'contentWidget', mime ''
+12:37:37.749 Created new note '_optionsEtapi', branch '_options__optionsEtapi' of type 'contentWidget', mime ''
+12:37:37.750 Created new note '_optionsBackup', branch '_options__optionsBackup' of type 'contentWidget', mime ''
+12:37:37.751 Created new note '_optionsSync', branch '_options__optionsSync' of type 'contentWidget', mime ''
+12:37:37.751 Created new note '_optionsAi', branch '_options__optionsAi' of type 'contentWidget', mime ''
+12:37:37.752 Created new note '_optionsOther', branch '_options__optionsOther' of type 'contentWidget', mime ''
+12:37:37.753 Created new note '_optionsLocalization', branch '_options__optionsLocalization' of type 'contentWidget', mime ''
+12:37:37.753 Created new note '_optionsAdvanced', branch '_options__optionsAdvanced' of type 'contentWidget', mime ''
+12:37:37.754 Created new note '_help', branch '_hidden__help' of type 'book', mime ''
+12:37:37.769 Created new note '_help_BOCnjTMBCoxW', branch '_help__help_BOCnjTMBCoxW' of type 'doc', mime ''
+12:37:37.776 Created new note '_help_Otzi9La2YAUX', branch '_help__help_Otzi9La2YAUX' of type 'book', mime ''
+12:37:37.777 Created new note '_help_poXkQfguuA0U', branch '_help_Otzi9La2YAUX__help_poXkQfguuA0U' of type 'doc', mime ''
+12:37:37.778 Created new note '_help_nRqcgfTb97uV', branch '_help_poXkQfguuA0U__help_nRqcgfTb97uV' of type 'doc', mime ''
+12:37:37.778 Created new note '_help_Rp0q8bSP6Ayl', branch '_help_poXkQfguuA0U__help_Rp0q8bSP6Ayl' of type 'doc', mime ''
+12:37:37.779 Created new note '_help_Un4wj2Mak2Ky', branch '_help_poXkQfguuA0U__help_Un4wj2Mak2Ky' of type 'doc', mime ''
+12:37:37.780 Created new note '_help_WOcw2SLH6tbX', branch '_help_Otzi9La2YAUX__help_WOcw2SLH6tbX' of type 'doc', mime ''
+12:37:37.780 Created new note '_help_Dgg7bR3b6K9j', branch '_help_WOcw2SLH6tbX__help_Dgg7bR3b6K9j' of type 'book', mime ''
+12:37:37.781 Created new note '_help_3tW6mORuTHnB', branch '_help_Dgg7bR3b6K9j__help_3tW6mORuTHnB' of type 'doc', mime ''
+12:37:37.782 Created new note '_help_rWX5eY045zbE', branch '_help_Dgg7bR3b6K9j__help_rWX5eY045zbE' of type 'doc', mime ''
+12:37:37.783 Created new note '_help_moVgBcoxE3EK', branch '_help_Dgg7bR3b6K9j__help_moVgBcoxE3EK' of type 'doc', mime ''
+12:37:37.785 Created new note '_help_J1Bb6lVlwU5T', branch '_help_Dgg7bR3b6K9j__help_J1Bb6lVlwU5T' of type 'doc', mime ''
+12:37:37.786 Created new note '_help_DCmT6e7clMoP', branch '_help_Dgg7bR3b6K9j__help_DCmT6e7clMoP' of type 'doc', mime ''
+12:37:37.787 Created new note '_help_klCWNks3ReaQ', branch '_help_Dgg7bR3b6K9j__help_klCWNks3ReaQ' of type 'doc', mime ''
+12:37:37.788 Created new note '_help_vcjrb3VVYPZI', branch '_help_WOcw2SLH6tbX__help_vcjrb3VVYPZI' of type 'book', mime ''
+12:37:37.788 Created new note '_help_ud6MShXL4WpO', branch '_help_vcjrb3VVYPZI__help_ud6MShXL4WpO' of type 'doc', mime ''
+12:37:37.789 Created new note '_help_fDLvzOx29Pfg', branch '_help_vcjrb3VVYPZI__help_fDLvzOx29Pfg' of type 'doc', mime ''
+12:37:37.790 Created new note '_help_LLzSMXACKhUs', branch '_help_vcjrb3VVYPZI__help_LLzSMXACKhUs' of type 'doc', mime ''
+12:37:37.790 Created new note '_help_l2VkvOwUNfZj', branch '_help_WOcw2SLH6tbX__help_l2VkvOwUNfZj' of type 'doc', mime ''
+12:37:37.791 Created new note '_help_0hzsNCP31IAB', branch '_help_WOcw2SLH6tbX__help_0hzsNCP31IAB' of type 'doc', mime ''
+12:37:37.792 Created new note '_help_7DAiwaf8Z7Rz', branch '_help_WOcw2SLH6tbX__help_7DAiwaf8Z7Rz' of type 'doc', mime ''
+12:37:37.792 Creating missing branch for note _help_Un4wj2Mak2Ky under parent _help_WOcw2SLH6tbX.
+12:37:37.793 Updating attribute _help_Un4wj2Mak2Ky_ldocName from "User Guide/User Guide/Installation & Setup/Desktop Installation/Nix flake" to "User Guide/User Guide/Installation & Setup/Server Installation/Nix flake.clone"
+12:37:37.793 Updating attribute _help_Un4wj2Mak2Ky_liconClass from "bx bxl-tux" to "bx bx-file"
+12:37:37.793 Created new note '_help_yeEaYqosGLSh', branch '_help_WOcw2SLH6tbX__help_yeEaYqosGLSh' of type 'doc', mime ''
+12:37:37.794 Created new note '_help_iGTnKjubbXkA', branch '_help_WOcw2SLH6tbX__help_iGTnKjubbXkA' of type 'doc', mime ''
+12:37:37.795 Created new note '_help_cbkrhQjrkKrh', branch '_help_Otzi9La2YAUX__help_cbkrhQjrkKrh' of type 'doc', mime ''
+12:37:37.811 Created new note '_help_RDslemsQ6gCp', branch '_help_Otzi9La2YAUX__help_RDslemsQ6gCp' of type 'doc', mime ''
+12:37:37.818 Created new note '_help_MtPxeAWVAzMg', branch '_help_Otzi9La2YAUX__help_MtPxeAWVAzMg' of type 'doc', mime ''
+12:37:37.819 Created new note '_help_n1lujUxCwipy', branch '_help_Otzi9La2YAUX__help_n1lujUxCwipy' of type 'doc', mime ''
+12:37:37.819 Created new note '_help_ODY7qQn5m2FT', branch '_help_Otzi9La2YAUX__help_ODY7qQn5m2FT' of type 'doc', mime ''
+12:37:37.820 Created new note '_help_tAassRL4RSQL', branch '_help_Otzi9La2YAUX__help_tAassRL4RSQL' of type 'doc', mime ''
+12:37:37.821 Created new note '_help_gh7bpGYxajRS', branch '_help__help_gh7bpGYxajRS' of type 'book', mime ''
+12:37:37.822 Created new note '_help_Vc8PjrjAGuOp', branch '_help_gh7bpGYxajRS__help_Vc8PjrjAGuOp' of type 'book', mime ''
+12:37:37.822 Created new note '_help_x0JgW8UqGXvq', branch '_help_Vc8PjrjAGuOp__help_x0JgW8UqGXvq' of type 'doc', mime ''
+12:37:37.823 Created new note '_help_x3i7MxGccDuM', branch '_help_Vc8PjrjAGuOp__help_x3i7MxGccDuM' of type 'doc', mime ''
+12:37:37.824 Created new note '_help_oPVyFC7WL2Lp', branch '_help_Vc8PjrjAGuOp__help_oPVyFC7WL2Lp' of type 'doc', mime ''
+12:37:37.825 Created new note '_help_YtSN43OrfzaA', branch '_help_oPVyFC7WL2Lp__help_YtSN43OrfzaA' of type 'doc', mime ''
+12:37:37.825 Created new note '_help_yTjUdsOi4CIE', branch '_help_oPVyFC7WL2Lp__help_yTjUdsOi4CIE' of type 'doc', mime ''
+12:37:37.826 Created new note '_help_DvdZhoQZY9Yd', branch '_help_oPVyFC7WL2Lp__help_DvdZhoQZY9Yd' of type 'doc', mime ''
+12:37:37.827 Created new note '_help_BlN9DFI679QC', branch '_help_Vc8PjrjAGuOp__help_BlN9DFI679QC' of type 'doc', mime ''
+12:37:37.827 Created new note '_help_3seOhtN8uLIY', branch '_help_Vc8PjrjAGuOp__help_3seOhtN8uLIY' of type 'doc', mime ''
+12:37:37.828 Created new note '_help_xYmIYSP6wE3F', branch '_help_Vc8PjrjAGuOp__help_xYmIYSP6wE3F' of type 'doc', mime ''
+12:37:37.829 Created new note '_help_8YBEPzcpUgxw', branch '_help_Vc8PjrjAGuOp__help_8YBEPzcpUgxw' of type 'doc', mime ''
+12:37:37.830 Created new note '_help_4TIF1oA4VQRO', branch '_help_Vc8PjrjAGuOp__help_4TIF1oA4VQRO' of type 'doc', mime ''
+12:37:37.830 Created new note '_help_luNhaphA37EO', branch '_help_Vc8PjrjAGuOp__help_luNhaphA37EO' of type 'doc', mime ''
+12:37:37.831 Created new note '_help_XpOYSgsLkTJy', branch '_help_Vc8PjrjAGuOp__help_XpOYSgsLkTJy' of type 'doc', mime ''
+12:37:37.832 Created new note '_help_RnaPdbciOfeq', branch '_help_Vc8PjrjAGuOp__help_RnaPdbciOfeq' of type 'doc', mime ''
+12:37:37.833 Created new note '_help_r5JGHN99bVKn', branch '_help_Vc8PjrjAGuOp__help_r5JGHN99bVKn' of type 'doc', mime ''
+12:37:37.834 Created new note '_help_ny318J39E5Z0', branch '_help_Vc8PjrjAGuOp__help_ny318J39E5Z0' of type 'doc', mime ''
+12:37:37.835 Created new note '_help_ZjLYv08Rp3qC', branch '_help_Vc8PjrjAGuOp__help_ZjLYv08Rp3qC' of type 'doc', mime ''
+12:37:37.856 Created new note '_help_lgKX7r3aL30x', branch '_help_Vc8PjrjAGuOp__help_lgKX7r3aL30x' of type 'doc', mime ''
+12:37:37.857 Created new note '_help_BFs8mudNFgCS', branch '_help_gh7bpGYxajRS__help_BFs8mudNFgCS' of type 'doc', mime ''
+12:37:37.858 Created new note '_help_p9kXRFAkwN4o', branch '_help_BFs8mudNFgCS__help_p9kXRFAkwN4o' of type 'doc', mime ''
+12:37:37.859 Created new note '_help_0vhv7lsOLy82', branch '_help_BFs8mudNFgCS__help_0vhv7lsOLy82' of type 'doc', mime ''
+12:37:37.860 Created new note '_help_IakOLONlIfGI', branch '_help_BFs8mudNFgCS__help_IakOLONlIfGI' of type 'doc', mime ''
+12:37:37.861 Created new note '_help_TBwsyfadTA18', branch '_help_IakOLONlIfGI__help_TBwsyfadTA18' of type 'doc', mime ''
+12:37:37.862 Created new note '_help_bwg0e8ewQMak', branch '_help_BFs8mudNFgCS__help_bwg0e8ewQMak' of type 'doc', mime ''
+12:37:37.862 Created new note '_help_MKmLg5x6xkor', branch '_help_BFs8mudNFgCS__help_MKmLg5x6xkor' of type 'doc', mime ''
+12:37:37.863 Created new note '_help_vZWERwf8U3nx', branch '_help_BFs8mudNFgCS__help_vZWERwf8U3nx' of type 'doc', mime ''
+12:37:37.864 Created new note '_help_aGlEvb9hyDhS', branch '_help_BFs8mudNFgCS__help_aGlEvb9hyDhS' of type 'doc', mime ''
+12:37:37.864 Created new note '_help_NRnIZmSMc5sj', branch '_help_BFs8mudNFgCS__help_NRnIZmSMc5sj' of type 'doc', mime ''
+12:37:37.865 Created new note '_help_CoFPLs3dRlXc', branch '_help_BFs8mudNFgCS__help_CoFPLs3dRlXc' of type 'doc', mime ''
+12:37:37.866 Created new note '_help_0ESUbbAxVnoK', branch '_help_BFs8mudNFgCS__help_0ESUbbAxVnoK' of type 'doc', mime ''
+12:37:37.867 Created new note '_help_wArbEsdSae6g', branch '_help_gh7bpGYxajRS__help_wArbEsdSae6g' of type 'book', mime ''
+12:37:37.868 Created new note '_help_kBrnXNG3Hplm', branch '_help_wArbEsdSae6g__help_kBrnXNG3Hplm' of type 'doc', mime ''
+12:37:37.869 Created new note '_help_MMiBEQljMQh2', branch '_help_wArbEsdSae6g__help_MMiBEQljMQh2' of type 'doc', mime ''
+12:37:37.869 Created new note '_help_Ms1nauBra7gq', branch '_help_wArbEsdSae6g__help_Ms1nauBra7gq' of type 'doc', mime ''
+12:37:37.870 Created new note '_help_F1r9QtzQLZqm', branch '_help_wArbEsdSae6g__help_F1r9QtzQLZqm' of type 'doc', mime ''
+12:37:37.871 Created new note '_help_eIg8jdvaoNNd', branch '_help_wArbEsdSae6g__help_eIg8jdvaoNNd' of type 'doc', mime ''
+12:37:37.872 Created new note '_help_u3YFHC9tQlpm', branch '_help_wArbEsdSae6g__help_u3YFHC9tQlpm' of type 'doc', mime ''
+12:37:37.873 Created new note '_help_OR8WJ7Iz9K4U', branch '_help_wArbEsdSae6g__help_OR8WJ7Iz9K4U' of type 'doc', mime ''
+12:37:37.873 Creating missing branch for note _help_ZjLYv08Rp3qC under parent _help_wArbEsdSae6g.
+12:37:37.874 Updating attribute _help_ZjLYv08Rp3qC_ldocName from "User Guide/User Guide/Basic Concepts and Features/UI Elements/Quick edit" to "User Guide/User Guide/Basic Concepts and Features/Navigation/Quick edit.clone"
+12:37:37.874 Created new note '_help_9sRHySam5fXb', branch '_help_wArbEsdSae6g__help_9sRHySam5fXb' of type 'doc', mime ''
+12:37:37.896 Created new note '_help_xWtq5NUHOwql', branch '_help_wArbEsdSae6g__help_xWtq5NUHOwql' of type 'doc', mime ''
+12:37:37.897 Created new note '_help_McngOG2jbUWX', branch '_help_wArbEsdSae6g__help_McngOG2jbUWX' of type 'doc', mime ''
+12:37:37.897 Created new note '_help_A9Oc6YKKc65v', branch '_help_gh7bpGYxajRS__help_A9Oc6YKKc65v' of type 'doc', mime ''
+12:37:37.898 Created new note '_help_Wy267RK4M69c', branch '_help_gh7bpGYxajRS__help_Wy267RK4M69c' of type 'doc', mime ''
+12:37:37.899 Created new note '_help_VbjZvtUek0Ln', branch '_help_Wy267RK4M69c__help_VbjZvtUek0Ln' of type 'doc', mime ''
+12:37:37.900 Created new note '_help_mHbBMPDPkVV5', branch '_help_gh7bpGYxajRS__help_mHbBMPDPkVV5' of type 'doc', mime ''
+12:37:37.901 Created new note '_help_Oau6X9rCuegd', branch '_help_mHbBMPDPkVV5__help_Oau6X9rCuegd' of type 'doc', mime ''
+12:37:37.901 Created new note '_help_rJ9grSgoExl9', branch '_help_Oau6X9rCuegd__help_rJ9grSgoExl9' of type 'doc', mime ''
+12:37:37.902 Created new note '_help_syuSEKf2rUGr', branch '_help_mHbBMPDPkVV5__help_syuSEKf2rUGr' of type 'doc', mime ''
+12:37:37.903 Created new note '_help_GnhlmrATVqcH', branch '_help_mHbBMPDPkVV5__help_GnhlmrATVqcH' of type 'doc', mime ''
+12:37:37.904 Created new note '_help_rC3pL2aptaRE', branch '_help_gh7bpGYxajRS__help_rC3pL2aptaRE' of type 'doc', mime ''
+12:37:37.905 Created new note '_help_s3YCWHBfmYuM', branch '_help__help_s3YCWHBfmYuM' of type 'doc', mime ''
+12:37:37.905 Created new note '_help_i6dbnitykE5D', branch '_help__help_i6dbnitykE5D' of type 'doc', mime ''
+12:37:37.906 Created new note '_help_KSZ04uQ2D1St', branch '_help__help_KSZ04uQ2D1St' of type 'doc', mime ''
+12:37:37.907 Created new note '_help_iPIMuisry3hd', branch '_help_KSZ04uQ2D1St__help_iPIMuisry3hd' of type 'doc', mime ''
+12:37:37.907 Created new note '_help_NwBbFdNZ9h7O', branch '_help_iPIMuisry3hd__help_NwBbFdNZ9h7O' of type 'doc', mime ''
+12:37:37.908 Created new note '_help_oSuaNgyyKnhu', branch '_help_iPIMuisry3hd__help_oSuaNgyyKnhu' of type 'doc', mime ''
+12:37:37.909 Created new note '_help_veGu4faJErEM', branch '_help_iPIMuisry3hd__help_veGu4faJErEM' of type 'doc', mime ''
+12:37:37.910 Created new note '_help_2x0ZAX9ePtzV', branch '_help_iPIMuisry3hd__help_2x0ZAX9ePtzV' of type 'doc', mime ''
+12:37:37.911 Created new note '_help_UYuUB1ZekNQU', branch '_help_iPIMuisry3hd__help_UYuUB1ZekNQU' of type 'doc', mime ''
+12:37:37.912 Created new note '_help_QxEyIjRBizuC', branch '_help_UYuUB1ZekNQU__help_QxEyIjRBizuC' of type 'doc', mime ''
+12:37:37.913 Created new note '_help_AgjCISero73a', branch '_help_iPIMuisry3hd__help_AgjCISero73a' of type 'doc', mime ''
+12:37:37.913 Created new note '_help_nRhnJkTT8cPs', branch '_help_iPIMuisry3hd__help_nRhnJkTT8cPs' of type 'doc', mime ''
+12:37:37.935 Created new note '_help_Gr6xFaF6ioJ5', branch '_help_iPIMuisry3hd__help_Gr6xFaF6ioJ5' of type 'doc', mime ''
+12:37:37.936 Created new note '_help_AxshuNRegLAv', branch '_help_iPIMuisry3hd__help_AxshuNRegLAv' of type 'doc', mime ''
+12:37:37.937 Created new note '_help_mT0HEkOsz6i1', branch '_help_iPIMuisry3hd__help_mT0HEkOsz6i1' of type 'doc', mime ''
+12:37:37.938 Created new note '_help_0Ofbk1aSuVRu', branch '_help_mT0HEkOsz6i1__help_0Ofbk1aSuVRu' of type 'doc', mime ''
+12:37:37.939 Created new note '_help_nBAXQFj20hS1', branch '_help_iPIMuisry3hd__help_nBAXQFj20hS1' of type 'doc', mime ''
+12:37:37.939 Created new note '_help_CohkqWQC1iBv', branch '_help_iPIMuisry3hd__help_CohkqWQC1iBv' of type 'doc', mime ''
+12:37:37.940 Created new note '_help_oiVPnW8QfnvS', branch '_help_iPIMuisry3hd__help_oiVPnW8QfnvS' of type 'doc', mime ''
+12:37:37.941 Created new note '_help_QEAPj01N5f7w', branch '_help_iPIMuisry3hd__help_QEAPj01N5f7w' of type 'doc', mime ''
+12:37:37.942 Created new note '_help_3IDVtesTQ8ds', branch '_help_QEAPj01N5f7w__help_3IDVtesTQ8ds' of type 'doc', mime ''
+12:37:37.943 Created new note '_help_hrZ1D00cLbal', branch '_help_QEAPj01N5f7w__help_hrZ1D00cLbal' of type 'doc', mime ''
+12:37:37.944 Created new note '_help_S6Xx8QIWTV66', branch '_help_iPIMuisry3hd__help_S6Xx8QIWTV66' of type 'doc', mime ''
+12:37:37.945 Created new note '_help_QrtTYPmdd1qq', branch '_help_iPIMuisry3hd__help_QrtTYPmdd1qq' of type 'doc', mime ''
+12:37:37.946 Created new note '_help_YfYAtQBcfo5V', branch '_help_iPIMuisry3hd__help_YfYAtQBcfo5V' of type 'doc', mime ''
+12:37:37.946 Created new note '_help_dEHYtoWWi8ct', branch '_help_iPIMuisry3hd__help_dEHYtoWWi8ct' of type 'doc', mime ''
+12:37:37.947 Created new note '_help_gLt3vA97tMcp', branch '_help_iPIMuisry3hd__help_gLt3vA97tMcp' of type 'doc', mime ''
+12:37:37.948 Created new note '_help_ZlN4nump6EbW', branch '_help_gLt3vA97tMcp__help_ZlN4nump6EbW' of type 'doc', mime ''
+12:37:37.949 Created new note '_help_pwc194wlRzcH', branch '_help_gLt3vA97tMcp__help_pwc194wlRzcH' of type 'doc', mime ''
+12:37:37.950 Created new note '_help_BFvAtE74rbP6', branch '_help_iPIMuisry3hd__help_BFvAtE74rbP6' of type 'doc', mime ''
+12:37:37.951 Created new note '_help_NdowYOC1GFKS', branch '_help_iPIMuisry3hd__help_NdowYOC1GFKS' of type 'doc', mime ''
+12:37:37.952 Created new note '_help_6f9hih2hXXZk', branch '_help_KSZ04uQ2D1St__help_6f9hih2hXXZk' of type 'doc', mime ''
+12:37:37.952 Created new note '_help_m523cpzocqaD', branch '_help_KSZ04uQ2D1St__help_m523cpzocqaD' of type 'doc', mime ''
+12:37:37.953 Created new note '_help_iRwzGnHPzonm', branch '_help_KSZ04uQ2D1St__help_iRwzGnHPzonm' of type 'doc', mime ''
+12:37:37.975 Created new note '_help_bdUJEHsAPYQR', branch '_help_KSZ04uQ2D1St__help_bdUJEHsAPYQR' of type 'doc', mime ''
+12:37:37.976 Created new note '_help_HcABDtFCkbFN', branch '_help_KSZ04uQ2D1St__help_HcABDtFCkbFN' of type 'doc', mime ''
+12:37:37.977 Created new note '_help_s1aBHPd79XYj', branch '_help_KSZ04uQ2D1St__help_s1aBHPd79XYj' of type 'doc', mime ''
+12:37:37.977 Created new note '_help_RH6yLjjWJHof', branch '_help_s1aBHPd79XYj__help_RH6yLjjWJHof' of type 'doc', mime ''
+12:37:37.978 Created new note '_help_WWgeUaBb7UfC', branch '_help_s1aBHPd79XYj__help_WWgeUaBb7UfC' of type 'webView', mime ''
+12:37:37.979 Created new note '_help_grjYqerjn243', branch '_help_KSZ04uQ2D1St__help_grjYqerjn243' of type 'doc', mime ''
+12:37:37.980 Created new note '_help_1vHRoWCEjj0L', branch '_help_KSZ04uQ2D1St__help_1vHRoWCEjj0L' of type 'doc', mime ''
+12:37:37.981 Created new note '_help_gBbsAeiuUxI5', branch '_help_KSZ04uQ2D1St__help_gBbsAeiuUxI5' of type 'doc', mime ''
+12:37:37.981 Created new note '_help_W8vYD3Q1zjCR', branch '_help_KSZ04uQ2D1St__help_W8vYD3Q1zjCR' of type 'doc', mime ''
+12:37:37.982 Created new note '_help_GTwFsgaA0lCt', branch '_help__help_GTwFsgaA0lCt' of type 'doc', mime ''
+12:37:37.983 Created new note '_help_xWbu3jpNWapp', branch '_help_GTwFsgaA0lCt__help_xWbu3jpNWapp' of type 'doc', mime ''
+12:37:37.984 Created new note '_help_2FvYrpmOXm29', branch '_help_GTwFsgaA0lCt__help_2FvYrpmOXm29' of type 'doc', mime ''
+12:37:37.984 Created new note '_help_CtBQqbwXDx1w', branch '_help_GTwFsgaA0lCt__help_CtBQqbwXDx1w' of type 'doc', mime ''
+12:37:37.985 Created new note '_help_81SGnPGMk7Xc', branch '_help_GTwFsgaA0lCt__help_81SGnPGMk7Xc' of type 'doc', mime ''
+12:37:37.986 Created new note '_help_zP3PMqaG71Ct', branch '_help_GTwFsgaA0lCt__help_zP3PMqaG71Ct' of type 'doc', mime ''
+12:37:37.987 Created new note '_help_8QqnMzx393bx', branch '_help_GTwFsgaA0lCt__help_8QqnMzx393bx' of type 'doc', mime ''
+12:37:37.988 Created new note '_help_mULW0Q3VojwY', branch '_help_GTwFsgaA0lCt__help_mULW0Q3VojwY' of type 'doc', mime ''
+12:37:37.989 Created new note '_help_BgmBlOIl72jZ', branch '_help__help_BgmBlOIl72jZ' of type 'doc', mime ''
+12:37:37.990 Created new note '_help_wy8So3yZZlH9', branch '_help_BgmBlOIl72jZ__help_wy8So3yZZlH9' of type 'doc', mime ''
+12:37:37.990 Created new note '_help_x59R8J8KV5Bp', branch '_help_BgmBlOIl72jZ__help_x59R8J8KV5Bp' of type 'doc', mime ''
+12:37:37.991 Created new note '_help_qzNzp9LYQyPT', branch '_help_BgmBlOIl72jZ__help_qzNzp9LYQyPT' of type 'doc', mime ''
+12:37:38.007 Created new note '_help_bnyigUA2UK7s', branch '_help_qzNzp9LYQyPT__help_bnyigUA2UK7s' of type 'doc', mime ''
+12:37:38.014 Created new note '_help_9yEHzMyFirZR', branch '_help_qzNzp9LYQyPT__help_9yEHzMyFirZR' of type 'doc', mime ''
+12:37:38.015 Created new note '_help_vdlYGAcpXAgc', branch '_help_BgmBlOIl72jZ__help_vdlYGAcpXAgc' of type 'doc', mime ''
+12:37:38.016 Created new note '_help_s8alTXmpFR61', branch '_help_BgmBlOIl72jZ__help_s8alTXmpFR61' of type 'doc', mime ''
+12:37:38.017 Created new note '_help_pKK96zzmvBGf', branch '_help__help_pKK96zzmvBGf' of type 'book', mime ''
+12:37:38.017 Created new note '_help_7NfNr5pZpVKV', branch '_help_pKK96zzmvBGf__help_7NfNr5pZpVKV' of type 'doc', mime ''
+12:37:38.018 Created new note '_help_WFGzWeUK6arS', branch '_help_pKK96zzmvBGf__help_WFGzWeUK6arS' of type 'doc', mime ''
+12:37:38.019 Created new note '_help_WN5z4M8ASACJ', branch '_help_pKK96zzmvBGf__help_WN5z4M8ASACJ' of type 'doc', mime ''
+12:37:38.020 Created new note '_help_AlhDUqhENtH7', branch '_help_pKK96zzmvBGf__help_AlhDUqhENtH7' of type 'doc', mime ''
+12:37:38.021 Created new note '_help_tC7s2alapj8V', branch '_help__help_tC7s2alapj8V' of type 'book', mime ''
+12:37:38.021 Created new note '_help_zEY4DaJG4YT5', branch '_help_tC7s2alapj8V__help_zEY4DaJG4YT5' of type 'doc', mime ''
+12:37:38.022 Created new note '_help_HI6GBBIduIgv', branch '_help_zEY4DaJG4YT5__help_HI6GBBIduIgv' of type 'doc', mime ''
+12:37:38.023 Created new note '_help_Cq5X6iKQop6R', branch '_help_zEY4DaJG4YT5__help_Cq5X6iKQop6R' of type 'doc', mime ''
+12:37:38.024 Created new note '_help_bwZpz2ajCEwO', branch '_help_zEY4DaJG4YT5__help_bwZpz2ajCEwO' of type 'doc', mime ''
+12:37:38.024 Created new note '_help_OFXdgB2nNk1F', branch '_help_zEY4DaJG4YT5__help_OFXdgB2nNk1F' of type 'doc', mime ''
+12:37:38.025 Created new note '_help_KC1HB96bqqHX', branch '_help_tC7s2alapj8V__help_KC1HB96bqqHX' of type 'doc', mime ''
+12:37:38.026 Created new note '_help_BCkXAVs63Ttv', branch '_help_tC7s2alapj8V__help_BCkXAVs63Ttv' of type 'doc', mime ''
+12:37:38.027 Created new note '_help_R9pX4DGra2Vt', branch '_help_tC7s2alapj8V__help_R9pX4DGra2Vt' of type 'doc', mime ''
+12:37:38.028 Created new note '_help_Qjt68inQ2bRj', branch '_help_R9pX4DGra2Vt__help_Qjt68inQ2bRj' of type 'doc', mime ''
+12:37:38.029 Created new note '_help_ycBFjKrrwE9p', branch '_help_R9pX4DGra2Vt__help_ycBFjKrrwE9p' of type 'doc', mime ''
+12:37:38.029 Created new note '_help_sLIJ6f1dkJYW', branch '_help_R9pX4DGra2Vt__help_sLIJ6f1dkJYW' of type 'doc', mime ''
+12:37:38.030 Created new note '_help_5668rwcirq1t', branch '_help_tC7s2alapj8V__help_5668rwcirq1t' of type 'doc', mime ''
+12:37:38.052 Created new note '_help_l0tKav7yLHGF', branch '_help_5668rwcirq1t__help_l0tKav7yLHGF' of type 'doc', mime ''
+12:37:38.053 Created new note '_help_R7abl2fc6Mxi', branch '_help_5668rwcirq1t__help_R7abl2fc6Mxi' of type 'doc', mime ''
+12:37:38.056 Created new note '_help_xYjQUYhpbUEW', branch '_help_5668rwcirq1t__help_xYjQUYhpbUEW' of type 'doc', mime ''
+12:37:38.057 Created new note '_help_J5Ex1ZrMbyJ6', branch '_help_tC7s2alapj8V__help_J5Ex1ZrMbyJ6' of type 'doc', mime ''
+12:37:38.058 Created new note '_help_d3fAXQ2diepH', branch '_help_tC7s2alapj8V__help_d3fAXQ2diepH' of type 'doc', mime ''
+12:37:38.058 Created new note '_help_pgxEVkzLl1OP', branch '_help_tC7s2alapj8V__help_pgxEVkzLl1OP' of type 'doc', mime ''
+12:37:38.059 Created new note '_help_9qPsTWBorUhQ', branch '_help_pgxEVkzLl1OP__help_9qPsTWBorUhQ' of type 'webView', mime ''
+12:37:38.060 Created new note '_help_47ZrP6FNuoG8', branch '_help_tC7s2alapj8V__help_47ZrP6FNuoG8' of type 'doc', mime ''
+12:37:38.061 Created new note '_help_wX4HbRucYSDD', branch '_help_tC7s2alapj8V__help_wX4HbRucYSDD' of type 'doc', mime ''
+12:37:38.061 Created new note '_help_oyIAJ9PvvwHX', branch '_help_wX4HbRucYSDD__help_oyIAJ9PvvwHX' of type 'doc', mime ''
+12:37:38.062 Created new note '_help_YKWqdJhzi2VY', branch '_help_oyIAJ9PvvwHX__help_YKWqdJhzi2VY' of type 'doc', mime ''
+12:37:38.063 Created new note '_help_6tZeKvSHEUiB', branch '_help_wX4HbRucYSDD__help_6tZeKvSHEUiB' of type 'doc', mime ''
+12:37:38.064 Created new note '_help_Gzjqa934BdH4', branch '_help_tC7s2alapj8V__help_Gzjqa934BdH4' of type 'doc', mime ''
+12:37:38.065 Created new note '_help_c5xB8m4g2IY6', branch '_help_Gzjqa934BdH4__help_c5xB8m4g2IY6' of type 'doc', mime ''
+12:37:38.065 Created new note '_help_LWtBjFej3wX3', branch '_help_Gzjqa934BdH4__help_LWtBjFej3wX3' of type 'doc', mime ''
+12:37:38.066 Created new note '_help_ivYnonVFBxbQ', branch '_help_tC7s2alapj8V__help_ivYnonVFBxbQ' of type 'doc', mime ''
+12:37:38.067 Created new note '_help_4FahAwuGTAwC', branch '_help_tC7s2alapj8V__help_4FahAwuGTAwC' of type 'doc', mime ''
+12:37:38.068 Created new note '_help_1YeN2MzFUluU', branch '_help_tC7s2alapj8V__help_1YeN2MzFUluU' of type 'doc', mime ''
+12:37:38.069 Created new note '_help_MI26XDLSAlCD', branch '_help_1YeN2MzFUluU__help_MI26XDLSAlCD' of type 'doc', mime ''
+12:37:38.069 Created new note '_help_N4IDkixaDG9C', branch '_help_1YeN2MzFUluU__help_N4IDkixaDG9C' of type 'doc', mime ''
+12:37:38.070 Created new note '_help_H0mM1lTxF9JI', branch '_help_1YeN2MzFUluU__help_H0mM1lTxF9JI' of type 'doc', mime ''
+12:37:38.092 Created new note '_help_MQHyy2dIFgxS', branch '_help_1YeN2MzFUluU__help_MQHyy2dIFgxS' of type 'doc', mime ''
+12:37:38.093 Created new note '_help_m1lbrzyKDaRB', branch '_help_tC7s2alapj8V__help_m1lbrzyKDaRB' of type 'doc', mime ''
+12:37:38.094 Created new note '_help_0vTSyvhPTAOz', branch '_help_tC7s2alapj8V__help_0vTSyvhPTAOz' of type 'book', mime ''
+12:37:38.094 Created new note '_help_z8O2VG4ZZJD7', branch '_help_0vTSyvhPTAOz__help_z8O2VG4ZZJD7' of type 'webView', mime ''
+12:37:38.095 Created new note '_help_2mUhVmZK8RF3', branch '_help_tC7s2alapj8V__help_2mUhVmZK8RF3' of type 'doc', mime ''
+12:37:38.096 Created new note '_help_uYF7pmepw27K', branch '_help_tC7s2alapj8V__help_uYF7pmepw27K' of type 'doc', mime ''
+12:37:38.096 Created new note '_help_bOP3TB56fL1V', branch '_help_uYF7pmepw27K__help_bOP3TB56fL1V' of type 'doc', mime ''
+12:37:38.097 Created new note '_help_64ZTlUPgEPtW', branch '_help_tC7s2alapj8V__help_64ZTlUPgEPtW' of type 'doc', mime ''
+12:37:38.098 Created new note '_help_HAIOFBoYIIdO', branch '_help_tC7s2alapj8V__help_HAIOFBoYIIdO' of type 'doc', mime ''
+12:37:38.099 Created new note '_help_ZmT9ln8XJX2o', branch '_help_tC7s2alapj8V__help_ZmT9ln8XJX2o' of type 'doc', mime ''
+12:37:38.100 Created new note '_help_GBBMSlVSOIGP', branch '_help__help_GBBMSlVSOIGP' of type 'doc', mime ''
+12:37:38.101 Created new note '_help_WkM7gsEUyCXs', branch '_help_GBBMSlVSOIGP__help_WkM7gsEUyCXs' of type 'doc', mime ''
+12:37:38.101 Created new note '_help_7EdTxPADv95W', branch '_help_WkM7gsEUyCXs__help_7EdTxPADv95W' of type 'book', mime ''
+12:37:38.102 Created new note '_help_vvUCN7FDkq7G', branch '_help_7EdTxPADv95W__help_vvUCN7FDkq7G' of type 'doc', mime ''
+12:37:38.103 Created new note '_help_ZavFigBX9AwP', branch '_help_WkM7gsEUyCXs__help_ZavFigBX9AwP' of type 'doc', mime ''
+12:37:38.104 Created new note '_help_e0lkirXEiSNc', branch '_help_WkM7gsEUyCXs__help_e0lkirXEiSNc' of type 'doc', mime ''
+12:37:38.104 Created new note '_help_CdNpE2pqjmI6', branch '_help__help_CdNpE2pqjmI6' of type 'doc', mime ''
+12:37:38.105 Created new note '_help_yIhgI5H7A2Sm', branch '_help_CdNpE2pqjmI6__help_yIhgI5H7A2Sm' of type 'doc', mime ''
+12:37:38.106 Created new note '_help_MgibgPcfeuGz', branch '_help_yIhgI5H7A2Sm__help_MgibgPcfeuGz' of type 'doc', mime ''
+12:37:38.107 Created new note '_help_YNxAqkI5Kg1M', branch '_help_MgibgPcfeuGz__help_YNxAqkI5Kg1M' of type 'doc', mime ''
+12:37:38.107 Created new note '_help_SynTBQiBsdYJ', branch '_help_MgibgPcfeuGz__help_SynTBQiBsdYJ' of type 'doc', mime ''
+12:37:38.108 Created new note '_help_M8IppdwVHSjG', branch '_help_MgibgPcfeuGz__help_M8IppdwVHSjG' of type 'doc', mime ''
+12:37:38.109 Created new note '_help_VqGQnnPGnqAU', branch '_help_MgibgPcfeuGz__help_VqGQnnPGnqAU' of type 'doc', mime ''
+12:37:38.131 Created new note '_help_es8OU2GuguFU', branch '_help_yIhgI5H7A2Sm__help_es8OU2GuguFU' of type 'book', mime ''
+12:37:38.132 Created new note '_help_TjLYAo3JMO8X', branch '_help_es8OU2GuguFU__help_TjLYAo3JMO8X' of type 'doc', mime ''
+12:37:38.132 Created new note '_help_7kZPMD0uFwkH', branch '_help_es8OU2GuguFU__help_7kZPMD0uFwkH' of type 'doc', mime ''
+12:37:38.133 Created new note '_help_DL92EjAaXT26', branch '_help_es8OU2GuguFU__help_DL92EjAaXT26' of type 'doc', mime ''
+12:37:38.134 Created new note '_help_SPirpZypehBG', branch '_help_CdNpE2pqjmI6__help_SPirpZypehBG' of type 'book', mime ''
+12:37:38.134 Created new note '_help_fZ2IGYFXjkEy', branch '_help_SPirpZypehBG__help_fZ2IGYFXjkEy' of type 'doc', mime ''
+12:37:38.135 Created new note '_help_GPERMystNGTB', branch '_help_SPirpZypehBG__help_GPERMystNGTB' of type 'doc', mime ''
+12:37:38.136 Created new note '_help_GLks18SNjxmC', branch '_help_CdNpE2pqjmI6__help_GLks18SNjxmC' of type 'doc', mime ''
+12:37:38.137 Created new note '_help_Q2z6av6JZVWm', branch '_help_GLks18SNjxmC__help_Q2z6av6JZVWm' of type 'webView', mime ''
+12:37:38.137 Created new note '_help_habiZ3HU8Kw8', branch '_help_Q2z6av6JZVWm__help_habiZ3HU8Kw8' of type 'webView', mime ''
+12:37:38.138 Created new note '_help_MEtfsqa5VwNi', branch '_help_GLks18SNjxmC__help_MEtfsqa5VwNi' of type 'webView', mime ''
+12:37:38.139 Created new note '_help_vElnKeDNPSVl', branch '_help_CdNpE2pqjmI6__help_vElnKeDNPSVl' of type 'doc', mime ''
+12:37:38.140 Created new note '_help_Fm0j45KqyHpU', branch '_help__help_Fm0j45KqyHpU' of type 'book', mime ''
+12:37:38.140 Created new note '_help_WFbFXrgnDyyU', branch '_help_Fm0j45KqyHpU__help_WFbFXrgnDyyU' of type 'doc', mime ''
+12:37:38.141 Created new note '_help_NcsmUYZRWEW4', branch '_help_Fm0j45KqyHpU__help_NcsmUYZRWEW4' of type 'doc', mime ''
+12:37:38.142 Created new note '_templates', branch '_hidden__templates' of type 'book', mime ''
+12:37:38.143 Created new note '_template_text_snippet', branch '_templates__template_text_snippet' of type 'text', mime 'text/html'
+12:37:38.144 Created new note '_template_list_view', branch '_templates__template_list_view' of type 'book', mime ''
+12:37:38.145 Created new note '_template_grid_view', branch '_templates__template_grid_view' of type 'book', mime ''
+12:37:38.146 Created new note '_template_calendar', branch '_templates__template_calendar' of type 'book', mime ''
+12:37:38.168 Created new note '_template_table', branch '_templates__template_table' of type 'book', mime ''
+12:37:38.169 Created new note '_template_geo_map', branch '_templates__template_geo_map' of type 'book', mime ''
+12:37:38.171 Created new note '_template_board', branch '_templates__template_board' of type 'book', mime ''
+12:37:38.172 Created new note '_template_board_first', branch '_template_board__template_board_first' of type 'text', mime 'text/html'
+12:37:38.173 Created new note '_template_board_second', branch '_template_board__template_board_second' of type 'text', mime 'text/html'
+12:37:38.173 Created new note '_template_board_third', branch '_template_board__template_board_third' of type 'text', mime 'text/html'
+12:37:38.174 Created new note '_template_presentation_slide', branch '_templates__template_presentation_slide' of type 'text', mime 'text/html'
+12:37:38.175 Created new note '_template_presentation', branch '_templates__template_presentation' of type 'book', mime ''
+12:37:38.178 Created new note '_template_presentation_first', branch '_template_presentation__template_presentation_first' of type 'text', mime 'text/html'
+12:37:38.179 Created new note '_template_presentation_second', branch '_template_presentation__template_presentation_second' of type 'text', mime 'text/html'
+12:37:38.180 Importing demo content...
+12:37:38.192 Created new note 'xvN8PaA86G9m', branch 'root_xvN8PaA86G9m' of type 'book', mime ''
+12:37:38.198 Created new note 'yIFS9BmBpjdH', branch 'root_yIFS9BmBpjdH' of type 'text', mime 'text/html'
+12:37:38.202 Created new note 'IOv45xcssQRE', branch 'yIFS9BmBpjdH_IOv45xcssQRE' of type 'text', mime 'text/html'
+12:37:38.204 Created new note 'fWx3CRg3DPDw', branch 'IOv45xcssQRE_fWx3CRg3DPDw' of type 'text', mime 'text/html'
+12:37:38.205 Created new note 'SptIyuRSSDyg', branch 'IOv45xcssQRE_SptIyuRSSDyg' of type 'text', mime 'text/html'
+12:37:38.207 Created new note 'g4yhxqD1dhWH', branch 'IOv45xcssQRE_g4yhxqD1dhWH' of type 'text', mime 'text/html'
+12:37:38.209 Created new note 'CJdzwJhq4Pbt', branch 'g4yhxqD1dhWH_CJdzwJhq4Pbt' of type 'file', mime 'application/pdf'
+12:37:38.210 Created new note 'qcn9rnwteLtk', branch 'yIFS9BmBpjdH_qcn9rnwteLtk' of type 'book', mime ''
+12:37:38.212 Created new note 'm9OMi36gwLP9', branch 'qcn9rnwteLtk_m9OMi36gwLP9' of type 'text', mime 'text/html'
+12:37:38.213 Created new note 'Y0qI89dCZubr', branch 'qcn9rnwteLtk_Y0qI89dCZubr' of type 'text', mime 'text/html'
+12:37:38.215 Created new note 'MvvWcbYAZpSp', branch 'qcn9rnwteLtk_MvvWcbYAZpSp' of type 'text', mime 'text/html'
+12:37:38.217 Created new note 'U9aVHsrrKFMk', branch 'qcn9rnwteLtk_U9aVHsrrKFMk' of type 'text', mime 'text/html'
+12:37:38.219 Created new note 'NXPovbIFKwQz', branch 'qcn9rnwteLtk_NXPovbIFKwQz' of type 'text', mime 'text/html'
+12:37:38.235 Created new note 'OXNvYz1pHM1c', branch 'yIFS9BmBpjdH_OXNvYz1pHM1c' of type 'text', mime 'text/html'
+12:37:38.242 Created new note 'wZBn4IKTMRJ2', branch 'OXNvYz1pHM1c_wZBn4IKTMRJ2' of type 'text', mime 'text/html'
+12:37:38.243 Created new note 'o8XFZ56VPUql', branch 'wZBn4IKTMRJ2_o8XFZ56VPUql' of type 'text', mime 'text/html'
+12:37:38.244 Created new note 'cLF3fdmWFf32', branch 'o8XFZ56VPUql_cLF3fdmWFf32' of type 'text', mime 'text/html'
+12:37:38.246 Created new note 'knwbtjjkOqUD', branch 'cLF3fdmWFf32_knwbtjjkOqUD' of type 'text', mime 'text/html'
+12:37:38.248 Created new note 'ejP0jn0GNLp4', branch 'cLF3fdmWFf32_ejP0jn0GNLp4' of type 'text', mime 'text/html'
+12:37:38.249 Created new note '6cwLMapnVMZi', branch 'cLF3fdmWFf32_6cwLMapnVMZi' of type 'text', mime 'text/html'
+12:37:38.250 Created new note '7SKvJPGdvSmq', branch 'wZBn4IKTMRJ2_7SKvJPGdvSmq' of type 'text', mime 'text/html'
+12:37:38.251 Created new note 'Ip0VLbbg1XoO', branch '7SKvJPGdvSmq_Ip0VLbbg1XoO' of type 'text', mime 'text/html'
+12:37:38.252 Created new note 'yIjrekx7gGxO', branch 'Ip0VLbbg1XoO_yIjrekx7gGxO' of type 'text', mime 'text/html'
+12:37:38.253 Created new note 'iAaJ8gNovz9z', branch 'Ip0VLbbg1XoO_iAaJ8gNovz9z' of type 'book', mime 'text/html'
+12:37:38.255 Created new note 'vV0sZfVRZ66R', branch 'iAaJ8gNovz9z_vV0sZfVRZ66R' of type 'image', mime 'image/jpg'
+12:37:38.256 Created new note 'JNa8JJj0X8JF', branch 'iAaJ8gNovz9z_JNa8JJj0X8JF' of type 'image', mime 'image/jpg'
+12:37:38.261 Created new note 'wgifNJnzMHsF', branch 'iAaJ8gNovz9z_wgifNJnzMHsF' of type 'image', mime 'image/jpg'
+12:37:38.263 Created new note 'IryEhV5qYXXs', branch 'iAaJ8gNovz9z_IryEhV5qYXXs' of type 'image', mime 'image/jpg'
+12:37:38.265 Created new note 'V8XDmNm44SYW', branch 'iAaJ8gNovz9z_V8XDmNm44SYW' of type 'image', mime 'image/jpg'
+12:37:38.269 Created new note '3l5I0VPjG0bu', branch 'iAaJ8gNovz9z_3l5I0VPjG0bu' of type 'image', mime 'image/jpg'
+12:37:38.275 Created new note 'c4gvleXP10H0', branch 'iAaJ8gNovz9z_c4gvleXP10H0' of type 'image', mime 'image/jpg'
+12:37:38.277 Created new note 'fe6r8FIuwJFF', branch 'iAaJ8gNovz9z_fe6r8FIuwJFF' of type 'image', mime 'image/jpg'
+12:37:38.280 Created new note 'OGA1mjVgJSja', branch 'iAaJ8gNovz9z_OGA1mjVgJSja' of type 'image', mime 'image/jpg'
+12:37:38.282 Created new note 'QKgMHe028VBN', branch 'iAaJ8gNovz9z_QKgMHe028VBN' of type 'image', mime 'image/jpg'
+12:37:38.286 Created new note 'ptfypwGWfUxa', branch 'iAaJ8gNovz9z_ptfypwGWfUxa' of type 'image', mime 'image/jpg'
+12:37:38.288 Created new note 'yDyNKzGSw2uX', branch 'iAaJ8gNovz9z_yDyNKzGSw2uX' of type 'image', mime 'image/jpg'
+12:37:38.290 Created new note 'GnjQqBA24yZE', branch 'Ip0VLbbg1XoO_GnjQqBA24yZE' of type 'text', mime 'text/html'
+12:37:38.291 Created new note 'Y34tZ1mOjd0X', branch '7SKvJPGdvSmq_Y34tZ1mOjd0X' of type 'text', mime 'text/html'
+12:37:38.292 Created new note 'yAL22zlBcus3', branch 'Y34tZ1mOjd0X_yAL22zlBcus3' of type 'text', mime 'text/html'
+12:37:38.293 Created new note '4DkZW8NVAgtN', branch '7SKvJPGdvSmq_4DkZW8NVAgtN' of type 'text', mime 'text/html'
+12:37:38.294 Created new note 'vHmNoGmEInDr', branch '7SKvJPGdvSmq_vHmNoGmEInDr' of type 'text', mime 'text/html'
+12:37:38.296 Created new note 'JZafDdHLtmKm', branch 'vHmNoGmEInDr_JZafDdHLtmKm' of type 'text', mime 'text/html'
+12:37:38.297 Created new note 'J3kg6Myj2Vqn', branch 'vHmNoGmEInDr_J3kg6Myj2Vqn' of type 'text', mime 'text/html'
+12:37:38.298 Created new note 'AAfsMbO0Lj8r', branch '7SKvJPGdvSmq_AAfsMbO0Lj8r' of type 'text', mime 'text/html'
+12:37:38.299 Created new note 'AdKh7Gs18ntQ', branch 'AAfsMbO0Lj8r_AdKh7Gs18ntQ' of type 'text', mime 'text/html'
+12:37:38.301 Created new note 'PURUTNBPio71', branch 'AAfsMbO0Lj8r_PURUTNBPio71' of type 'text', mime 'text/html'
+12:37:38.303 Created new note 'YYlQx2DVOzWM', branch 'PURUTNBPio71_YYlQx2DVOzWM' of type 'text', mime 'text/html'
+12:37:38.320 Created new note 'shWeJdh13zuj', branch '7SKvJPGdvSmq_shWeJdh13zuj' of type 'text', mime 'text/html'
+12:37:38.327 Created new note 'okNCPxHMUUhh', branch '7SKvJPGdvSmq_okNCPxHMUUhh' of type 'text', mime 'text/html'
+12:37:38.329 Created new note '2y4leFbfxZVC', branch 'okNCPxHMUUhh_2y4leFbfxZVC' of type 'text', mime 'text/html'
+12:37:38.331 Created new note 'BUo952D6wygz', branch 'okNCPxHMUUhh_BUo952D6wygz' of type 'text', mime 'text/html'
+12:37:38.332 Created new note 'agUbDTzGZMlN', branch '7SKvJPGdvSmq_agUbDTzGZMlN' of type 'text', mime 'text/html'
+12:37:38.333 Created new note 'cusjnu0NR39h', branch 'wZBn4IKTMRJ2_cusjnu0NR39h' of type 'text', mime 'text/html'
+12:37:38.334 Created new note 'LWqUPyURCXll', branch 'cusjnu0NR39h_LWqUPyURCXll' of type 'text', mime 'text/html'
+12:37:38.335 Created new note 'S8I0HVwzN8h1', branch 'LWqUPyURCXll_S8I0HVwzN8h1' of type 'text', mime 'text/html'
+12:37:38.337 Created new note 'o21DwrLxHDBh', branch 'LWqUPyURCXll_o21DwrLxHDBh' of type 'text', mime 'text/html'
+12:37:38.337 Created new note 'm1UdcPuXIjkw', branch 'LWqUPyURCXll_m1UdcPuXIjkw' of type 'text', mime 'text/html'
+12:37:38.339 Created new note 'SEBP7sAkBDSx', branch 'cusjnu0NR39h_SEBP7sAkBDSx' of type 'text', mime 'text/html'
+12:37:38.340 Created new note 'YAN8xPYtkrgv', branch 'OXNvYz1pHM1c_YAN8xPYtkrgv' of type 'text', mime 'text/html'
+12:37:38.341 Created new note 'AeeTQiSIVAV0', branch 'yIFS9BmBpjdH_AeeTQiSIVAV0' of type 'text', mime 'text/html'
+12:37:38.342 Created new note 'zMIrOHwMgWff', branch 'AeeTQiSIVAV0_zMIrOHwMgWff' of type 'text', mime 'text/html'
+12:37:38.343 Created new note 'HbL5MXfeT3SP', branch 'AeeTQiSIVAV0_HbL5MXfeT3SP' of type 'text', mime 'text/html'
+12:37:38.344 Created new note 'mDoaMiG2ya0B', branch 'HbL5MXfeT3SP_mDoaMiG2ya0B' of type 'text', mime 'text/html'
+12:37:38.346 Created new note 'FU9lpDKwvdl3', branch 'HbL5MXfeT3SP_FU9lpDKwvdl3' of type 'text', mime 'text/html'
+12:37:38.348 Created new note '6DQAgOedj2zC', branch 'FU9lpDKwvdl3_6DQAgOedj2zC' of type 'text', mime 'text/html'
+12:37:38.351 Created new note 'pmbzHNlPPxHt', branch 'FU9lpDKwvdl3_pmbzHNlPPxHt' of type 'text', mime 'text/html'
+12:37:38.352 Created new note 'LO8iOi2aYgvL', branch 'HbL5MXfeT3SP_LO8iOi2aYgvL' of type 'text', mime 'text/html'
+12:37:38.353 Created new note '7G9j6MMhCW6K', branch 'LO8iOi2aYgvL_7G9j6MMhCW6K' of type 'text', mime 'text/html'
+12:37:38.354 Created new note 'sMIwq9UL0e76', branch 'AeeTQiSIVAV0_sMIwq9UL0e76' of type 'text', mime 'text/html'
+12:37:38.355 Created new note '5Tl8ipPlecwI', branch 'sMIwq9UL0e76_5Tl8ipPlecwI' of type 'text', mime 'text/html'
+12:37:38.356 Created new note 'mLoJUpu8EAMM', branch 'AeeTQiSIVAV0_mLoJUpu8EAMM' of type 'book', mime 'text/html'
+12:37:38.358 Created new note 'n7ZcImykQm1Q', branch 'mLoJUpu8EAMM_n7ZcImykQm1Q' of type 'text', mime 'text/html'
+12:37:38.360 Created new note 'DxQIkLkGPG8n', branch 'mLoJUpu8EAMM_DxQIkLkGPG8n' of type 'text', mime 'text/html'
+12:37:38.362 Created new note '2xJHvMch6UMJ', branch 'DxQIkLkGPG8n_2xJHvMch6UMJ' of type 'text', mime 'text/html'
+12:37:38.363 Created new note 'NvJJfZpG0th8', branch 'DxQIkLkGPG8n_NvJJfZpG0th8' of type 'text', mime 'text/html'
+12:37:38.365 Created new note 'ZQsFEtmP9rSB', branch 'DxQIkLkGPG8n_ZQsFEtmP9rSB' of type 'text', mime 'text/html'
+12:37:38.367 Created new note 'aAvD6hsb1BHs', branch 'mLoJUpu8EAMM_aAvD6hsb1BHs' of type 'text', mime 'text/html'
+12:37:38.368 Created new note 'Z1lscRkesBM8', branch 'yIFS9BmBpjdH_Z1lscRkesBM8' of type 'text', mime 'text/html'
+12:37:38.373 Created new note 'DvaU1irJVZHn', branch 'Z1lscRkesBM8_DvaU1irJVZHn' of type 'canvas', mime 'application/json'
+12:37:38.375 Created new note 'h1vdF767xwbR', branch 'Z1lscRkesBM8_h1vdF767xwbR' of type 'book', mime ''
+12:37:38.376 Created new note 'wkqSM6H7x6re', branch 'h1vdF767xwbR_wkqSM6H7x6re' of type 'mermaid', mime 'text/mermaid'
+12:37:38.378 Created new note 'aZZEixgTqxs8', branch 'h1vdF767xwbR_aZZEixgTqxs8' of type 'mermaid', mime 'text/mermaid'
+12:37:38.402 Created new note 'UtlTNWcCNUEx', branch 'h1vdF767xwbR_UtlTNWcCNUEx' of type 'mermaid', mime 'text/mermaid'
+12:37:38.404 Created new note '5bLVELk5t71V', branch 'h1vdF767xwbR_5bLVELk5t71V' of type 'mermaid', mime 'text/plain'
+12:37:38.406 Created new note '2VhWR8cp0Oxp', branch 'h1vdF767xwbR_2VhWR8cp0Oxp' of type 'mermaid', mime 'text/plain'
+12:37:38.408 Created new note 'BS42YgmNuveo', branch 'h1vdF767xwbR_BS42YgmNuveo' of type 'mermaid', mime 'text/plain'
+12:37:38.410 Created new note 'RNTYp8x4dEfG', branch 'h1vdF767xwbR_RNTYp8x4dEfG' of type 'mermaid', mime 'text/mermaid'
+12:37:38.412 Created new note 'wYwYKdvHBvRI', branch 'h1vdF767xwbR_wYwYKdvHBvRI' of type 'mermaid', mime 'text/plain'
+12:37:38.413 Created new note 'E3r9y9poOkEK', branch 'h1vdF767xwbR_E3r9y9poOkEK' of type 'mermaid', mime 'text/plain'
+12:37:38.415 Created new note 'qAvuB6aGrIYw', branch 'h1vdF767xwbR_qAvuB6aGrIYw' of type 'mermaid', mime 'text/plain'
+12:37:38.417 Created new note 'hojWB9ftbRou', branch 'h1vdF767xwbR_hojWB9ftbRou' of type 'mermaid', mime 'text/plain'
+12:37:38.419 Created new note 'cQxwGETO0JKD', branch 'h1vdF767xwbR_cQxwGETO0JKD' of type 'mermaid', mime 'text/mermaid'
+12:37:38.421 Created new note 'WiFhNvEO78re', branch 'h1vdF767xwbR_WiFhNvEO78re' of type 'mermaid', mime 'text/plain'
+12:37:38.425 Created new note 'INLLTTLdBKDC', branch 'Z1lscRkesBM8_INLLTTLdBKDC' of type 'mindMap', mime 'application/json'
+12:37:38.427 Created new note 'K1lNRTu0nmCx', branch 'Z1lscRkesBM8_K1lNRTu0nmCx' of type 'book', mime ''
+12:37:38.429 Created new note 'qNrsS8G13bhb', branch 'K1lNRTu0nmCx_qNrsS8G13bhb' of type 'text', mime 'text/html'
+12:37:38.431 Created new note 'NEZBzlncCFRG', branch 'K1lNRTu0nmCx_NEZBzlncCFRG' of type 'text', mime 'text/html'
+12:37:38.433 Created new note 'ZuPRveDqf36U', branch 'K1lNRTu0nmCx_ZuPRveDqf36U' of type 'text', mime 'text/html'
+12:37:38.435 Created new note '6olf7t3pBKFA', branch 'K1lNRTu0nmCx_6olf7t3pBKFA' of type 'text', mime 'text/html'
+12:37:38.437 Created new note 'j4NoKHCt3lnl', branch 'K1lNRTu0nmCx_j4NoKHCt3lnl' of type 'text', mime 'text/html'
+12:37:38.439 Created new note 'unAwgCtdT2Xt', branch 'K1lNRTu0nmCx_unAwgCtdT2Xt' of type 'text', mime 'text/html'
+12:37:38.441 Created new note 'RN0FYFPQaFrG', branch 'K1lNRTu0nmCx_RN0FYFPQaFrG' of type 'text', mime 'text/html'
+12:37:38.442 Created new note 'D8y9DzQACRyv', branch 'yIFS9BmBpjdH_D8y9DzQACRyv' of type 'text', mime 'text/html'
+12:37:38.444 Created new note 'oYwrQ1jdylkJ', branch 'D8y9DzQACRyv_oYwrQ1jdylkJ' of type 'text', mime 'text/html'
+12:37:38.445 Created new note 'HKHpsro6AfFL', branch 'D8y9DzQACRyv_HKHpsro6AfFL' of type 'text', mime 'text/html'
+12:37:38.446 Created new note 'PWWgUrQIDSSs', branch 'HKHpsro6AfFL_PWWgUrQIDSSs' of type 'text', mime 'text/html'
+12:37:38.447 Created new note 'Zed0pqj0G0EH', branch 'D8y9DzQACRyv_Zed0pqj0G0EH' of type 'text', mime 'text/html'
+12:37:38.448 Created new note 'FOFMcY80NzTg', branch 'yIFS9BmBpjdH_FOFMcY80NzTg' of type 'text', mime 'text/html'
+12:37:38.466 Created new note '3S1IaCqhLkeD', branch 'FOFMcY80NzTg_3S1IaCqhLkeD' of type 'text', mime 'text/html'
+12:37:38.475 Created new note 'UHvPWYEEfaFp', branch 'FOFMcY80NzTg_UHvPWYEEfaFp' of type 'text', mime 'text/html'
+12:37:38.476 Created new note '2dviJ8ivznf2', branch 'FOFMcY80NzTg_2dviJ8ivznf2' of type 'text', mime 'text/html'
+12:37:38.478 Created new note 'nA0lJs2HSIR1', branch 'yIFS9BmBpjdH_nA0lJs2HSIR1' of type 'code', mime 'text/css'
+12:37:38.480 Created new note 'HdngYLsFrzVl', branch 'nA0lJs2HSIR1_HdngYLsFrzVl' of type 'file', mime 'application/octet-stream'
+12:37:38.481 Created new note '8EG1Yd1GHx5y', branch 'nA0lJs2HSIR1_8EG1Yd1GHx5y' of type 'file', mime 'application/octet-stream'
+12:37:38.482 Created new note 'Z1ED5sEbUsuf', branch 'yIFS9BmBpjdH_Z1ED5sEbUsuf' of type 'text', mime 'text/html'
+12:37:38.483 Created new note 'GKA3MAABvqvU', branch 'Z1ED5sEbUsuf_GKA3MAABvqvU' of type 'text', mime 'text/html'
+12:37:38.484 Created new note '5a3vuqrSs0ar', branch 'GKA3MAABvqvU_5a3vuqrSs0ar' of type 'text', mime 'text/html'
+12:37:38.485 Created new note 'cAL3Uv6ZAECh', branch '5a3vuqrSs0ar_cAL3Uv6ZAECh' of type 'text', mime 'text/html'
+12:37:38.486 Created new note 'lBKrqLU7mDP0', branch '5a3vuqrSs0ar_lBKrqLU7mDP0' of type 'text', mime 'text/html'
+12:37:38.487 Created new note 'oKN5fJyGjgB3', branch 'lBKrqLU7mDP0_oKN5fJyGjgB3' of type 'text', mime 'text/html'
+12:37:38.487 Created new note 'IMIA4j4JsAec', branch '5a3vuqrSs0ar_IMIA4j4JsAec' of type 'text', mime 'text/html'
+12:37:38.488 Created new note 'jWZpVdQlaTSz', branch 'IMIA4j4JsAec_jWZpVdQlaTSz' of type 'text', mime 'text/html'
+12:37:38.489 Created new note 'iNQVm3fW8rNG', branch '5a3vuqrSs0ar_iNQVm3fW8rNG' of type 'text', mime 'text/html'
+12:37:38.490 Created new note 'nsyKrKdnv9Hj', branch 'iNQVm3fW8rNG_nsyKrKdnv9Hj' of type 'text', mime 'text/html'
+12:37:38.492 Created new note 'wUfCGr4FxtU5', branch 'nsyKrKdnv9Hj_wUfCGr4FxtU5' of type 'text', mime 'text/html'
+12:37:38.492 Created new note '710qfnJsh9bW', branch 'GKA3MAABvqvU_710qfnJsh9bW' of type 'text', mime 'text/html'
+12:37:38.494 Created new note '2fp7lyBFQVVg', branch '710qfnJsh9bW_2fp7lyBFQVVg' of type 'text', mime 'text/html'
+12:37:38.495 Created new note 'Whq4Vyl0Jtoz', branch '710qfnJsh9bW_Whq4Vyl0Jtoz' of type 'text', mime 'text/html'
+12:37:38.496 Created new note 'dMw0PfMwnHNL', branch '710qfnJsh9bW_dMw0PfMwnHNL' of type 'text', mime 'text/html'
+12:37:38.497 Created new note 'Erze9gDzN5Ed', branch 'GKA3MAABvqvU_Erze9gDzN5Ed' of type 'text', mime 'text/html'
+12:37:38.499 Created new note 'maoGoQ4F4gsn', branch 'GKA3MAABvqvU_maoGoQ4F4gsn' of type 'text', mime 'text/html'
+12:37:38.500 Created new note 'N3BrzqXjFH8N', branch 'maoGoQ4F4gsn_N3BrzqXjFH8N' of type 'code', mime 'application/javascript;env=backend'
+12:37:38.502 Created new note 'Ix1SRC3ZGh85', branch 'N3BrzqXjFH8N_Ix1SRC3ZGh85' of type 'code', mime 'application/javascript;env=backend'
+12:37:38.503 Created new note 'yOuKqUYCokC4', branch 'maoGoQ4F4gsn_yOuKqUYCokC4' of type 'code', mime 'text/css'
+12:37:38.503 Created new note 'HkCY29dp47mE', branch 'maoGoQ4F4gsn_HkCY29dp47mE' of type 'text', mime 'text/html'
+12:37:38.505 Created new note 'xZj37pUOpHxV', branch 'maoGoQ4F4gsn_xZj37pUOpHxV' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.505 Created new note 'p722lOYP4JXP', branch 'GKA3MAABvqvU_p722lOYP4JXP' of type 'text', mime 'text/html'
+12:37:38.506 Created new note 'fgeI6F4mBbCn', branch 'p722lOYP4JXP_fgeI6F4mBbCn' of type 'text', mime 'text/html'
+12:37:38.507 Created new note 'FAXEJUnMeDqY', branch 'p722lOYP4JXP_FAXEJUnMeDqY' of type 'text', mime 'text/html'
+12:37:38.509 Created new note 'NiQngvQNBKw1', branch 'p722lOYP4JXP_NiQngvQNBKw1' of type 'text', mime 'text/html'
+12:37:38.510 Created new note '0hYgbUMQwI1h', branch 'p722lOYP4JXP_0hYgbUMQwI1h' of type 'text', mime 'text/html'
+12:37:38.511 Created new note 'SmTWOeQ9zNbM', branch 'GKA3MAABvqvU_SmTWOeQ9zNbM' of type 'code', mime 'application/javascript;env=backend'
+12:37:38.513 Created new note 'ts50aR7QFXs2', branch 'Z1ED5sEbUsuf_ts50aR7QFXs2' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.529 Created new note 'QZHRdZWATXlS', branch 'Z1ED5sEbUsuf_QZHRdZWATXlS' of type 'render', mime 'text/html'
+12:37:38.536 Created new note 'DRTcKwPeKoYt', branch 'QZHRdZWATXlS_DRTcKwPeKoYt' of type 'code', mime 'text/html'
+12:37:38.537 Created new note '7DTaycqa7irh', branch 'DRTcKwPeKoYt_7DTaycqa7irh' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.541 Created new note 'YDG2OPu0NIlb', branch '7DTaycqa7irh_YDG2OPu0NIlb' of type 'file', mime 'text/javascript'
+12:37:38.542 Created new note 'u9fotYWY2nCO', branch 'Z1ED5sEbUsuf_u9fotYWY2nCO' of type 'book', mime ''
+12:37:38.542 Created new note 'pZYB1eJczBVl', branch 'u9fotYWY2nCO_pZYB1eJczBVl' of type 'render', mime ''
+12:37:38.543 Created new note 'zRKMZhxQnm6Z', branch 'pZYB1eJczBVl_zRKMZhxQnm6Z' of type 'code', mime 'text/html'
+12:37:38.544 Created new note 'fOtq7EsmykUn', branch 'zRKMZhxQnm6Z_fOtq7EsmykUn' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.546 Created new note 'Gxw3LetCpKGv', branch 'fOtq7EsmykUn_Gxw3LetCpKGv' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.547 Created new note 'BNqlPpmxFo3M', branch 'Gxw3LetCpKGv_BNqlPpmxFo3M' of type 'file', mime 'text/javascript'
+12:37:38.549 Created new note 'z46fX7xzUFLJ', branch 'fOtq7EsmykUn_z46fX7xzUFLJ' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.549 Created new note '7lvOWztx0rJr', branch 'u9fotYWY2nCO_7lvOWztx0rJr' of type 'render', mime ''
+12:37:38.550 Created new note 'iJnLXpoafdWK', branch '7lvOWztx0rJr_iJnLXpoafdWK' of type 'code', mime 'text/html'
+12:37:38.552 Created new note 'DAae0gcXOvnZ', branch 'iJnLXpoafdWK_DAae0gcXOvnZ' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.552 Created new note 'cOcJSEfLED0c', branch 'u9fotYWY2nCO_cOcJSEfLED0c' of type 'render', mime ''
+12:37:38.554 Created new note 'fPL0dEwpm2y4', branch 'cOcJSEfLED0c_fPL0dEwpm2y4' of type 'code', mime 'text/html'
+12:37:38.555 Created new note 'q2q4gWC92uCe', branch 'fPL0dEwpm2y4_q2q4gWC92uCe' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.555 Created new note '67QqKLNMlgf5', branch 'u9fotYWY2nCO_67QqKLNMlgf5' of type 'render', mime ''
+12:37:38.556 Created new note 'JX07V88eV4st', branch '67QqKLNMlgf5_JX07V88eV4st' of type 'code', mime 'text/html'
+12:37:38.558 Created new note '5liurj57zKiV', branch 'JX07V88eV4st_5liurj57zKiV' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.558 Created new note 'zIEzVZTYtlsE', branch 'u9fotYWY2nCO_zIEzVZTYtlsE' of type 'render', mime ''
+12:37:38.559 Created new note 'Z3UrVYxGIrdJ', branch 'zIEzVZTYtlsE_Z3UrVYxGIrdJ' of type 'code', mime 'text/html'
+12:37:38.561 Created new note 'V4cip3PJwbok', branch 'Z3UrVYxGIrdJ_V4cip3PJwbok' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.562 Created new note '4APkjmYPPZSm', branch 'V4cip3PJwbok_4APkjmYPPZSm' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.562 Created new note 'OjMy9dK0LZO6', branch 'u9fotYWY2nCO_OjMy9dK0LZO6' of type 'render', mime ''
+12:37:38.563 Created new note 'wIEjybsQHLBj', branch 'OjMy9dK0LZO6_wIEjybsQHLBj' of type 'code', mime 'text/html'
+12:37:38.565 Created new note 'ObYGjjTyIcQ8', branch 'wIEjybsQHLBj_ObYGjjTyIcQ8' of type 'code', mime 'application/javascript;env=frontend'
+12:37:38.566 Created new note 'R6Rj3OhonwJt', branch 'Z1ED5sEbUsuf_R6Rj3OhonwJt' of type 'code', mime 'application/javascript;env=backend'
+12:37:38.567 Created new note 'VS0kOrLaT7Gm', branch 'root_VS0kOrLaT7Gm' of type 'text', mime 'text/html'
+12:37:38.568 Created new note 'YiLhsVP0Y6mR', branch 'VS0kOrLaT7Gm_YiLhsVP0Y6mR' of type 'text', mime 'text/html'
+12:37:38.668 [Script N3BrzqXjFH8N] Schema and initial content generated.
+12:37:38.675 Becca (note cache) load took 6ms
+12:37:38.678 Slow 204 POST /api/setup/new-document with 0 bytes took 1099ms
+12:37:39.279 404 GET /assets/v0.99.5/images/app-icons/ios/apple-touch-icon.png
+12:37:42.680 Table counts: notes: 472, revisions: 0, attachments: 19, branches: 488, attributes: 876, etapi_tokens: 0, blobs: 137
+12:37:42.687 All consistency checks passed with no errors detected (took 8ms)
+12:37:48.080 200 GET /api/health-check with 15 bytes took 1ms
+12:37:53.560 CSRF token generation: Successful
+12:37:53.708 404 GET /assets/v0.99.5/stylesheets/print.css
+12:37:53.895 200 GET /api/tree with 14302 bytes took 1ms
+12:37:53.896 200 GET /api/options with 8770 bytes took 1ms
+12:37:53.900 200 GET /api/keyboard-actions with 21736 bytes took 4ms
+12:37:53.901 200 GET /api/autocomplete/notesCount with 3 bytes took 1ms
+12:37:53.933 200 GET /api/options/locales with 1023 bytes took 1ms
+12:37:53.995 200 GET /api/script/widgets with 2829 bytes took 1ms
+12:37:54.013 200 POST /api/tree/load with 4635 bytes took 0ms
+12:37:54.222 200 GET /api/keyboard-shortcuts-for-notes with 2 bytes took 1ms
+12:37:54.224 200 POST /api/tree/load with 6485 bytes took 1ms
+12:37:54.225 200 POST /api/tree/load with 42 bytes took 1ms
+12:37:54.225 200 GET /api/system-checks with 27 bytes took 0ms
+12:37:54.243 200 POST /api/tree/load with 4440 bytes took 0ms
+12:37:54.247 200 GET /api/recent-changes/undefined with 2 bytes took 3ms
+12:37:54.345 200 GET /api/sql/schema with 7987 bytes took 1ms
+12:37:54.358 200 POST /api/tree/load with 21458 bytes took 1ms
+12:37:54.359 200 POST /api/tree/load with 14474 bytes took 1ms
+12:37:54.359 200 POST /api/tree/load with 1665 bytes took 0ms
+12:37:54.360 200 GET /api/note-map/xvN8PaA86G9m/backlink-count with 11 bytes took 0ms
+12:37:54.361 200 GET /api/notes/xvN8PaA86G9m/attachments with 2 bytes took 1ms
+12:37:54.370 200 GET /api/notes/root with 315 bytes took 1ms
+12:37:54.383 200 GET /api/notes/_template_text_snippet with 341 bytes took 1ms
+12:37:54.391 200 GET /api/notes/_template_list_view with 326 bytes took 0ms
+12:37:54.407 200 GET /api/notes/_template_grid_view with 326 bytes took 1ms
+12:37:54.410 200 GET /api/notes/_template_calendar with 324 bytes took 0ms
+12:37:54.414 200 GET /api/notes/_template_table with 318 bytes took 1ms
+12:37:54.430 200 GET /api/notes/_template_geo_map with 322 bytes took 0ms
+12:37:54.434 200 GET /api/notes/_template_board with 325 bytes took 1ms
+12:37:54.443 200 GET /api/notes/_template_presentation with 332 bytes took 0ms
+12:37:54.509 200 GET /api/special-notes/notes-for-month/2025-10?calendarRoot=xvN8PaA86G9m with 2 bytes took 0ms
+12:37:54.513 200 GET /api/search-templates with 16 bytes took 1ms
+12:37:54.525 200 GET /api/special-notes/notes-for-month/2025-11?calendarRoot=xvN8PaA86G9m with 2 bytes took 0ms
+12:37:54.526 200 POST /api/tree/load with 5533 bytes took 0ms
+12:37:54.530 200 GET /api/special-notes/notes-for-month/2025-12?calendarRoot=xvN8PaA86G9m with 2 bytes took 0ms
+12:37:54.531 200 GET /api/notes/HKHpsro6AfFL with 332 bytes took 0ms
+12:37:56.223 200 GET /api/script/startup with 2 bytes took 1ms
+12:37:58.179 204 PUT /api/options with 0 bytes took 2ms
+12:37:58.180 200 GET /api/notes/IOv45xcssQRE/blob with 302 bytes took 1ms
+12:37:58.181 200 GET /api/note-map/IOv45xcssQRE/backlink-count with 11 bytes took 0ms
+12:37:58.182 200 GET /api/notes/IOv45xcssQRE/attachments with 2 bytes took 1ms
+12:37:58.188 JS Info: Creating new CKEditor
+12:37:58.203 200 GET /api/search/%23textSnippet with 2 bytes took 1ms
+12:37:58.214 200 POST /api/tree/load with 4748 bytes took 1ms
+12:37:58.309 200 GET /api/notes/fWx3CRg3DPDw/blob with 256 bytes took 1ms
+12:37:58.309 200 GET /api/notes/SptIyuRSSDyg/blob with 338 bytes took 0ms
+12:37:58.310 200 GET /api/notes/g4yhxqD1dhWH/blob with 1097 bytes took 1ms
+12:37:58.645 JS Info: CKEditor state changed to ready
+12:37:59.803 200 GET /api/tree?subTreeNoteId=IOv45xcssQRE with 4748 bytes took 1ms
+12:38:00.020 204 PUT /api/branches/yIFS9BmBpjdH_IOv45xcssQRE/expanded/1 with 0 bytes took 0ms
+12:38:02.274 200 GET /api/autocomplete?query=&activeNoteId=IOv45xcssQRE&fastSearch=true with 2 bytes took 1ms
+12:38:03.151 Created new note '7JXdevFS7hFX', branch '_search_7JXdevFS7hFX' of type 'book', mime ''
+12:38:03.152 Created new note 'OvXI5IAgW2Nd', branch '7JXdevFS7hFX_OvXI5IAgW2Nd' of type 'search', mime 'application/json'
+12:38:03.154 200 POST /api/special-notes/search-note with 336 bytes took 7ms
+12:38:03.157 200 POST /api/tree/load with 3571 bytes took 0ms
+12:38:03.167 200 POST /api/tree/load with 4137 bytes took 0ms
+12:38:03.177 200 GET /api/search-note/OvXI5IAgW2Nd with 2666 bytes took 4ms
+12:38:03.275 304 GET /api/sql/schema with 7987 bytes took 1ms
+12:38:03.286 204 PUT /api/options with 0 bytes took 1ms
+12:38:03.287 200 GET /api/note-map/OvXI5IAgW2Nd/backlink-count with 11 bytes took 0ms
+12:38:03.288 200 GET /api/notes/OvXI5IAgW2Nd/attachments with 2 bytes took 0ms
+12:38:03.288 200 GET /api/notes/OvXI5IAgW2Nd/attachments with 2 bytes took 0ms
+12:38:03.322 200 POST /api/tree/load with 7018 bytes took 0ms
+12:38:03.343 200 POST /api/tree/load with 4773 bytes took 1ms
+12:38:05.018 Created new note '9CedsojLjg80', branch 'xvN8PaA86G9m_9CedsojLjg80' of type 'text', mime 'text/html'
+12:38:05.020 Created new note 'ndwVKX417wgu', branch '9CedsojLjg80_ndwVKX417wgu' of type 'text', mime 'text/html'
+12:38:05.022 Created new note 'Kx317zaCcgPs', branch 'ndwVKX417wgu_Kx317zaCcgPs' of type 'text', mime 'text/html'
+12:38:05.023 200 GET /api/special-notes/inbox/2025-11-12 with 333 bytes took 9ms
+12:38:05.025 200 POST /api/tree/load with 2334 bytes took 1ms
+12:38:05.030 200 POST /api/tree/load with 4201 bytes took 0ms
+12:38:05.036 200 POST /api/tree/load with 2891 bytes took 1ms
+12:38:05.051 Created new note 'C4zfKb4NLqal', branch 'Kx317zaCcgPs_C4zfKb4NLqal' of type 'text', mime 'text/html'
+12:38:05.052 200 POST /api/notes/Kx317zaCcgPs/children?target=into with 554 bytes took 4ms
+12:38:05.058 200 POST /api/tree/load with 4477 bytes took 1ms
+12:38:05.182 304 GET /api/sql/schema with 7987 bytes took 1ms
+12:38:05.190 204 PUT /api/options with 0 bytes took 1ms
+12:38:05.191 200 GET /api/notes/C4zfKb4NLqal/blob with 155 bytes took 0ms
+12:38:05.192 200 GET /api/tree?subTreeNoteId=9CedsojLjg80 with 2891 bytes took 1ms
+12:38:05.192 200 GET /api/note-map/C4zfKb4NLqal/backlink-count with 11 bytes took 0ms
+12:38:05.193 200 GET /api/notes/C4zfKb4NLqal/attachments with 2 bytes took 0ms
+12:38:05.202 JS Info: Creating new CKEditor
+12:38:05.218 304 GET /api/search/%23textSnippet with 2 bytes took 1ms
+12:38:05.290 200 GET /api/tree?subTreeNoteId=ndwVKX417wgu with 4347 bytes took 0ms
+12:38:05.434 JS Info: CKEditor state changed to ready
+12:38:05.469 200 GET /api/tree?subTreeNoteId=Kx317zaCcgPs with 4477 bytes took 1ms
+12:38:05.476 204 PUT /api/branches/root_xvN8PaA86G9m/expanded/1 with 0 bytes took 0ms
+12:38:05.479 204 PUT /api/branches/xvN8PaA86G9m_9CedsojLjg80/expanded/1 with 0 bytes took 0ms
+12:38:05.484 204 PUT /api/branches/9CedsojLjg80_ndwVKX417wgu/expanded/1 with 0 bytes took 1ms
+12:38:05.487 204 PUT /api/branches/ndwVKX417wgu_Kx317zaCcgPs/expanded/1 with 0 bytes took 0ms
+12:38:07.751 304 GET /api/search-templates with 16 bytes took 0ms
+12:38:07.755 304 GET /api/search-templates with 16 bytes took 0ms
+12:38:11.524 200 POST /api/delete-notes-preview with 60 bytes took 1ms
+12:38:13.155 Sending message to all clients: {"type":"taskProgressCount","taskId":"1lNioGRYkQ","taskType":"deleteNotes","data":null,"progressCount":0}
+12:38:13.156 Marking branches Kx317zaCcgPs_C4zfKb4NLqal as deleted
+12:38:13.156 Deleting note 'C4zfKb4NLqal'
+12:38:13.157 Marking notes C4zfKb4NLqal as deleted
+12:38:13.157 Sending message to all clients: {"type":"taskSucceeded","taskId":"1lNioGRYkQ","taskType":"deleteNotes","data":null,"result":null}
+12:38:13.157 200 DELETE /api/branches/Kx317zaCcgPs_C4zfKb4NLqal?taskId=1lNioGRYkQ&eraseNotes=false&last=true with 20 bytes took 2ms
+12:38:13.169 204 PUT /api/options with 0 bytes took 1ms
+12:38:13.170 200 GET /api/notes/Kx317zaCcgPs/blob with 285 bytes took 1ms
+12:38:13.170 200 GET /api/notes/Kx317zaCcgPs/attachments with 2 bytes took 0ms
+12:38:13.171 200 GET /api/note-map/Kx317zaCcgPs/backlink-count with 11 bytes took 0ms
+12:38:14.176 200 POST /api/tree/load with 42 bytes took 0ms
+12:38:14.281 200 GET /api/notes/ndwVKX417wgu/blob with 155 bytes took 1ms
+12:38:14.282 204 PUT /api/options with 0 bytes took 1ms
+12:38:14.283 200 GET /api/note-map/ndwVKX417wgu/backlink-count with 11 bytes took 0ms
+12:38:14.284 200 GET /api/notes/ndwVKX417wgu/attachments with 2 bytes took 1ms
+12:38:14.329 304 GET /api/notes/Kx317zaCcgPs/blob with 285 bytes took 0ms
+12:38:16.494 204 PUT /api/options with 0 bytes took 1ms
+12:38:16.494 304 GET /api/notes/Kx317zaCcgPs/blob with 285 bytes took 0ms
+12:38:16.495 304 GET /api/note-map/Kx317zaCcgPs/backlink-count with 11 bytes took 0ms
+12:38:17.591 204 PUT /api/options with 0 bytes took 1ms
+12:38:17.591 304 GET /api/notes/fWx3CRg3DPDw/blob with 256 bytes took 0ms
+12:38:17.592 200 GET /api/note-map/fWx3CRg3DPDw/backlink-count with 11 bytes took 0ms
+12:38:17.592 200 GET /api/notes/fWx3CRg3DPDw/attachments with 2 bytes took 0ms
+12:38:18.177 200 GET /api/health-check with 15 bytes took 0ms
+12:38:18.480 Slow query took 95ms: UPDATE sessions SET expires = ? WHERE id = ?
+12:38:18.481 Slow 304 GET /api/notes/IOv45xcssQRE/blob with 302 bytes took 97ms
+12:38:18.503 Slow query took 21ms: UPDATE sessions SET expires = ? WHERE id = ?
+12:38:18.503 Slow 304 GET /api/note-map/IOv45xcssQRE/backlink-count with 11 bytes took 21ms
+12:38:18.504 304 GET /api/notes/SptIyuRSSDyg/blob with 338 bytes took 1ms
+12:38:18.504 304 GET /api/notes/g4yhxqD1dhWH/blob with 1097 bytes took 0ms
+12:38:18.525 204 PUT /api/options with 0 bytes took 1ms
+12:38:18.873 200 GET /api/notes/yIFS9BmBpjdH/blob with 3037 bytes took 1ms
+12:38:18.873 200 GET /api/note-map/yIFS9BmBpjdH/backlink-count with 11 bytes took 0ms
+12:38:18.874 200 GET /api/notes/yIFS9BmBpjdH/attachments with 356 bytes took 0ms
+12:38:18.976 200 GET /api/notes/qcn9rnwteLtk/blob with 155 bytes took 0ms
+12:38:18.978 200 GET /api/notes/OXNvYz1pHM1c/blob with 349 bytes took 0ms
+12:38:18.980 200 GET /api/notes/AeeTQiSIVAV0/blob with 207 bytes took 1ms
+12:38:18.980 200 GET /api/notes/Z1lscRkesBM8/blob with 163 bytes took 0ms
+12:38:18.981 200 GET /api/notes/D8y9DzQACRyv/blob with 155 bytes took 0ms
+12:38:18.982 200 GET /api/notes/FOFMcY80NzTg/blob with 155 bytes took 0ms
+12:38:18.983 200 GET /api/notes/nA0lJs2HSIR1/blob with 3277 bytes took 0ms
+12:38:18.983 200 GET /api/notes/Z1ED5sEbUsuf/blob with 155 bytes took 0ms
+12:38:18.989 200 POST /api/tree/load with 4458 bytes took 1ms
+12:38:18.994 200 POST /api/tree/load with 4415 bytes took 0ms
+12:38:18.997 200 POST /api/tree/load with 7980 bytes took 0ms
+12:38:19.528 204 PUT /api/options with 0 bytes took 0ms
+12:38:21.903 204 PUT /api/options with 0 bytes took 1ms
+12:38:22.904 204 PUT /api/options with 0 bytes took 1ms
+12:38:25.427 204 PUT /api/notes/yIFS9BmBpjdH/data with 0 bytes took 2ms
+12:38:25.451 200 GET /api/notes/yIFS9BmBpjdH/blob with 2367 bytes took 1ms
+12:38:30.512 304 GET /api/notes/IOv45xcssQRE/blob with 302 bytes took 0ms
+12:38:30.513 204 PUT /api/options with 0 bytes took 0ms
+12:38:30.514 304 GET /api/note-map/IOv45xcssQRE/backlink-count with 11 bytes took 0ms
+12:38:30.515 304 GET /api/notes/fWx3CRg3DPDw/blob with 256 bytes took 1ms
+12:38:30.515 304 GET /api/notes/SptIyuRSSDyg/blob with 338 bytes took 0ms
+12:38:30.516 304 GET /api/notes/g4yhxqD1dhWH/blob with 1097 bytes took 0ms
+12:38:30.850 304 GET /api/note-map/fWx3CRg3DPDw/backlink-count with 11 bytes took 0ms
+12:38:31.442 204 PUT /api/options with 0 bytes took 1ms
+12:38:31.863 304 GET /api/notes/g4yhxqD1dhWH/blob with 1097 bytes took 0ms
+12:38:31.864 200 GET /api/notes/g4yhxqD1dhWH/attachments with 2 bytes took 0ms
+12:38:31.864 200 GET /api/note-map/g4yhxqD1dhWH/backlink-count with 11 bytes took 0ms
+12:38:31.929 200 POST /api/tree/load with 42 bytes took 0ms
+12:38:31.935 200 POST /api/tree/load with 4811 bytes took 0ms
+12:38:32.443 204 PUT /api/options with 0 bytes took 1ms
+12:38:34.929 200 GET /api/notes/CJdzwJhq4Pbt/blob with 161 bytes took 0ms
+12:38:34.935 200 GET /api/tree?subTreeNoteId=g4yhxqD1dhWH with 4811 bytes took 1ms
+12:38:34.945 204 PUT /api/options with 0 bytes took 1ms
+12:38:34.977 200 GET /api/note-map/CJdzwJhq4Pbt/backlink-count with 11 bytes took 0ms
+12:38:34.981 200 GET /api/notes/CJdzwJhq4Pbt/attachments with 2 bytes took 1ms
+12:38:34.994 204 PUT /api/branches/IOv45xcssQRE_g4yhxqD1dhWH/expanded/1 with 0 bytes took 1ms
+12:38:37.045 304 GET /api/notes/SptIyuRSSDyg/blob with 338 bytes took 0ms
+12:38:37.047 204 PUT /api/options with 0 bytes took 1ms
+12:38:37.091 200 GET /api/note-map/SptIyuRSSDyg/backlink-count with 11 bytes took 0ms
+12:38:37.092 200 GET /api/notes/SptIyuRSSDyg/attachments with 2 bytes took 0ms
+12:38:37.864 304 GET /api/notes/IOv45xcssQRE/blob with 302 bytes took 0ms
+12:38:37.865 304 GET /api/note-map/IOv45xcssQRE/backlink-count with 11 bytes took 0ms
+12:38:37.866 304 GET /api/notes/fWx3CRg3DPDw/blob with 256 bytes took 1ms
+12:38:37.866 304 GET /api/notes/g4yhxqD1dhWH/blob with 1097 bytes took 0ms
+12:38:38.018 204 PUT /api/options with 0 bytes took 1ms
+12:38:38.900 304 GET /api/notes/AeeTQiSIVAV0/blob with 207 bytes took 1ms
+12:38:38.900 200 GET /api/note-map/AeeTQiSIVAV0/backlink-count with 11 bytes took 0ms
+12:38:38.901 200 GET /api/notes/AeeTQiSIVAV0/attachments with 2 bytes took 1ms
+12:38:38.926 200 POST /api/tree/load with 6597 bytes took 1ms
+12:38:38.948 200 GET /api/notes/zMIrOHwMgWff/blob with 155 bytes took 1ms
+12:38:38.949 200 GET /api/notes/HbL5MXfeT3SP/blob with 155 bytes took 0ms
+12:38:38.949 200 GET /api/notes/sMIwq9UL0e76/blob with 155 bytes took 0ms
+12:38:38.949 200 GET /api/notes/mLoJUpu8EAMM/blob with 155 bytes took 0ms
+12:38:38.952 200 POST /api/tree/load with 8775 bytes took 1ms
+12:38:38.958 200 POST /api/tree/load with 6285 bytes took 0ms
+12:38:38.959 200 POST /api/tree/load with 6156 bytes took 0ms
+12:38:38.963 200 POST /api/tree/load with 5711 bytes took 0ms
+12:38:39.021 204 PUT /api/options with 0 bytes took 1ms
+12:38:39.791 304 GET /api/notes/nA0lJs2HSIR1/blob with 3277 bytes took 1ms
+12:38:39.791 200 GET /api/note-map/nA0lJs2HSIR1/backlink-count with 11 bytes took 0ms
+12:38:39.792 200 GET /api/notes/nA0lJs2HSIR1/attachments with 2 bytes took 0ms
+12:38:39.827 200 POST /api/tree/load with 5186 bytes took 0ms
+12:38:40.024 204 PUT /api/options with 0 bytes took 1ms
+12:38:40.906 304 GET /api/notes/nA0lJs2HSIR1/blob with 3277 bytes took 1ms
+12:38:41.028 204 PUT /api/options with 0 bytes took 0ms
+12:38:45.782 204 PUT /api/options with 0 bytes took 1ms
+12:38:45.783 304 GET /api/notes/FOFMcY80NzTg/blob with 155 bytes took 0ms
+12:38:45.783 200 GET /api/note-map/FOFMcY80NzTg/backlink-count with 11 bytes took 0ms
+12:38:45.784 200 GET /api/notes/FOFMcY80NzTg/attachments with 2 bytes took 0ms
+12:38:45.853 200 GET /api/notes/3S1IaCqhLkeD/blob with 171 bytes took 0ms
+12:38:45.854 200 GET /api/notes/UHvPWYEEfaFp/blob with 173 bytes took 0ms
+12:38:45.854 200 GET /api/notes/2dviJ8ivznf2/blob with 225 bytes took 0ms
+12:38:46.333 200 GET /api/tree?subTreeNoteId=nA0lJs2HSIR1 with 5186 bytes took 1ms
+12:38:46.544 204 PUT /api/branches/yIFS9BmBpjdH_nA0lJs2HSIR1/expanded/1 with 0 bytes took 1ms
+12:38:47.071 200 GET /api/notes/HdngYLsFrzVl/blob with 161 bytes took 1ms
+12:38:47.082 204 PUT /api/options with 0 bytes took 0ms
+12:38:47.103 200 GET /api/note-map/HdngYLsFrzVl/backlink-count with 11 bytes took 0ms
+12:38:47.104 200 GET /api/notes/HdngYLsFrzVl/attachments with 2 bytes took 1ms
+12:38:47.824 200 GET /api/notes/8EG1Yd1GHx5y/blob with 161 bytes took 0ms
+12:38:47.825 200 GET /api/note-map/8EG1Yd1GHx5y/backlink-count with 11 bytes took 0ms
+12:38:47.826 200 GET /api/notes/8EG1Yd1GHx5y/attachments with 2 bytes took 0ms
+12:38:48.088 204 PUT /api/options with 0 bytes took 1ms
+12:38:48.278 200 GET /api/health-check with 15 bytes took 0ms
+12:38:48.491 304 GET /api/notes/nA0lJs2HSIR1/blob with 3277 bytes took 1ms
+12:38:48.492 304 GET /api/note-map/nA0lJs2HSIR1/backlink-count with 11 bytes took 1ms
+12:38:49.090 204 PUT /api/options with 0 bytes took 1ms
+12:39:18.378 200 GET /api/health-check with 15 bytes took 0ms
+12:39:24.607 304 GET /api/special-notes/inbox/2025-11-12 with 333 bytes took 1ms
+12:39:24.613 Created new note 'KDZla1kQq4JL', branch 'Kx317zaCcgPs_KDZla1kQq4JL' of type 'text', mime 'text/html'
+12:39:24.614 200 POST /api/notes/Kx317zaCcgPs/children?target=into with 554 bytes took 2ms
+12:39:24.619 200 POST /api/tree/load with 4473 bytes took 1ms
+12:39:24.737 304 GET /api/sql/schema with 7987 bytes took 1ms
+12:39:24.748 204 PUT /api/options with 0 bytes took 0ms
+12:39:24.749 200 GET /api/notes/KDZla1kQq4JL/blob with 155 bytes took 0ms
+12:39:24.750 200 GET /api/note-map/KDZla1kQq4JL/backlink-count with 11 bytes took 0ms
+12:39:24.750 200 GET /api/notes/KDZla1kQq4JL/attachments with 2 bytes took 0ms
+12:39:24.773 JS Info: Creating new CKEditor
+12:39:24.792 304 GET /api/search/%23textSnippet with 2 bytes took 0ms
+12:39:25.042 JS Info: CKEditor state changed to ready
+12:39:26.377 200 GET /api/autocomplete?query=&activeNoteId=KDZla1kQq4JL&fastSearch=true with 787 bytes took 1ms
+12:39:27.545 200 POST /api/tree/load with 3361 bytes took 0ms
+12:39:27.645 204 PUT /api/options with 0 bytes took 1ms
+12:39:27.646 200 GET /api/note-map/_globalNoteMap/backlink-count with 11 bytes took 0ms
+12:39:27.649 200 GET /api/notes/_globalNoteMap/attachments with 2 bytes took 0ms
+12:39:27.705 200 POST /api/note-map/root/link with 19694 bytes took 3ms
+12:39:27.705 JS Error: Uncaught error: Message: ResizeObserver loop completed with undelivered notifications., URL: , Line: 0, Column: 0, Error object: undefined, Stack: undefined
+Stack: logError$1@http://localhost:8080/assets/v0.99.5/src/app_context.js:26:67239
+Ke/window.onerror@http://localhost:8080/assets/v0.99.5/src/index_jquery.js:1:960
+
+12:39:28.339 200 GET /api/search/%23calendarRoot with 16 bytes took 0ms
+12:39:28.343 200 GET /api/notes/xvN8PaA86G9m/attributes with 1054 bytes took 0ms
+12:39:28.347 200 GET /api/attribute-values/weekNote with 2 bytes took 0ms
+12:39:28.350 200 GET /api/special-notes/notes-for-month/2025-11 with 29 bytes took 0ms
+12:39:28.353 200 GET /api/special-notes/notes-for-month/2025-10 with 2 bytes took 0ms
+12:39:30.870 Created new note 'ikIYsWyccr4F', branch 'ndwVKX417wgu_ikIYsWyccr4F' of type 'text', mime 'text/html'
+12:39:30.871 200 GET /api/special-notes/days/2025-11-22 with 332 bytes took 5ms
+12:39:30.915 200 POST /api/tree/load with 4342 bytes took 1ms
+12:39:30.966 200 GET /api/tree?subTreeNoteId=ikIYsWyccr4F with 4342 bytes took 1ms
+12:39:31.462 200 GET /api/notes/ikIYsWyccr4F/blob with 285 bytes took 0ms
+12:39:31.464 204 PUT /api/options with 0 bytes took 0ms
+12:39:31.494 200 GET /api/note-map/ikIYsWyccr4F/backlink-count with 11 bytes took 0ms
+12:39:31.494 200 GET /api/notes/ikIYsWyccr4F/attachments with 2 bytes took 0ms
+12:39:48.472 200 GET /api/health-check with 15 bytes took 0ms
+12:40:18.569 200 GET /api/health-check with 15 bytes took 0ms
+12:40:48.665 200 GET /api/health-check with 15 bytes took 0ms
+12:41:18.794 200 GET /api/health-check with 15 bytes took 1ms
+12:41:48.884 200 GET /api/health-check with 15 bytes took 0ms
+12:42:18.984 200 GET /api/health-check with 15 bytes took 0ms
+12:42:49.074 200 GET /api/health-check with 15 bytes took 1ms
+12:43:19.169 200 GET /api/health-check with 15 bytes took 0ms
+12:43:49.260 200 GET /api/health-check with 15 bytes took 1ms
+12:44:19.352 200 GET /api/health-check with 15 bytes took 0ms
+12:44:49.437 200 GET /api/health-check with 15 bytes took 0ms
+12:45:19.532 200 GET /api/health-check with 15 bytes took 1ms
+12:45:49.641 200 GET /api/health-check with 15 bytes took 0ms
+12:46:19.753 200 GET /api/health-check with 15 bytes took 0ms
+12:46:49.850 200 GET /api/health-check with 15 bytes took 0ms
+12:47:19.936 200 GET /api/health-check with 15 bytes took 0ms
+12:47:50.046 200 GET /api/health-check with 15 bytes took 1ms
+12:48:20.141 200 GET /api/health-check with 15 bytes took 0ms
+12:48:50.235 200 GET /api/health-check with 15 bytes took 0ms
+12:49:20.326 200 GET /api/health-check with 15 bytes took 1ms
+12:49:50.418 200 GET /api/health-check with 15 bytes took 0ms
+12:50:20.511 200 GET /api/health-check with 15 bytes took 0ms
+12:50:50.599 200 GET /api/health-check with 15 bytes took 0ms
+12:51:20.697 200 GET /api/health-check with 15 bytes took 0ms
+12:51:50.781 200 GET /api/health-check with 15 bytes took 0ms
+12:52:20.872 200 GET /api/health-check with 15 bytes took 0ms
+12:52:50.963 200 GET /api/health-check with 15 bytes took 0ms
+12:53:21.054 200 GET /api/health-check with 15 bytes took 1ms
+12:53:51.151 200 GET /api/health-check with 15 bytes took 0ms
+12:54:21.243 200 GET /api/health-check with 15 bytes took 1ms
+12:54:51.334 200 GET /api/health-check with 15 bytes took 0ms
+12:55:21.444 200 GET /api/health-check with 15 bytes took 0ms
+12:55:51.550 200 GET /api/health-check with 15 bytes took 0ms
+12:56:21.662 200 GET /api/health-check with 15 bytes took 0ms
+12:56:51.789 200 GET /api/health-check with 15 bytes took 0ms
+12:57:21.883 200 GET /api/health-check with 15 bytes took 0ms
+12:57:51.975 200 GET /api/health-check with 15 bytes took 0ms
+12:58:22.089 200 GET /api/health-check with 15 bytes took 0ms
+12:58:52.184 200 GET /api/health-check with 15 bytes took 1ms
+12:59:22.280 200 GET /api/health-check with 15 bytes took 0ms
+12:59:52.392 200 GET /api/health-check with 15 bytes took 0ms
+13:00:22.489 200 GET /api/health-check with 15 bytes took 1ms
+13:00:52.583 200 GET /api/health-check with 15 bytes took 0ms
+13:01:22.686 200 GET /api/health-check with 15 bytes took 1ms
+13:01:52.788 200 GET /api/health-check with 15 bytes took 1ms
+13:02:22.891 200 GET /api/health-check with 15 bytes took 1ms
+13:02:52.992 200 GET /api/health-check with 15 bytes took 0ms
+13:03:23.095 200 GET /api/health-check with 15 bytes took 0ms
+13:03:53.202 200 GET /api/health-check with 15 bytes took 0ms
+13:04:23.309 200 GET /api/health-check with 15 bytes took 0ms
+13:04:53.427 200 GET /api/health-check with 15 bytes took 0ms
+13:05:23.516 200 GET /api/health-check with 15 bytes took 0ms
+13:05:53.637 200 GET /api/health-check with 15 bytes took 1ms
+13:06:23.725 200 GET /api/health-check with 15 bytes took 0ms
+13:06:53.815 200 GET /api/health-check with 15 bytes took 0ms
+13:07:23.909 200 GET /api/health-check with 15 bytes took 0ms
+13:07:54.000 200 GET /api/health-check with 15 bytes took 0ms
+13:08:24.092 200 GET /api/health-check with 15 bytes took 1ms
+13:08:54.195 200 GET /api/health-check with 15 bytes took 1ms
+13:09:24.302 200 GET /api/health-check with 15 bytes took 0ms
+13:09:54.400 200 GET /api/health-check with 15 bytes took 1ms
+13:10:24.495 200 GET /api/health-check with 15 bytes took 0ms
+13:10:54.591 200 GET /api/health-check with 15 bytes took 0ms
+13:11:24.691 200 GET /api/health-check with 15 bytes took 0ms
+13:11:54.788 200 GET /api/health-check with 15 bytes took 0ms
+13:12:24.879 200 GET /api/health-check with 15 bytes took 0ms
+13:12:54.980 200 GET /api/health-check with 15 bytes took 0ms
+13:13:25.092 200 GET /api/health-check with 15 bytes took 0ms
+13:13:55.201 200 GET /api/health-check with 15 bytes took 1ms
+13:14:25.305 200 GET /api/health-check with 15 bytes took 0ms
+13:14:55.398 200 GET /api/health-check with 15 bytes took 0ms
+13:15:25.510 200 GET /api/health-check with 15 bytes took 0ms
+13:15:55.611 200 GET /api/health-check with 15 bytes took 0ms
+13:16:25.713 200 GET /api/health-check with 15 bytes took 1ms
+13:16:55.799 200 GET /api/health-check with 15 bytes took 1ms
+13:17:25.888 200 GET /api/health-check with 15 bytes took 0ms
+13:17:55.989 200 GET /api/health-check with 15 bytes took 0ms
+13:18:26.084 200 GET /api/health-check with 15 bytes took 0ms
+13:18:56.179 200 GET /api/health-check with 15 bytes took 0ms
+13:19:26.275 200 GET /api/health-check with 15 bytes took 0ms
+13:19:56.370 200 GET /api/health-check with 15 bytes took 1ms
+13:20:26.461 200 GET /api/health-check with 15 bytes took 0ms
+13:20:56.550 200 GET /api/health-check with 15 bytes took 0ms
+13:21:26.642 200 GET /api/health-check with 15 bytes took 0ms
+13:21:56.735 200 GET /api/health-check with 15 bytes took 0ms
+13:22:26.822 200 GET /api/health-check with 15 bytes took 0ms
+13:22:56.912 200 GET /api/health-check with 15 bytes took 0ms
+13:23:27.004 200 GET /api/health-check with 15 bytes took 0ms
+13:23:57.095 200 GET /api/health-check with 15 bytes took 0ms
+13:24:27.187 200 GET /api/health-check with 15 bytes took 1ms
+13:24:57.278 200 GET /api/health-check with 15 bytes took 0ms
+13:25:27.369 200 GET /api/health-check with 15 bytes took 1ms
+13:25:57.455 200 GET /api/health-check with 15 bytes took 0ms
+13:26:27.540 200 GET /api/health-check with 15 bytes took 0ms
+13:26:57.639 200 GET /api/health-check with 15 bytes took 0ms
+13:27:27.726 200 GET /api/health-check with 15 bytes took 0ms
+13:27:57.816 200 GET /api/health-check with 15 bytes took 0ms
+13:28:27.902 200 GET /api/health-check with 15 bytes took 0ms
+13:28:58.006 200 GET /api/health-check with 15 bytes took 0ms
+13:29:28.092 200 GET /api/health-check with 15 bytes took 0ms
+13:29:58.181 200 GET /api/health-check with 15 bytes took 0ms
+13:30:28.274 200 GET /api/health-check with 15 bytes took 0ms
+13:30:58.361 200 GET /api/health-check with 15 bytes took 0ms
+13:31:28.456 200 GET /api/health-check with 15 bytes took 0ms
+13:31:58.547 200 GET /api/health-check with 15 bytes took 0ms
+13:32:28.644 200 GET /api/health-check with 15 bytes took 0ms
+13:32:58.740 200 GET /api/health-check with 15 bytes took 0ms
+13:33:28.827 200 GET /api/health-check with 15 bytes took 0ms
+13:33:58.963 200 GET /api/health-check with 15 bytes took 0ms
+13:34:29.069 200 GET /api/health-check with 15 bytes took 1ms
+20:57:38.177 200 GET /api/health-check with 15 bytes took 1ms
+20:58:08.265 200 GET /api/health-check with 15 bytes took 0ms
+20:58:38.353 200 GET /api/health-check with 15 bytes took 0ms
+20:59:08.442 200 GET /api/health-check with 15 bytes took 0ms
+20:59:38.536 200 GET /api/health-check with 15 bytes took 0ms
+21:00:08.622 200 GET /api/health-check with 15 bytes took 0ms
+21:00:17.699 Table counts: notes: 480, revisions: 0, attachments: 19, branches: 496, attributes: 888, etapi_tokens: 0, blobs: 137
+21:00:17.705 All consistency checks passed with no errors detected (took 7ms)
+21:00:17.705 Optimizing database
+21:00:17.707 Optimization finished in 2ms.
+21:00:38.714 200 GET /api/health-check with 15 bytes took 0ms
+21:01:08.810 200 GET /api/health-check with 15 bytes took 0ms
+21:01:38.896 200 GET /api/health-check with 15 bytes took 0ms
+21:02:09.005 200 GET /api/health-check with 15 bytes took 0ms
+21:02:39.094 200 GET /api/health-check with 15 bytes took 0ms
+21:03:09.186 200 GET /api/health-check with 15 bytes took 0ms
+21:03:39.279 200 GET /api/health-check with 15 bytes took 0ms
+21:04:09.377 200 GET /api/health-check with 15 bytes took 0ms
+21:04:39.466 200 GET /api/health-check with 15 bytes took 0ms
+21:05:09.555 200 GET /api/health-check with 15 bytes took 0ms
+21:05:39.653 200 GET /api/health-check with 15 bytes took 0ms
+21:06:09.750 200 GET /api/health-check with 15 bytes took 1ms
+21:06:39.842 200 GET /api/health-check with 15 bytes took 0ms
+21:07:09.931 200 GET /api/health-check with 15 bytes took 0ms
+21:07:40.021 200 GET /api/health-check with 15 bytes took 1ms
+21:08:10.116 200 GET /api/health-check with 15 bytes took 0ms
+21:08:40.212 200 GET /api/health-check with 15 bytes took 1ms
+21:09:10.300 200 GET /api/health-check with 15 bytes took 0ms
+21:09:40.395 200 GET /api/health-check with 15 bytes took 1ms
+21:10:10.491 200 GET /api/health-check with 15 bytes took 0ms
+21:10:40.580 200 GET /api/health-check with 15 bytes took 1ms
+21:11:10.667 200 GET /api/health-check with 15 bytes took 0ms
+21:11:40.763 200 GET /api/health-check with 15 bytes took 1ms
+21:12:10.852 200 GET /api/health-check with 15 bytes took 0ms
+21:12:40.944 200 GET /api/health-check with 15 bytes took 1ms
+21:13:11.039 200 GET /api/health-check with 15 bytes took 1ms
+21:13:41.129 200 GET /api/health-check with 15 bytes took 0ms
+21:14:11.227 200 GET /api/health-check with 15 bytes took 1ms
+21:14:41.319 200 GET /api/health-check with 15 bytes took 1ms
+21:15:11.412 200 GET /api/health-check with 15 bytes took 0ms
+21:15:41.503 200 GET /api/health-check with 15 bytes took 0ms
+21:16:11.592 200 GET /api/health-check with 15 bytes took 0ms
+21:16:41.701 200 GET /api/health-check with 15 bytes took 0ms
+21:17:11.791 200 GET /api/health-check with 15 bytes took 0ms
+21:17:41.879 200 GET /api/health-check with 15 bytes took 0ms
+21:18:11.978 200 GET /api/health-check with 15 bytes took 0ms
+21:18:42.088 200 GET /api/health-check with 15 bytes took 0ms
+21:19:12.185 200 GET /api/health-check with 15 bytes took 0ms
+21:19:42.293 200 GET /api/health-check with 15 bytes took 0ms
+21:20:12.393 200 GET /api/health-check with 15 bytes took 0ms
+21:20:42.501 200 GET /api/health-check with 15 bytes took 0ms
+21:21:12.606 200 GET /api/health-check with 15 bytes took 0ms
+21:21:42.705 200 GET /api/health-check with 15 bytes took 0ms
+21:22:12.803 200 GET /api/health-check with 15 bytes took 1ms
+21:22:42.897 200 GET /api/health-check with 15 bytes took 0ms
+21:23:12.984 200 GET /api/health-check with 15 bytes took 1ms
+21:23:43.074 200 GET /api/health-check with 15 bytes took 1ms
+21:24:13.172 200 GET /api/health-check with 15 bytes took 0ms
+21:24:43.263 200 GET /api/health-check with 15 bytes took 0ms
+21:25:13.353 200 GET /api/health-check with 15 bytes took 0ms
+21:25:43.453 200 GET /api/health-check with 15 bytes took 0ms
+21:26:13.548 200 GET /api/health-check with 15 bytes took 0ms
+21:26:43.636 200 GET /api/health-check with 15 bytes took 0ms
+21:27:13.730 200 GET /api/health-check with 15 bytes took 0ms
+21:27:43.831 200 GET /api/health-check with 15 bytes took 0ms
+21:28:13.922 200 GET /api/health-check with 15 bytes took 0ms
+21:28:44.010 200 GET /api/health-check with 15 bytes took 0ms
+21:29:14.097 200 GET /api/health-check with 15 bytes took 0ms
+21:29:44.188 200 GET /api/health-check with 15 bytes took 1ms
+21:30:14.276 200 GET /api/health-check with 15 bytes took 0ms
+21:30:44.365 200 GET /api/health-check with 15 bytes took 1ms
+21:31:14.447 200 GET /api/health-check with 15 bytes took 0ms
+21:31:44.533 200 GET /api/health-check with 15 bytes took 0ms
+21:32:14.620 200 GET /api/health-check with 15 bytes took 0ms
+21:32:44.706 200 GET /api/health-check with 15 bytes took 1ms
+21:33:14.796 200 GET /api/health-check with 15 bytes took 0ms
+21:33:44.888 200 GET /api/health-check with 15 bytes took 0ms
+21:34:14.981 200 GET /api/health-check with 15 bytes took 0ms
+21:34:45.067 200 GET /api/health-check with 15 bytes took 0ms
+21:35:15.156 200 GET /api/health-check with 15 bytes took 0ms
+21:35:45.246 200 GET /api/health-check with 15 bytes took 0ms
+21:36:15.333 200 GET /api/health-check with 15 bytes took 0ms
+21:36:45.429 200 GET /api/health-check with 15 bytes took 1ms
+21:37:15.523 200 GET /api/health-check with 15 bytes took 0ms
+21:37:45.617 200 GET /api/health-check with 15 bytes took 0ms
+21:38:15.698 200 GET /api/health-check with 15 bytes took 1ms
+21:38:45.788 200 GET /api/health-check with 15 bytes took 0ms
+21:39:15.885 200 GET /api/health-check with 15 bytes took 0ms
+21:39:45.979 200 GET /api/health-check with 15 bytes took 0ms
+21:40:16.075 200 GET /api/health-check with 15 bytes took 0ms
+21:40:46.160 200 GET /api/health-check with 15 bytes took 0ms
+21:41:16.245 200 GET /api/health-check with 15 bytes took 0ms
+21:41:46.339 200 GET /api/health-check with 15 bytes took 1ms
+21:42:16.430 200 GET /api/health-check with 15 bytes took 0ms
+21:42:46.519 200 GET /api/health-check with 15 bytes took 0ms
+21:43:16.602 200 GET /api/health-check with 15 bytes took 0ms
+21:43:46.691 200 GET /api/health-check with 15 bytes took 1ms
+21:44:16.775 200 GET /api/health-check with 15 bytes took 0ms
+21:44:46.862 200 GET /api/health-check with 15 bytes took 0ms
+21:45:16.946 200 GET /api/health-check with 15 bytes took 0ms
+21:45:47.027 200 GET /api/health-check with 15 bytes took 1ms
+21:46:17.121 200 GET /api/health-check with 15 bytes took 1ms
+21:46:47.210 200 GET /api/health-check with 15 bytes took 1ms
+21:47:17.295 200 GET /api/health-check with 15 bytes took 0ms
+21:47:47.385 200 GET /api/health-check with 15 bytes took 0ms
+21:48:17.473 200 GET /api/health-check with 15 bytes took 1ms
+21:48:47.565 200 GET /api/health-check with 15 bytes took 0ms
+21:49:17.652 200 GET /api/health-check with 15 bytes took 0ms
+21:49:47.736 200 GET /api/health-check with 15 bytes took 0ms
+21:50:17.831 200 GET /api/health-check with 15 bytes took 0ms
+21:50:47.916 200 GET /api/health-check with 15 bytes took 0ms
+21:51:18.008 200 GET /api/health-check with 15 bytes took 0ms
+21:51:48.095 200 GET /api/health-check with 15 bytes took 1ms
+21:52:18.179 200 GET /api/health-check with 15 bytes took 0ms
+21:52:48.262 200 GET /api/health-check with 15 bytes took 0ms
+21:53:18.355 200 GET /api/health-check with 15 bytes took 0ms
+21:53:48.440 200 GET /api/health-check with 15 bytes took 1ms
+21:54:18.532 200 GET /api/health-check with 15 bytes took 1ms
+21:54:48.625 200 GET /api/health-check with 15 bytes took 1ms
+21:55:18.715 200 GET /api/health-check with 15 bytes took 0ms
+21:55:48.801 200 GET /api/health-check with 15 bytes took 0ms
+21:56:18.884 200 GET /api/health-check with 15 bytes took 0ms
+21:56:48.967 200 GET /api/health-check with 15 bytes took 0ms
+21:57:19.054 200 GET /api/health-check with 15 bytes took 1ms
+21:57:49.138 200 GET /api/health-check with 15 bytes took 1ms
+21:58:19.228 200 GET /api/health-check with 15 bytes took 0ms
+21:58:49.309 200 GET /api/health-check with 15 bytes took 1ms
+21:59:19.393 200 GET /api/health-check with 15 bytes took 0ms
+21:59:49.484 200 GET /api/health-check with 15 bytes took 0ms
+22:00:17.723 Table counts: notes: 480, revisions: 0, attachments: 19, branches: 496, attributes: 888, etapi_tokens: 0, blobs: 137
+22:00:17.729 All consistency checks passed with no errors detected (took 6ms)
+22:00:19.573 200 GET /api/health-check with 15 bytes took 0ms
+22:00:49.656 200 GET /api/health-check with 15 bytes took 0ms
+22:01:19.741 200 GET /api/health-check with 15 bytes took 0ms
+22:01:49.831 200 GET /api/health-check with 15 bytes took 1ms
+22:02:19.913 200 GET /api/health-check with 15 bytes took 1ms
+22:02:50.003 200 GET /api/health-check with 15 bytes took 0ms
+22:03:20.086 200 GET /api/health-check with 15 bytes took 0ms
+22:03:50.178 200 GET /api/health-check with 15 bytes took 1ms
+22:04:20.271 200 GET /api/health-check with 15 bytes took 0ms
+22:04:50.354 200 GET /api/health-check with 15 bytes took 0ms
+22:05:20.439 200 GET /api/health-check with 15 bytes took 0ms
+22:05:50.529 200 GET /api/health-check with 15 bytes took 0ms
+22:06:20.624 200 GET /api/health-check with 15 bytes took 1ms
+22:06:50.709 200 GET /api/health-check with 15 bytes took 0ms
+22:07:20.796 200 GET /api/health-check with 15 bytes took 0ms
+22:07:50.883 200 GET /api/health-check with 15 bytes took 0ms
+22:08:20.968 200 GET /api/health-check with 15 bytes took 0ms
+22:08:51.060 200 GET /api/health-check with 15 bytes took 0ms
+22:09:21.144 200 GET /api/health-check with 15 bytes took 1ms
+22:09:51.234 200 GET /api/health-check with 15 bytes took 1ms
+22:10:21.327 200 GET /api/health-check with 15 bytes took 0ms
+22:10:51.415 200 GET /api/health-check with 15 bytes took 0ms
+22:11:21.504 200 GET /api/health-check with 15 bytes took 0ms
+22:11:51.587 200 GET /api/health-check with 15 bytes took 0ms
+22:12:21.684 200 GET /api/health-check with 15 bytes took 0ms
+22:12:51.770 200 GET /api/health-check with 15 bytes took 0ms
+22:13:21.867 200 GET /api/health-check with 15 bytes took 1ms
+22:13:51.956 200 GET /api/health-check with 15 bytes took 0ms
+22:14:22.039 200 GET /api/health-check with 15 bytes took 0ms
+22:14:52.131 200 GET /api/health-check with 15 bytes took 1ms
+22:15:22.214 200 GET /api/health-check with 15 bytes took 0ms
+22:15:52.300 200 GET /api/health-check with 15 bytes took 0ms
+22:16:22.389 200 GET /api/health-check with 15 bytes took 0ms
+22:16:52.480 200 GET /api/health-check with 15 bytes took 0ms
+22:17:22.571 200 GET /api/health-check with 15 bytes took 0ms
+22:17:52.654 200 GET /api/health-check with 15 bytes took 0ms
+22:18:22.746 200 GET /api/health-check with 15 bytes took 0ms
+22:18:52.829 200 GET /api/health-check with 15 bytes took 0ms
+22:19:22.918 200 GET /api/health-check with 15 bytes took 0ms
+22:19:53.002 200 GET /api/health-check with 15 bytes took 0ms
+22:20:23.087 200 GET /api/health-check with 15 bytes took 0ms
+22:20:53.176 200 GET /api/health-check with 15 bytes took 0ms
+22:21:23.266 200 GET /api/health-check with 15 bytes took 0ms
+22:21:53.358 200 GET /api/health-check with 15 bytes took 0ms
+22:22:23.441 200 GET /api/health-check with 15 bytes took 0ms
+22:22:53.537 200 GET /api/health-check with 15 bytes took 0ms
+22:23:23.630 200 GET /api/health-check with 15 bytes took 0ms
+22:23:53.717 200 GET /api/health-check with 15 bytes took 1ms
+22:24:23.809 200 GET /api/health-check with 15 bytes took 0ms
+22:24:53.901 200 GET /api/health-check with 15 bytes took 0ms
+22:25:23.983 200 GET /api/health-check with 15 bytes took 0ms
+22:25:54.070 200 GET /api/health-check with 15 bytes took 0ms
+22:26:24.166 200 GET /api/health-check with 15 bytes took 1ms
+22:26:54.259 200 GET /api/health-check with 15 bytes took 0ms
+22:27:24.348 200 GET /api/health-check with 15 bytes took 0ms
+22:27:54.436 200 GET /api/health-check with 15 bytes took 0ms
+22:28:24.526 200 GET /api/health-check with 15 bytes took 0ms
+22:28:54.616 200 GET /api/health-check with 15 bytes took 0ms
+22:29:24.708 200 GET /api/health-check with 15 bytes took 0ms
+22:29:54.792 200 GET /api/health-check with 15 bytes took 0ms
+22:30:24.871 200 GET /api/health-check with 15 bytes took 0ms
+22:30:54.953 200 GET /api/health-check with 15 bytes took 0ms
+22:31:25.044 200 GET /api/health-check with 15 bytes took 0ms
+22:31:55.128 200 GET /api/health-check with 15 bytes took 0ms
+22:32:25.217 200 GET /api/health-check with 15 bytes took 0ms
+22:32:55.303 200 GET /api/health-check with 15 bytes took 0ms
+22:33:25.393 200 GET /api/health-check with 15 bytes took 1ms
+22:33:55.479 200 GET /api/health-check with 15 bytes took 0ms
+22:34:25.569 200 GET /api/health-check with 15 bytes took 0ms
+22:34:55.661 200 GET /api/health-check with 15 bytes took 0ms
+22:35:25.736 200 GET /api/health-check with 15 bytes took 0ms
+22:35:55.812 200 GET /api/health-check with 15 bytes took 0ms
+22:36:25.908 200 GET /api/health-check with 15 bytes took 1ms
+22:36:56.003 200 GET /api/health-check with 15 bytes took 0ms
+22:37:26.090 200 GET /api/health-check with 15 bytes took 0ms
+22:37:56.177 200 GET /api/health-check with 15 bytes took 0ms
+22:38:26.272 200 GET /api/health-check with 15 bytes took 0ms
+22:38:56.369 200 GET /api/health-check with 15 bytes took 0ms
+22:39:26.457 200 GET /api/health-check with 15 bytes took 0ms
+22:39:56.549 200 GET /api/health-check with 15 bytes took 0ms
+22:40:26.641 200 GET /api/health-check with 15 bytes took 1ms
+22:40:56.729 200 GET /api/health-check with 15 bytes took 0ms
+22:41:26.818 200 GET /api/health-check with 15 bytes took 0ms
+22:41:56.910 200 GET /api/health-check with 15 bytes took 0ms
+22:42:27.002 200 GET /api/health-check with 15 bytes took 0ms
+22:42:57.089 200 GET /api/health-check with 15 bytes took 1ms
+22:43:27.176 200 GET /api/health-check with 15 bytes took 0ms
+22:43:57.267 200 GET /api/health-check with 15 bytes took 0ms
+22:44:27.362 200 GET /api/health-check with 15 bytes took 0ms
+22:44:57.453 200 GET /api/health-check with 15 bytes took 1ms
+22:45:27.546 200 GET /api/health-check with 15 bytes took 0ms
+22:45:57.641 200 GET /api/health-check with 15 bytes took 0ms
+22:46:27.727 200 GET /api/health-check with 15 bytes took 0ms
+22:46:57.814 200 GET /api/health-check with 15 bytes took 0ms
+22:47:27.903 200 GET /api/health-check with 15 bytes took 1ms
+22:47:57.999 200 GET /api/health-check with 15 bytes took 0ms
+22:48:28.092 200 GET /api/health-check with 15 bytes took 0ms
+22:48:58.180 200 GET /api/health-check with 15 bytes took 0ms
+22:49:28.264 200 GET /api/health-check with 15 bytes took 0ms
+22:49:58.346 200 GET /api/health-check with 15 bytes took 0ms
+22:50:28.439 200 GET /api/health-check with 15 bytes took 0ms
+22:50:58.528 200 GET /api/health-check with 15 bytes took 0ms
+22:51:28.620 200 GET /api/health-check with 15 bytes took 0ms
+22:51:58.704 200 GET /api/health-check with 15 bytes took 0ms
+22:52:28.790 200 GET /api/health-check with 15 bytes took 0ms
+22:52:58.878 200 GET /api/health-check with 15 bytes took 1ms
+22:53:28.966 200 GET /api/health-check with 15 bytes took 0ms
+22:53:59.062 200 GET /api/health-check with 15 bytes took 0ms
+22:54:29.150 200 GET /api/health-check with 15 bytes took 0ms
+22:54:59.236 200 GET /api/health-check with 15 bytes took 0ms
+22:55:29.338 200 GET /api/health-check with 15 bytes took 0ms
+22:55:59.429 200 GET /api/health-check with 15 bytes took 0ms
+22:56:29.512 200 GET /api/health-check with 15 bytes took 0ms
+22:56:59.598 200 GET /api/health-check with 15 bytes took 0ms
+22:57:29.687 200 GET /api/health-check with 15 bytes took 0ms
+22:57:59.775 200 GET /api/health-check with 15 bytes took 0ms
+22:58:29.864 200 GET /api/health-check with 15 bytes took 0ms
+22:58:59.960 200 GET /api/health-check with 15 bytes took 0ms
+22:59:30.045 200 GET /api/health-check with 15 bytes took 0ms
+23:00:00.137 200 GET /api/health-check with 15 bytes took 0ms
+23:00:17.741 Table counts: notes: 480, revisions: 0, attachments: 19, branches: 496, attributes: 888, etapi_tokens: 0, blobs: 137
+23:00:17.746 All consistency checks passed with no errors detected (took 5ms)
+23:00:30.226 200 GET /api/health-check with 15 bytes took 0ms
+23:01:00.310 200 GET /api/health-check with 15 bytes took 0ms
+23:01:30.407 200 GET /api/health-check with 15 bytes took 0ms
+23:02:00.498 200 GET /api/health-check with 15 bytes took 1ms
+23:02:30.591 200 GET /api/health-check with 15 bytes took 0ms
+23:03:00.679 200 GET /api/health-check with 15 bytes took 0ms
+23:03:30.768 200 GET /api/health-check with 15 bytes took 0ms
+23:04:00.856 200 GET /api/health-check with 15 bytes took 0ms
+23:04:30.944 200 GET /api/health-check with 15 bytes took 0ms
+23:05:01.027 200 GET /api/health-check with 15 bytes took 0ms
+23:05:31.118 200 GET /api/health-check with 15 bytes took 0ms
+23:06:01.208 200 GET /api/health-check with 15 bytes took 0ms
+23:06:31.289 200 GET /api/health-check with 15 bytes took 0ms
+23:07:01.386 200 GET /api/health-check with 15 bytes took 1ms
+23:07:31.471 200 GET /api/health-check with 15 bytes took 0ms
+23:08:01.564 200 GET /api/health-check with 15 bytes took 0ms
+23:08:31.650 200 GET /api/health-check with 15 bytes took 0ms
+23:09:01.740 200 GET /api/health-check with 15 bytes took 0ms
+23:09:31.825 200 GET /api/health-check with 15 bytes took 0ms
+23:10:01.914 200 GET /api/health-check with 15 bytes took 0ms
+23:10:32.002 200 GET /api/health-check with 15 bytes took 1ms
+23:11:02.086 200 GET /api/health-check with 15 bytes took 1ms
+23:11:32.176 200 GET /api/health-check with 15 bytes took 0ms
+23:12:02.261 200 GET /api/health-check with 15 bytes took 0ms
+23:12:32.348 200 GET /api/health-check with 15 bytes took 0ms
+23:13:02.435 200 GET /api/health-check with 15 bytes took 0ms
+23:13:32.524 200 GET /api/health-check with 15 bytes took 0ms
+23:14:02.613 200 GET /api/health-check with 15 bytes took 1ms
+23:14:32.700 200 GET /api/health-check with 15 bytes took 0ms
+23:15:02.785 200 GET /api/health-check with 15 bytes took 0ms
+23:15:32.869 200 GET /api/health-check with 15 bytes took 0ms
+23:16:02.958 200 GET /api/health-check with 15 bytes took 1ms
+23:16:33.041 200 GET /api/health-check with 15 bytes took 0ms
+23:17:03.128 200 GET /api/health-check with 15 bytes took 0ms
+23:17:33.211 200 GET /api/health-check with 15 bytes took 1ms
+23:18:03.304 200 GET /api/health-check with 15 bytes took 0ms
+23:18:33.399 200 GET /api/health-check with 15 bytes took 0ms
+23:19:03.484 200 GET /api/health-check with 15 bytes took 0ms
+23:19:33.578 200 GET /api/health-check with 15 bytes took 0ms
+23:20:03.665 200 GET /api/health-check with 15 bytes took 0ms
+23:20:33.753 200 GET /api/health-check with 15 bytes took 0ms
+23:21:03.844 200 GET /api/health-check with 15 bytes took 1ms
+23:21:33.929 200 GET /api/health-check with 15 bytes took 0ms
+23:22:04.015 200 GET /api/health-check with 15 bytes took 0ms
+23:22:34.101 200 GET /api/health-check with 15 bytes took 0ms
+23:23:04.198 200 GET /api/health-check with 15 bytes took 0ms
+23:23:34.286 200 GET /api/health-check with 15 bytes took 0ms
+23:24:04.376 200 GET /api/health-check with 15 bytes took 0ms
+23:24:34.469 200 GET /api/health-check with 15 bytes took 0ms
+23:25:04.563 200 GET /api/health-check with 15 bytes took 1ms
+23:25:34.652 200 GET /api/health-check with 15 bytes took 1ms
+23:26:04.735 200 GET /api/health-check with 15 bytes took 0ms
+23:26:34.823 200 GET /api/health-check with 15 bytes took 0ms
+23:27:04.920 200 GET /api/health-check with 15 bytes took 0ms
+23:27:35.013 200 GET /api/health-check with 15 bytes took 0ms
+23:28:05.101 200 GET /api/health-check with 15 bytes took 0ms
+23:28:35.194 200 GET /api/health-check with 15 bytes took 0ms
+23:29:05.276 200 GET /api/health-check with 15 bytes took 0ms
+23:29:35.369 200 GET /api/health-check with 15 bytes took 0ms
+23:30:05.459 200 GET /api/health-check with 15 bytes took 0ms
+23:30:35.553 200 GET /api/health-check with 15 bytes took 0ms
+23:31:05.640 200 GET /api/health-check with 15 bytes took 0ms
+23:31:35.730 200 GET /api/health-check with 15 bytes took 0ms
+23:32:05.812 200 GET /api/health-check with 15 bytes took 0ms
+23:32:35.899 200 GET /api/health-check with 15 bytes took 0ms
+23:33:05.989 200 GET /api/health-check with 15 bytes took 0ms
+23:33:36.080 200 GET /api/health-check with 15 bytes took 0ms
+23:34:06.165 200 GET /api/health-check with 15 bytes took 0ms
+23:34:36.256 200 GET /api/health-check with 15 bytes took 0ms
+23:35:06.339 200 GET /api/health-check with 15 bytes took 0ms
+23:35:36.428 200 GET /api/health-check with 15 bytes took 0ms
+23:36:06.516 200 GET /api/health-check with 15 bytes took 1ms
+23:36:36.612 200 GET /api/health-check with 15 bytes took 0ms
+23:37:06.703 200 GET /api/health-check with 15 bytes took 0ms
+23:37:36.790 200 GET /api/health-check with 15 bytes took 0ms
+23:38:06.883 200 GET /api/health-check with 15 bytes took 0ms
+23:38:36.971 200 GET /api/health-check with 15 bytes took 0ms
+23:39:07.063 200 GET /api/health-check with 15 bytes took 0ms
+23:39:37.154 200 GET /api/health-check with 15 bytes took 0ms
+23:40:07.244 200 GET /api/health-check with 15 bytes took 0ms
+23:40:37.335 200 GET /api/health-check with 15 bytes took 1ms
+23:41:07.420 200 GET /api/health-check with 15 bytes took 0ms
+23:41:37.508 200 GET /api/health-check with 15 bytes took 0ms
+23:42:07.605 200 GET /api/health-check with 15 bytes took 0ms
+23:42:37.697 200 GET /api/health-check with 15 bytes took 0ms
+23:43:07.790 200 GET /api/health-check with 15 bytes took 0ms
+23:43:37.876 200 GET /api/health-check with 15 bytes took 0ms
+23:44:07.962 200 GET /api/health-check with 15 bytes took 1ms
+23:44:38.055 200 GET /api/health-check with 15 bytes took 1ms
+23:45:08.145 200 GET /api/health-check with 15 bytes took 0ms
+23:45:38.241 200 GET /api/health-check with 15 bytes took 0ms
+23:46:08.327 200 GET /api/health-check with 15 bytes took 0ms
+23:46:38.415 200 GET /api/health-check with 15 bytes took 0ms
+23:47:08.503 200 GET /api/health-check with 15 bytes took 0ms
+23:47:38.588 200 GET /api/health-check with 15 bytes took 0ms
+23:48:08.674 200 GET /api/health-check with 15 bytes took 0ms
+23:48:38.765 200 GET /api/health-check with 15 bytes took 0ms
+23:49:08.848 200 GET /api/health-check with 15 bytes took 1ms
+23:49:38.934 200 GET /api/health-check with 15 bytes took 1ms
+23:50:09.022 200 GET /api/health-check with 15 bytes took 1ms
+23:50:39.111 200 GET /api/health-check with 15 bytes took 0ms
+23:51:09.201 200 GET /api/health-check with 15 bytes took 0ms
+23:51:39.292 200 GET /api/health-check with 15 bytes took 0ms
+23:52:09.383 200 GET /api/health-check with 15 bytes took 0ms
+23:52:39.465 200 GET /api/health-check with 15 bytes took 0ms
+23:53:09.559 200 GET /api/health-check with 15 bytes took 0ms
+23:53:39.645 200 GET /api/health-check with 15 bytes took 0ms
+23:54:09.731 200 GET /api/health-check with 15 bytes took 1ms
+23:54:39.818 200 GET /api/health-check with 15 bytes took 0ms
+23:55:09.905 200 GET /api/health-check with 15 bytes took 0ms
+23:55:39.991 200 GET /api/health-check with 15 bytes took 0ms
+23:56:10.077 200 GET /api/health-check with 15 bytes took 0ms
+23:56:40.164 200 GET /api/health-check with 15 bytes took 0ms
+23:57:10.249 200 GET /api/health-check with 15 bytes took 0ms
+23:57:40.339 200 GET /api/health-check with 15 bytes took 0ms
+23:58:10.421 200 GET /api/health-check with 15 bytes took 0ms
+23:58:40.509 200 GET /api/health-check with 15 bytes took 0ms
+23:59:10.602 200 GET /api/health-check with 15 bytes took 0ms
+23:59:40.690 200 GET /api/health-check with 15 bytes took 0ms
