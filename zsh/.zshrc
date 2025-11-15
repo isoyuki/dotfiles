@@ -62,3 +62,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# opencode
+export PATH=/home/wren/.opencode/bin:$PATH
