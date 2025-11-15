@@ -5,13 +5,10 @@ return {
 		opts = {},
 		-- Optional dependencies
 		dependencies = { { "echasnovski/mini.icons", opts = {} } },
-		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer n-web-devicons
 		config = function(_, opts)
 			require("oil").setup(opts)
 		end,
-		keys = {
-			{ "<leader>o", "<cmd>Oil<CR>", desc = "Open Oil" },
-		},
 	},
 }
 
