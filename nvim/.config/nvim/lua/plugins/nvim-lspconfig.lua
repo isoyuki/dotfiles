@@ -98,8 +98,11 @@ return {
 								{ clear = true }),
 							callback = function(event2)
 								vim.lsp.buf.clear_references()
-								vim.api.nvim_clear_autocmds({ group =
-								"kickstart-lsp-highlight", buffer = event2.buf })
+								vim.api.nvim_clear_autocmds({
+									group =
+									"kickstart-lsp-highlight",
+									buffer = event2.buf
+								})
 							end,
 						})
 					end
@@ -145,6 +148,7 @@ return {
 					filetypes = { "python", "py", "pyw", "sage" },
 				},
 				texlab = {},
+				terraformls = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
