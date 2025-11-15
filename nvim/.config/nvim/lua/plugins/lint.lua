@@ -5,7 +5,7 @@ return {
     local lint = require("lint")
     lint.linters_by_ft = {
       python = { "ruff" },
-      go = { "golangci_lint" },
+      go = { "golangcilint" },
       rust = { "rustc" },
       cpp = { "cpplint" },
       c = { "cpplint" },
