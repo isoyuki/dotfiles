@@ -397,6 +397,19 @@ local global_bindings = {
 
 	binding.new({
 		modifiers = {},
+		triggers = {
+			{ trigger = "XF86MonBrightnessDown", direction = -1 },
+			{ trigger = "XF86MonBrightnessUp", direction = 1 },
+		},
+		path = "Brightness",
+		description = "Change brightness",
+		on_press = function(trigger)
+			services.brightness.change_brightness(trigger.direction * 10)
+		end,
+	}),
+
+	binding.new({
+		modifiers = {},
 		triggers = "XF86AudioPlay",
 		path = "Media",
 		description = "Play/pause",
