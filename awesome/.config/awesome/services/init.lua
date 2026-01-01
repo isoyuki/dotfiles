@@ -3,6 +3,7 @@ local config = require("rice.config")
 local services = {
     magnifier = config.features.magnifier_tools and require("services.magnifier") or nil,
     volume = require("services.volume"),
+    brightness = require("services.brightness"),
     weather = config.features.weather_widget and require("services.weather") or nil,
     network = require("services.network"),
     torrent = config.features.torrent_widget and require("services.torrent") or nil,

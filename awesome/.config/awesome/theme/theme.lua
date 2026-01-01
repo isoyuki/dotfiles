@@ -531,6 +531,37 @@ theme.volume_osd.styles = {
 
 ----------------------------------------------------------------------------------------------------
 
+theme.brightness_osd = {
+	default_style = setmetatable({
+		bg = theme.common.bg,
+		fg = theme.common.fg,
+		border_color = theme.common.bg_bright,
+		border_width = dpi(1),
+		placement = function(d)
+			aplacement.top(d, {
+				honor_workarea = true,
+				margins = hui.new({ dpi(32) }),
+			})
+		end,
+		paddings = hui.new({ dpi(16), dpi(32) }),
+	}, { __index = theme.popup.default_style }),
+}
+
+theme.brightness_osd.styles = {
+	normal = {
+		bg = theme.brightness_osd.default_style.bg,
+		fg = theme.brightness_osd.default_style.fg,
+		border_color = theme.brightness_osd.default_style.border_color,
+	},
+	boosted = {
+		bg = theme.capsule.styles.palette.yellow.bg,
+		fg = theme.capsule.styles.palette.yellow.fg,
+		border_color = theme.capsule.styles.palette.yellow.border_color,
+	},
+}
+
+----------------------------------------------------------------------------------------------------
+
 theme.tools_popup = {
 	default_style = setmetatable({}, { __index = theme.popup.default_style }),
 }

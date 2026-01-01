@@ -1,3 +1,6 @@
+-- Map brightness keys
+local awful = require("awful")
+
 require("develop")
 require("globals")
 
