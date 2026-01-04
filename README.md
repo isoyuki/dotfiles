@@ -1,7 +1,5 @@
 # Dotfiles
 
-This repository contains my personal dotfiles. They are managed by a custom script `install.mjs` that uses `zx` to install and configure my development environment.
-
 ## Usage
 
 To install the dotfiles, run the following command:
