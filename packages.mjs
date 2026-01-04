@@ -21,3 +21,7 @@ export const dev = [
   "go",
   "rustup",
 ];
+
+export const github = {
+  picom: "https://github.com/yshui/picom.git",
+};
