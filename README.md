@@ -38,20 +38,21 @@ To install all modules, use the `all` keyword.
 
 ### Operating System
 
-You can specify the operating system using the `--os` flag. The default operating system is `arch`.
+You can specify the operating system using the `--os` flag. The default operating system is `fedora`.
 
 Supported operating systems:
 
+*   `fedora`
 *   `arch`
 *   `ubuntu`
 *   `macos`
 
 ### Examples
 
-Install all modules for Arch Linux:
+Install all modules for Fedora:
 
 ```bash
-./install.mjs all --os arch
+./install.mjs all --os fedora
 ```
 
 Install the `core` and `dev` modules for Ubuntu:
