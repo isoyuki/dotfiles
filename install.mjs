@@ -3,6 +3,7 @@
 import { core, dev, github } from "./packages.mjs";
 
 const osPackageManagers = {
+  fedora: "dnf",
   arch: "paru",
   ubuntu: "apt",
   macos: "brew",
@@ -30,7 +31,7 @@ const modules = {
 
 async function main() {
   const selection = await getSelection();
-  const os = argv.os || "arch";
+  const os = argv.os || "fedora";
   await install(selection, os);
 }
 
