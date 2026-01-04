@@ -10,3 +10,14 @@ export const core = [
   "awesome",
   "paru",
 ];
+
+export const dev = [
+  "cmake",
+  "gcc",
+  "gdb",
+  "make",
+  "ninja",
+  "python",
+  "go",
+  "rustup",
+];
