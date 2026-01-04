@@ -1,6 +1,9 @@
 #!/usr/bin/env zx
 
+import { core } from "./packages.mjs";
+
 const modules = {
+  core: installCore,
   alacritty: installAlacritty,
   awesome: installAwesome,
   bash: installBash,
@@ -15,6 +18,15 @@ const modules = {
   vim: installVim,
   zsh: installZsh,
 };
+
+async function installCore() {
+  console.log("Installing core packages...");
+  try {
+    await $`paru -S --needed ${core.join(" ")}`;
+  } catch (error) {
+    console.error("Failed to install core packages:", error);
+  }
+}
 
 async function main() {
   const selection = await getSelection();
