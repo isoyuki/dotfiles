@@ -133,10 +133,24 @@ async function installFonts() {
   console.log("Installing fonts...");
   const sourceDir = path.join(process.cwd(), "fonts", ".fonts");
   const targetDir = path.join(os.homedir(), ".local", "share", "fonts");
-
   await fs.ensureDir(targetDir);
-  await $`cp -r ${sourceDir}/* ${targetDir}`;
-  await $`fc-cache -f -v`;
+
+  let installed = 0;
+  const files = await fs.readdir(sourceDir);
+  for (const file of files) {
+    const source = path.join(sourceDir, file);
+    const target = path.join(targetDir, file);
+    if (await fs.pathExists(target)) {
+      console.log(`Font ${file} is already installed. Skipping.`);
+    } else {
+      await $`cp -r ${source} ${target}`;
+      installed++;
+    }
+  }
+
+  if (installed > 0) {
+    await $`fc-cache -f -v`;
+  }
 }
 
 async function installModule(name, source, target) {
