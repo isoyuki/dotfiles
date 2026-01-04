@@ -8,6 +8,7 @@ const modules = {
   core: installCore,
   dev: installDev,
   github: installGithub,
+  fonts: installFonts,
   alacritty: installAlacritty,
   awesome: installAwesome,
   bash: installBash,
@@ -22,6 +23,16 @@ const modules = {
   vim: installVim,
   zsh: installZsh,
 };
+
+async function installFonts() {
+  console.log("Installing fonts...");
+  const sourceDir = path.join(process.cwd(), "fonts", ".fonts");
+  const targetDir = path.join(os.homedir(), ".local", "share", "fonts");
+
+  await fs.ensureDir(targetDir);
+  await $`cp -r ${sourceDir}/* ${targetDir}`;
+  await $`fc-cache -f -v`;
+}
 
 async function installGithub() {
   console.log("Installing github packages...");
