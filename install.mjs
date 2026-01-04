@@ -110,187 +110,124 @@ async function install(selection) {
   }
 }
 
-async function installAlacritty() {
-    console.log("Installing alacritty...");
-    const sourceDir = path.join(process.cwd(), "alacritty", ".config", "alacritty");
-    const targetDir = path.join(os.homedir(), ".config", "alacritty");
-
-    await fs.ensureDir(targetDir);
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        const source = path.join(sourceDir, file);
-        const target = path.join(targetDir, file);
-        await $`ln -sf ${source} ${target}`;
+async function installModule(name, source, target) {
+    console.log(`Installing ${name}...`);
+    const installScript = path.join(process.cwd(), name, "install.sh");
+    if (await fs.pathExists(installScript)) {
+        await $`bash ${installScript}`;
+    } else {
+        await fs.ensureDir(target);
+        const files = await fs.readdir(source);
+        for (const file of files) {
+            const sourcePath = path.join(source, file);
+            const targetPath = path.join(target, file);
+            await $`ln -sf ${sourcePath} ${targetPath}`;
+        }
     }
+}
+
+async function installAlacritty() {
+    await installModule(
+        "alacritty",
+        path.join(process.cwd(), "alacritty", ".config", "alacritty"),
+        path.join(os.homedir(), ".config", "alacritty")
+    );
 }
 
 async function installAwesome() {
-  console.log("Installing awesome...");
-  const sourceDir = path.join(process.cwd(), "awesome", ".config", "awesome");
-  const targetDir = path.join(os.homedir(), ".config", "awesome");
-
-  await fs.ensureDir(targetDir);
-
-  const files = await fs.readdir(sourceDir);
-  for (const file of files) {
-    const source = path.join(sourceDir, file);
-    const target = path.join(targetDir, file);
-    await $`ln -sf ${source} ${target}`;
-  }
+    await installModule(
+        "awesome",
+        path.join(process.cwd(), "awesome", ".config", "awesome"),
+        path.join(os.homedir(), ".config", "awesome")
+    );
 }
 
 async function installBash() {
-    console.log("Installing bash...");
-    const sourceDir = path.join(process.cwd(), "bash");
-    const targetDir = os.homedir();
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        const source = path.join(sourceDir, file);
-        const target = path.join(targetDir, file);
-        await $`ln -sf ${source} ${target}`;
-    }
+    await installModule(
+        "bash",
+        path.join(process.cwd(), "bash"),
+        os.homedir()
+    );
 }
 
 async function installEmacs() {
-    console.log("Installing emacs...");
-    const sourceDir = path.join(process.cwd(), "emacs", ".config", "doom");
-    const targetDir = path.join(os.homedir(), ".config", "doom");
-
-    await fs.ensureDir(targetDir);
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        const source = path.join(sourceDir, file);
-        const target = path.join(targetDir, file);
-        await $`ln -sf ${source} ${target}`;
-    }
+    await installModule(
+        "emacs",
+        path.join(process.cwd(), "emacs", ".config", "doom"),
+        path.join(os.homedir(), ".config", "doom")
+    );
 }
 
 async function installGit() {
-    console.log("Installing git...");
-    const source = path.join(process.cwd(), "git", ".gitconfig");
-    const target = path.join(os.homedir(), ".gitconfig");
-    await $`ln -sf ${source} ${target}`;
+    await installModule(
+        "git",
+        path.join(process.cwd(), "git"),
+        os.homedir()
+    );
 }
 
 async function installGtk() {
-    console.log("Installing gtk...");
-    const sourceDir = path.join(process.cwd(), "gtk", ".config");
-    const targetDir = path.join(os.homedir(), ".config");
-
-    await fs.ensureDir(targetDir);
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        if (file.startsWith("gtk-")) {
-            const source = path.join(sourceDir, file);
-            const target = path.join(targetDir, file);
-            await $`ln -sf ${source} ${target}`;
-        }
-    }
+    await installModule(
+        "gtk",
+        path.join(process.cwd(), "gtk", ".config"),
+        path.join(os.homedir(), ".config")
+    );
 }
 
 async function installNvim() {
-    console.log("Installing nvim...");
-    const sourceDir = path.join(process.cwd(), "nvim", ".config", "nvim");
-    const targetDir = path.join(os.homedir(), ".config", "nvim");
-
-    await fs.ensureDir(targetDir);
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        const source = path.join(sourceDir, file);
-        const target = path.join(targetDir, file);
-        await $`ln -sf ${source} ${target}`;
-    }
+    await installModule(
+        "nvim",
+        path.join(process.cwd(), "nvim", ".config", "nvim"),
+        path.join(os.homedir(), ".config", "nvim")
+    );
 }
 
 async function installRofi() {
-    console.log("Installing rofi...");
-    const sourceDir = path.join(process.cwd(), "rofi", ".config", "rofi");
-    const targetDir = path.join(os.homedir(), ".config", "rofi");
-
-    await fs.ensureDir(targetDir);
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        const source = path.join(sourceDir, file);
-        const target = path.join(targetDir, file);
-        await $`ln -sf ${source} ${target}`;
-    }
+    await installModule(
+        "rofi",
+        path.join(process.cwd(), "rofi", ".config", "rofi"),
+        path.join(os.homedir(), ".config", "rofi")
+    );
 }
 
 async function installSsh() {
-    console.log("Installing ssh...");
-    const sourceDir = path.join(process.cwd(), "ssh", ".ssh");
-    const targetDir = path.join(os.homedir(), ".ssh");
-
-    await fs.ensureDir(targetDir);
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        const source = path.join(sourceDir, file);
-        const target = path.join(targetDir, file);
-        await $`ln -sf ${source} ${target}`;
-    }
+    await installModule(
+        "ssh",
+        path.join(process.cwd(), "ssh", ".ssh"),
+        path.join(os.homedir(), ".ssh")
+    );
 }
 
 async function installSystemd() {
-    console.log("Installing systemd...");
-    const sourceDir = path.join(process.cwd(), "systemd", ".config", "systemd");
-    const targetDir = path.join(os.homedir(), ".config", "systemd");
-
-    await fs.ensureDir(targetDir);
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        const source = path.join(sourceDir, file);
-        const target = path.join(targetDir, file);
-        await $`ln -sf ${source} ${target}`;
-    }
+    await installModule(
+        "systemd",
+        path.join(process.cwd(), "systemd", ".config", "systemd"),
+        path.join(os.homedir(), ".config", "systemd")
+    );
 }
 
 async function installTmux() {
-    console.log("Installing tmux...");
-    const sourceDir = path.join(process.cwd(), "tmux", ".config", "tmux");
-    const targetDir = path.join(os.homedir(), ".config", "tmux");
-
-    await fs.ensureDir(targetDir);
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        const source = path.join(sourceDir, file);
-        const target = path.join(targetDir, file);
-        await $`ln -sf ${source} ${target}`;
-    }
+    await installModule(
+        "tmux",
+        path.join(process.cwd(), "tmux", ".config", "tmux"),
+        path.join(os.homedir(), ".config", "tmux")
+    );
 }
 
 async function installVim() {
-    console.log("Installing vim...");
-    const source = path.join(process.cwd(), "vim", ".vim");
-    const target = path.join(os.homedir(), ".vim");
-    await $`ln -sf ${source} ${target}`;
+    await installModule(
+        "vim",
+        path.join(process.cwd(), "vim"),
+        os.homedir()
+    );
 }
 
 async function installZsh() {
-    console.log("Installing zsh...");
-    const sourceDir = path.join(process.cwd(), "zsh");
-    const targetDir = os.homedir();
-
-    const files = await fs.readdir(sourceDir);
-    for (const file of files) {
-        if (file === ".zshrc") {
-            const source = path.join(sourceDir, file);
-            const target = path.join(targetDir, file);
-            await $`ln -sf ${source} ${target}`;
-        }
-    }
-
-    const sourceOhMyZsh = path.join(process.cwd(), "zsh", ".config", "oh-my-zsh");
-    const targetOhMyZsh = path.join(os.homedir(), ".config", "oh-my-zsh");
-    await $`ln -sf ${sourceOhMyZsh} ${targetOhMyZsh}`;
+    await installModule(
+        "zsh",
+        path.join(process.cwd(), "zsh"),
+        os.homedir()
+    );
 }
 
 main();
