@@ -1,8 +1,12 @@
 #!/usr/bin/env zx
 
-import { core, dev } from "./packages.mjs";
-
 import { core, dev, github } from "./packages.mjs";
+
+const osPackageManagers = {
+  arch: "paru",
+  ubuntu: "apt",
+  macos: "brew",
+};
 
 const modules = {
   core: installCore,
@@ -24,14 +28,67 @@ const modules = {
   zsh: installZsh,
 };
 
-async function installFonts() {
-  console.log("Installing fonts...");
-  const sourceDir = path.join(process.cwd(), "fonts", ".fonts");
-  const targetDir = path.join(os.homedir(), ".local", "share", "fonts");
+async function main() {
+  const selection = await getSelection();
+  const os = argv.os || "arch";
+  await install(selection, os);
+}
 
-  await fs.ensureDir(targetDir);
-  await $`cp -r ${sourceDir}/* ${targetDir}`;
-  await $`fc-cache -f -v`;
+async function getSelection() {
+  let selection = [];
+
+  if (argv._.length > 0) {
+    selection = argv._;
+  } else {
+    const response = await question("Which modules do you want to install? (all) ", {
+      choices: Object.keys(modules),
+    });
+    selection = response.split(" ");
+  }
+
+  if (selection.includes("all")) {
+    selection = Object.keys(modules);
+  }
+
+  return selection;
+}
+
+async function install(selection, os) {
+  for (const module of selection) {
+    if (modules[module]) {
+      await modules[module](os);
+    } else {
+      console.log(`Module ${module} not found.`);
+    }
+  }
+}
+
+async function installCore(os) {
+  console.log("Installing core packages...");
+  const packageManager = osPackageManagers[os];
+  if (!packageManager) {
+    console.error(`Unsupported OS: ${os}`);
+    return;
+  }
+  try {
+    await $`${packageManager} -S --needed ${core.join(" ")}`;
+  } catch (error) {
+    console.error("Failed to install core packages:", error);
+  }
+}
+
+async function installDev(os) {
+  console.log("Installing dev packages...");
+  const packageManager = osPackageManagers[os];
+  if (!packageManager) {
+    console.error(`Unsupported OS: ${os}`);
+    return;
+  }
+  try {
+    await $`${packageManager} -S --needed ${dev.join(" ")}`;
+  } catch (error) {
+    console.error("Failed to install dev packages:", error);
+  }
 }
 
 async function installGithub() {
@@ -58,56 +115,14 @@ async function installGithub() {
   }
 }
 
-async function installCore() {
-  console.log("Installing core packages...");
-  try {
-    await $`paru -S --needed ${core.join(" ")}`;
-  } catch (error) {
-    console.error("Failed to install core packages:", error);
-  }
-}
+async function installFonts() {
+  console.log("Installing fonts...");
+  const sourceDir = path.join(process.cwd(), "fonts", ".fonts");
+  const targetDir = path.join(os.homedir(), ".local", "share", "fonts");
 
-async function installDev() {
-  console.log("Installing dev packages...");
-  try {
-    await $`paru -S --needed ${dev.join(" ")}`;
-  } catch (error) {
-    console.error("Failed to install dev packages:", error);
-  }
-}
-
-async function main() {
-  const selection = await getSelection();
-  await install(selection);
-}
-
-async function getSelection() {
-  let selection = [];
-
-  if (argv._.length > 0) {
-    selection = argv._;
-  } else {
-    const response = await question("Which modules do you want to install? (all) ", {
-      choices: Object.keys(modules),
-    });
-    selection = response.split(" ");
-  }
-
-  if (selection.includes("all")) {
-    selection = Object.keys(modules);
-  }
-
-  return selection;
-}
-
-async function install(selection) {
-  for (const module of selection) {
-    if (modules[module]) {
-      await modules[module]();
-    } else {
-      console.log(`Module ${module} not found.`);
-    }
-  }
+  await fs.ensureDir(targetDir);
+  await $`cp -r ${sourceDir}/* ${targetDir}`;
+  await $`fc-cache -f -v`;
 }
 
 async function installModule(name, source, target) {
