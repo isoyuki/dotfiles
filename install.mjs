@@ -72,7 +72,11 @@ async function installCore(os) {
     return;
   }
   try {
-    await $`${packageManager} -S --needed ${core.join(" ")}`;
+    if (packageManager === "dnf") {
+      await $`sudo ${packageManager} install -y ${core.join(" ")}`;
+    } else {
+      await $`${packageManager} -S --needed ${core.join(" ")}`;
+    }
   } catch (error) {
     console.error("Failed to install core packages:", error);
   }
@@ -86,7 +90,11 @@ async function installDev(os) {
     return;
   }
   try {
-    await $`${packageManager} -S --needed ${dev.join(" ")}`;
+    if (packageManager === "dnf") {
+      await $`sudo ${packageManager} install -y ${dev.join(" ")}`;
+    } else {
+      await $`${packageManager} -S --needed ${dev.join(" ")}`;
+    }
   } catch (error) {
     console.error("Failed to install dev packages:", error);
   }
