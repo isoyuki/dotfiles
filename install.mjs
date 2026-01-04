@@ -116,10 +116,15 @@ async function installGithub() {
     }
 
     if (name === "picom") {
-      await $`git -C ${repoDir} submodule update --init --recursive`;
-      await $`meson --buildtype=release . build`;
-      await $`ninja -C build`;
-      await $`sudo ninja -C build install`;
+      const buildDir = path.join(repoDir, "build");
+      if (await fs.pathExists(buildDir)) {
+        console.log("picom is already built. Skipping build and install.");
+      } else {
+        await $`git -C ${repoDir} submodule update --init --recursive`;
+        await $`meson --buildtype=release . build`;
+        await $`ninja -C build`;
+        await $`sudo ninja -C build install`;
+      }
     }
   }
 }
