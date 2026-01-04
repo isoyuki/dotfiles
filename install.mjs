@@ -1,9 +1,10 @@
 #!/usr/bin/env zx
 
-import { core } from "./packages.mjs";
+import { core, dev } from "./packages.mjs";
 
 const modules = {
   core: installCore,
+  dev: installDev,
   alacritty: installAlacritty,
   awesome: installAwesome,
   bash: installBash,
@@ -25,6 +26,15 @@ async function installCore() {
     await $`paru -S --needed ${core.join(" ")}`;
   } catch (error) {
     console.error("Failed to install core packages:", error);
+  }
+}
+
+async function installDev() {
+  console.log("Installing dev packages...");
+  try {
+    await $`paru -S --needed ${dev.join(" ")}`;
+  } catch (error) {
+    console.error("Failed to install dev packages:", error);
   }
 }
 
