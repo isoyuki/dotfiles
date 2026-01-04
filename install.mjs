@@ -2,9 +2,12 @@
 
 import { core, dev } from "./packages.mjs";
 
+import { core, dev, github } from "./packages.mjs";
+
 const modules = {
   core: installCore,
   dev: installDev,
+  github: installGithub,
   alacritty: installAlacritty,
   awesome: installAwesome,
   bash: installBash,
@@ -19,6 +22,30 @@ const modules = {
   vim: installVim,
   zsh: installZsh,
 };
+
+async function installGithub() {
+  console.log("Installing github packages...");
+  const installDir = path.join(os.homedir(), ".local", "src");
+  await fs.ensureDir(installDir);
+
+  for (const [name, url] of Object.entries(github)) {
+    console.log(`Installing ${name} from ${url}...`);
+    const repoDir = path.join(installDir, name);
+    if (await fs.pathExists(repoDir)) {
+      console.log(`${name} is already cloned. Pulling latest changes...`);
+      await $`git -C ${repoDir} pull`;
+    } else {
+      await $`git clone ${url} ${repoDir}`;
+    }
+
+    if (name === "picom") {
+      await $`git -C ${repoDir} submodule update --init --recursive`;
+      await $`meson --buildtype=release . build`;
+      await $`ninja -C build`;
+      await $`sudo ninja -C build install`;
+    }
+  }
+}
 
 async function installCore() {
   console.log("Installing core packages...");
