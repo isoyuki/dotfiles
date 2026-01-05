@@ -1,8 +1,10 @@
 # Dotfiles
 
-## Usage
+## Script-based Installation
 
-To install the dotfiles, run the following command:
+Instructions for the legacy script-based setup.
+
+To install dotfiles, run the following command:
 
 ```bash
 ./install.mjs [modules...] [--os <os>]
@@ -10,7 +12,7 @@ To install the dotfiles, run the following command:
 
 ### Modules
 
-You can specify which modules to install by passing their names as arguments. If no modules are specified, you will be prompted to select them.
+Specify which modules to install by passing their names as arguments. If no modules are specified, a prompt will appear for selection.
 
 Available modules:
 
@@ -36,7 +38,7 @@ To install all modules, use the `all` keyword.
 
 ### Operating System
 
-You can specify the operating system using the `--os` flag. The default operating system is `fedora`.
+Specify the operating system using the `--os` flag. The default OS is `fedora`.
 
 Supported operating systems:
 
@@ -65,34 +67,36 @@ Install the `zsh` module for macOS:
 ./install.mjs zsh --os macos
 ```
 
+---
+
 ## Nix & Home Manager Setup
 
-Alongside the script-based installation, this repository now includes a setup for managing packages and configurations declaratively using [Nix](https://nixos.org/) and [Home Manager](https://github.com/nix-community/home-manager). This allows for reproducible, isolated, and predictable environments.
+A declarative setup for managing packages and configurations using [Nix](https://nixos.org/) and [Home Manager](https://github.com/nix-community/home-manager) for reproducible, isolated, and predictable environments.
 
 ### Initial Setup
 
-1.  **Install Nix:** If you haven't already, install the Nix package manager. The recommended multi-user installation can be done by running:
+1.  **Install Nix:** Install the Nix package manager if it's not already present.
     ```bash
     sh <(curl -L https://nix.dev/install) --daemon
     ```
 
-2.  **Enable Flakes:** The Nix configuration for this repository uses Flakes, a modern feature for managing dependencies. Enable it by adding the following to `~/.config/nix/nix.conf` (or `/etc/nix/nix.conf`):
+2.  **Enable Flakes:** The Nix configuration uses Flakes. Enable it by adding the following to `~/.config/nix/nix.conf` (or `/etc/nix/nix.conf`):
     ```
     experimental-features = nix-command flakes
     ```
 
-3.  **Apply Configuration:** Run the initial activation from the root of this repository. This will install the packages and create the symlinks defined in `nix/home.nix`.
+3.  **Apply Configuration:** Run the initial activation from the root of the repository. This installs packages and creates symlinks defined in `nix/home.nix`.
     ```bash
     home-manager switch --flake ./nix#wren
     ```
-    > **Note:** Nix requires configuration files to be tracked by Git. If you get an error, make sure any changes to the `nix/` directory are added and committed.
+    > **Note:** Nix requires configuration files to be tracked by Git. If an error occurs, ensure changes to the `nix/` directory are added and committed.
 
-### Managing Your Configuration
+### Managing the Configuration
 
 The entire Nix setup is contained within the `nix/` directory.
 
--   `nix/flake.nix`: This file pins the versions of `nixpkgs` and `home-manager`. You generally won't need to edit this unless you want to update these dependencies.
--   `nix/home.nix`: This is your main configuration file. You can manage packages, services, and other settings here.
+-   `nix/flake.nix`: Pins the versions of `nixpkgs` and `home-manager`. Generally does not need to be edited unless updating dependencies.
+-   `nix/home.nix`: The main configuration file for managing packages, services, and other settings.
 
 #### Searching for Packages
 
@@ -109,7 +113,7 @@ nix search nixpkgs neofetch
 
 #### Adding a Package
 
-To add a new package to your environment:
+To add a new package:
 
 1.  Open `nix/home.nix`.
 2.  Add the package name to the `home.packages` list. For example, to add `neofetch`:
@@ -124,10 +128,10 @@ To add a new package to your environment:
 
 #### Applying Changes
 
-After modifying `nix/home.nix` or any other file in the `nix/` directory, apply the changes by running the following command from the root of the repository:
+After modifying `nix/home.nix`, apply the changes by running the following command from the root of the repository:
 
 ```bash
 home-manager switch --flake ./nix#wren
 ```
 
-This command will build your new configuration and activate it, making the new packages available in your shell. Remember to commit your changes to Git.
+This command builds the new configuration and activates it, making new packages available in the shell. Remember to commit any changes to Git.
