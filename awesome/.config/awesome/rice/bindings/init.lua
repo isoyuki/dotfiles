@@ -7,7 +7,7 @@ local bindbox = require("widget.bindbox")
 ---@class Rice.Bindings
 local bindings = {}
 
-bindbox.main:add_group(require("rice.bindings.apps.feh"))
+
 bindbox.main:add_group(require("rice.bindings.apps.mpv"))
 bindbox.main:add_groups {
     {
