@@ -8,7 +8,11 @@ require("core")
 
 require("theme")
 require("rice")
-require("services")
+local services = require("services")
+if services.wallpaper then
+  services.wallpaper.restore()
+end
+
 require("ui")
 require("autostart")
 
