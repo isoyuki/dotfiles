@@ -31,7 +31,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_CUSTOM=/home/wren/.config/oh-my-zsh/custom
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting docker z zsh-vi-mode fzf)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting docker z zsh-vi-mode fzf zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
