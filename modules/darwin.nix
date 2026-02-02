@@ -3,7 +3,8 @@
 {
   imports = [ ./common.nix ];
 
-  home.homeDirectory = builtins.getEnv "HOME";
+  home.username = "wren";
+  home.homeDirectory = "/Users/wren";
 
   # macOS specific packages
   home.packages = with pkgs; [

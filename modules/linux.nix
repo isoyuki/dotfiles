@@ -3,6 +3,7 @@
 {
   imports = [ ./common.nix ];
 
+  home.username = "wren";
   home.homeDirectory = "/home/wren";
 
   # Linux specific packages
