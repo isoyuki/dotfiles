@@ -1,0 +1,7 @@
+# Nix/Home Manager
+result
+.DS_Store
+
+# Local secrets/config
+*.local.nix
+.gitconfig.local

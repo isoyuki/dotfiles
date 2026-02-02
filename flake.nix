@@ -15,7 +15,8 @@
     homeConfigurations."fedora" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [ 
-        ./modules/linux.nix 
+        ./modules/linux.nix
+        ./modules/git-personal.nix 
       ];
     };
 
@@ -24,8 +25,10 @@
     homeConfigurations."macos" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [ 
-        ./modules/darwin.nix 
+        ./modules/darwin.nix
+        ./modules/git-work.nix 
       ];
     };
+
   };
 }
