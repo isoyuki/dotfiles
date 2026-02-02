@@ -71,67 +71,69 @@ Install the `zsh` module for macOS:
 
 ## Nix & Home Manager Setup
 
-A declarative setup for managing packages and configurations using [Nix](https://nixos.org/) and [Home Manager](https://github.com/nix-community/home-manager) for reproducible, isolated, and predictable environments.
+A declarative setup for managing packages and configurations using [Nix](https://nixos.org/) and [Home Manager](https://github.com/nix-community/home-manager). This setup supports both Linux (Fedora) and macOS.
 
-### Initial Setup
+### Prerequisites
 
-1.  **Install Nix:** Install the Nix package manager if it's not already present.
+1.  **Install Nix:**
     ```bash
-    sh <(curl -L https://nix.dev/install) --daemon
+    sh <(curl -L https://nixos.org/nix/install) --daemon
     ```
 
-2.  **Enable Flakes:** The Nix configuration uses Flakes. Enable it by adding the following to `~/.config/nix/nix.conf` (or `/etc/nix/nix.conf`):
+2.  **Enable Flakes:**
+    Edit `~/.config/nix/nix.conf` or `/etc/nix/nix.conf` and add:
     ```
     experimental-features = nix-command flakes
     ```
 
-3.  **Apply Configuration:** Run the initial activation from the root of the repository. This installs packages and creates symlinks defined in `nix/home.nix`.
+### Directory Structure
+
+The configuration is split into modules for reuse:
+
+*   `flake.nix`: Entry point defining configurations (`fedora` and `macos`).
+*   `modules/common.nix`: Packages and settings shared by all OSs.
+*   `modules/linux.nix`: Linux-specific settings (e.g., Desktop Environment configs).
+*   `modules/darwin.nix`: macOS-specific settings.
+
+### Usage
+
+**1. Apply Configuration**
+
+Run the following command from the repository root to build and activate your environment:
+
+*   **Fedora (Linux):**
     ```bash
-    home-manager switch --flake ./nix#wren
+    nix run home-manager/master -- switch --flake .#fedora
     ```
-    > **Note:** Nix requires configuration files to be tracked by Git. If an error occurs, ensure changes to the `nix/` directory are added and committed.
 
-### Managing the Configuration
+*   **macOS:**
+    ```bash
+    nix run home-manager/master -- switch --flake .#macos
+    ```
 
-The entire Nix setup is contained within the `nix/` directory.
+**2. Update Packages**
 
--   `nix/flake.nix`: Pins the versions of `nixpkgs` and `home-manager`. Generally does not need to be edited unless updating dependencies.
--   `nix/home.nix`: The main configuration file for managing packages, services, and other settings.
-
-#### Searching for Packages
-
-To find available packages in `nixpkgs`, use the `nix search` command:
+To update all packages to their latest versions defined in `nixpkgs`:
 
 ```bash
-nix search nixpkgs <package-name>
+nix flake update
+nix run home-manager/master -- switch --flake .#<profile>
 ```
 
-For example:
-```bash
-nix search nixpkgs neofetch
-```
+### Managing Configuration
 
-#### Adding a Package
+**Adding Packages:**
+*   Add cross-platform tools (e.g., `ripgrep`) to `modules/common.nix`.
+*   Add OS-specific tools to `modules/linux.nix` or `modules/darwin.nix`.
 
-To add a new package:
-
-1.  Open `nix/home.nix`.
-2.  Add the package name to the `home.packages` list. For example, to add `neofetch`:
+**Managing Dotfiles:**
+*   **Symlinking:** You can map existing dotfiles (like `awesome/`) using `home.file` in the relevant module:
     ```nix
-    home.packages = [
-      pkgs.htop
-      pkgs.cowsay
-      pkgs.neofetch # Add the new package here
-    ];
+    home.file.".config/awesome" = {
+      source = ../awesome/.config/awesome;
+      recursive = true;
+    };
     ```
-3.  Save the file.
+*   **Native Config:** Prefer using Home Manager modules (e.g., `programs.git`) for better integration where possible.
 
-#### Applying Changes
-
-After modifying `nix/home.nix`, apply the changes by running the following command from the root of the repository:
-
-```bash
-home-manager switch --flake ./nix#wren
-```
-
-This command builds the new configuration and activates it, making new packages available in the shell. Remember to commit any changes to Git.
+> **Note:** Changes to config files managed by Home Manager require running the `switch` command to take effect.
