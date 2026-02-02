@@ -5,7 +5,6 @@
   
   programs.home-manager.enable = true;
 
-  home.username = builtins.getEnv "USER";
   # Note: homeDirectory is usually set in the flake or platform specific file
   # to handle /home/wren vs /Users/wren
 
