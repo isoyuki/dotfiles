@@ -15,12 +15,41 @@
               # but on Fedora via HM you might just want the config management
   ];
 
-  # Example: Symlinking your existing AwesomeWM config
-  # This replaces 'stow awesome'
+  # AwesomeWM
   home.file.".config/awesome" = {
-    source = ../awesome/.config/awesome;
+    source = ../config/awesome;
     recursive = true;
   };
+
+  # Rofi
+  home.file.".config/rofi" = {
+    source = ../config/rofi;
+    recursive = true;
+  };
+
+  # GTK 3.0
+  home.file.".config/gtk-3.0" = {
+    source = ../config/gtk-3.0;
+    recursive = true;
+  };
+
+  # Systemd User Units
+  home.file.".config/systemd" = {
+    source = ../config/systemd;
+    recursive = true;
+  };
+
+  # X11 Configuration
+  home.file.".Xresources".source = ../home/.Xresources;
+  home.file.".xinitrc".source = ../home/.xinitrc;
+  
+  # User Fonts
+  home.file.".fonts" = {
+    source = ../home/.fonts;
+    recursive = true;
+  };
+
+
   
   # X11 / GTK settings could go here
   gtk = {
