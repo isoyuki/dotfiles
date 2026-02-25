@@ -1,3 +1,8 @@
+# Uncomment below if profiling the zsh startup
+# zmodload zsh/zprof
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,71 +12,59 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH=/usr/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
 
-# Go
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:$CUDA_HOME/bin
-export PATH=$PATH:~/.config/emacs/bin
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "/home/wren/.oh-my-zsh/completions/_bun" ] && source "/home/wren/.oh-my-zsh/completions/_bun"
-
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR=/usr/bin/vim
-export VISUAL=$EDITOR
 
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_CUSTOM=/home/wren/.config/oh-my-zsh/custom
 
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting docker z zsh-vi-mode fzf zsh-fzf-history-search)
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# Uncomment the following line to use case-sensitive completion.
+plugins=(
+    git
+    zsh-autosuggestions
+    fast-syntax-highlighting
+    zsh-vi-mode
+)
+
+# Workaround to get zsh-vi-mode to not conflict with fzf
+ZVM_INIT_MODE=sourcing
 source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-autoload -U +X bashcompinit && bashcompinit
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
+eval "$(mise activate zsh)"
 
-complete -o nospace -C /usr/bin/terraform terraform
-
-export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64
-
-export GTK_THEME=Adwaita:dark
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/wren/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/wren/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/wren/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/wren/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+alias vi="nvim"
+export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
-export PATH=/home/wren/.opencode/bin:$PATH
+export PATH=/Users/ykume/.opencode/bin:$PATH
+# autoload -U compinit; compinit
+# Optimisation for compinit
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 
-# fzf history
-# function fzf-select-history() {
-#     BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER" --reverse)
-#     CURSOR=$#BUFFER
-#     zle reset-prompt
-# }
-# zle -N fzf-select-history
-# bindkey '^r' fzf-select-history
-#
+# gcloud auto completion
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+[ -f ~/.env.sh ] && source ~/.env.sh
+
+# Uncomment below if profiling the zsh startup
+# zprof
