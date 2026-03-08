@@ -2,7 +2,7 @@ return {
   {
     "stevearc/aerial.nvim",
     keys = {
-      { "<leader>a", "<cmd>AerialToggle<CR>", desc = "Toggle Aerial" },
+      { "<leader>A", "<cmd>AerialToggle<CR>", desc = "Toggle Aerial" },
     },
   },
   {
@@ -124,28 +124,28 @@ return {
         desc = "Harpoon: Add file",
       },
       {
-        "<C-h>",
+        "<leader>1",
         function()
           require("harpoon"):list():select(1)
         end,
         desc = "Harpoon: Select file 1",
       },
       {
-        "<C-t>",
+        "<leader>2",
         function()
           require("harpoon"):list():select(2)
         end,
         desc = "Harpoon: Select file 2",
       },
       {
-        "<C-n>",
+        "<leader>3",
         function()
           require("harpoon"):list():select(3)
         end,
         desc = "Harpoon: Select file 3",
       },
       {
-        "<C-s>",
+        "<leader>4",
         function()
           require("harpoon"):list():select(4)
         end,
@@ -239,11 +239,11 @@ return {
         desc = "[S]earch current [W]ord",
       },
       {
-        "<leader>sg",
+        "<leader>sl",
         function()
           require("telescope.builtin").live_grep()
         end,
-        desc = "[S]earch by [G]rep",
+        desc = "[S]earch by [L]ive grep",
       },
       {
         "<leader>sd",
