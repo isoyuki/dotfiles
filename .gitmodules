@@ -1,3 +1,24 @@
 [submodule "alacritty/.config/alacritty/themes"]
 	path = alacritty/.config/alacritty/themes
 	url = https://github.com/alacritty/alacritty-theme
+[submodule "config/oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
+	path = config/oh-my-zsh/custom/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+[submodule "config/oh-my-zsh/custom/plugins/zsh-autocomplete"]
+	path = config/oh-my-zsh/custom/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git
+[submodule "config/oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "config/oh-my-zsh/custom/plugins/zsh-fzf-history-search"]
+	path = config/oh-my-zsh/custom/plugins/zsh-fzf-history-search
+	url = https://github.com/joshskidmore/zsh-fzf-history-search
+[submodule "config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "config/oh-my-zsh/custom/plugins/zsh-vi-mode"]
+	path = config/oh-my-zsh/custom/plugins/zsh-vi-mode
+	url = https://github.com/jeffreytse/zsh-vi-mode
+[submodule "config/oh-my-zsh/custom/themes/powerlevel10k"]
+	path = config/oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
