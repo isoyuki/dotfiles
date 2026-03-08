@@ -62,8 +62,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 #
-echo "source <(COMPLETE=zsh tms)" >> ~/.zshrc
-
 
 # opencode
 export PATH=/home/wren/.opencode/bin:$PATH
@@ -76,10 +74,3 @@ export PATH=/home/wren/.opencode/bin:$PATH
 # }
 # zle -N fzf-select-history
 # bindkey '^r' fzf-select-history
-source <(COMPLETE=zsh tms)
-source <(COMPLETE=zsh tms)
-source <(COMPLETE=zsh tms)
-source <(COMPLETE=zsh tms)
-source <(COMPLETE=zsh tms)
-source <(COMPLETE=zsh tms)
-source <(COMPLETE=zsh tms)
