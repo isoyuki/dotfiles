@@ -6,9 +6,9 @@ return {
   },
   keys = {
     {
-      "<leader>dt",
+      "<leader>dT",
       function() require('dap-go').debug_test() end,
-      desc = "Debug test"
+      desc = "DAP: Debug Go test"
     },
   },
 }

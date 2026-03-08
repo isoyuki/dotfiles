@@ -6,8 +6,7 @@ return {
 			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{ "j-hui/fidget.nvim",       opts = {} },
-			{ "folke/neodev.nvim",       opts = {} },
+				{ "folke/neodev.nvim",       opts = {} },
 			"hrsh7th/cmp-nvim-lsp",
 			"nvim-telescope/telescope.nvim",
 		},
@@ -57,7 +56,9 @@ return {
 
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
-					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+					vim.keymap.set("n", "<leader>rn", function()
+						return ":IncRename " .. vim.fn.expand("<cword>")
+					end, { buffer = event.buf, desc = "LSP: [R]e[n]ame", expr = true })
 
 					-- Execute a code action, usually your cursor needs to be on top of an error
 					-- or a suggestion from your LSP for this to activate.
