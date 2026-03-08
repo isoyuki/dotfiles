@@ -37,3 +37,9 @@
 [submodule "config/tmux/plugins/tmux-continuum"]
 	path = config/tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum.git
+[submodule "config/oh-my-zsh/custom/plugins/fzf-tab"]
+	path = config/oh-my-zsh/custom/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
+[submodule "config/oh-my-zsh/custom/plugins/forgit"]
+	path = config/oh-my-zsh/custom/plugins/forgit
+	url = https://github.com/wfxr/forgit
