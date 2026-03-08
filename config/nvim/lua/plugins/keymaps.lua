@@ -6,12 +6,6 @@ return {
     },
   },
   {
-    "kevinhwang91/nvim-bqf",
-    keys = {
-      { "<leader>p", "<cmd>BqfTogglePreview<CR>", desc = "Toggle Preview" },
-    },
-  },
-  {
     "mfussenegger/nvim-dap",
     keys = {
       { "<leader>dt", function() require("dap").toggle_breakpoint() end,                                    desc = "DAP: Toggle Breakpoint" },

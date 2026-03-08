@@ -1,17 +1,13 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		tag = "v1.0.0",
 		dependencies = {
 			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-				{ "folke/neodev.nvim",       opts = {} },
+			{ "folke/lazydev.nvim",      opts = {} },
 			"hrsh7th/cmp-nvim-lsp",
 			"nvim-telescope/telescope.nvim",
-		},
-		opts = {
-			inlay_hints = { enabled = true },
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -113,6 +109,7 @@ return {
 					--
 					-- This may be unwanted, since they displace some of your code
 					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+						vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 						end, "[T]oggle Inlay [H]ints")
@@ -199,19 +196,14 @@ return {
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-			require("mason-lspconfig").setup({
-				handlers = {
-					function(server_name)
-						local server = servers[server_name] or {}
-						-- This handles overriding only values explicitly passed
-						-- by the server configuration above. Useful when disabling
-						-- certain features of an LSP (for example, turning off formatting for tsserver)
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities,
-							server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
-					end,
-				},
-			})
+			require("mason-lspconfig").setup()
+
+			for server_name, server_config in pairs(servers) do
+				server_config.capabilities = vim.tbl_deep_extend("force", {}, capabilities,
+					server_config.capabilities or {})
+				vim.lsp.config(server_name, server_config)
+			end
+			vim.lsp.enable(vim.tbl_keys(servers))
 		end,
 	},
 }

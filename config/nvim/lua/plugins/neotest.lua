@@ -6,7 +6,13 @@ return {
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-neotest/neotest-python",
-		"nvim-neotest/neotest-go",
+		{
+			"fredrikaverpil/neotest-golang",
+			version = "*",
+			build = function()
+				vim.system({ "go", "install", "gotest.tools/gotestsum@latest" }):wait()
+			end,
+		},
 		"rouge8/neotest-rust",
 	},
 	keys = {
@@ -26,8 +32,10 @@ return {
 	config = function()
 		require("neotest").setup({
 			adapters = {
+				require("neotest-golang")({
+					runner = "gotestsum",
+				}),
 				require("neotest-python"),
-				require("neotest-go"),
 				require("neotest-rust"),
 			},
 			status = { virtual_text = true },
