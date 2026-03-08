@@ -349,18 +349,18 @@ Add, change, or delete surrounding characters. Think quotes, brackets, tags.
 
 | Key | Mode | Action | Example |
 |-----|------|--------|---------|
-| `ys<motion><char>` | Normal | **Add** surrounding | `ysiw"` - surround word with `"` |
-| `yss<char>` | Normal | **Surround line** | `yss)` - wrap line in `()` |
-| `ds<char>` | Normal | **Delete** surrounding | `ds"` - remove surrounding `"` |
-| `cs<old><new>` | Normal | **Change** surrounding | `cs"'` - change `"` to `'` |
-| `S<char>` | Visual | **Surround selection** | Select + `S"` wraps in `"` |
+| `gsa<motion><char>` | Normal | **Add** surrounding | `gsaiw"` - surround word with `"` |
+| `gsl<char>` | Normal | **Surround line** | `gsl)` - wrap line in `()` |
+| `gsd<char>` | Normal | **Delete** surrounding | `gsd"` - remove surrounding `"` |
+| `gsc<old><new>` | Normal | **Change** surrounding | `gsc"'` - change `"` to `'` |
+| `gs<char>` | Visual | **Surround selection** | Select + `gs"` wraps in `"` |
 
 **Common patterns:**
-- `ysiw)` - surround inner word with parens: `word` -> `(word)`
-- `ysiw"` - surround inner word with quotes: `word` -> `"word"`
-- `cs'"` - change single quotes to double: `'hello'` -> `"hello"`
-- `ds(` - delete parens: `(hello)` -> `hello`
-- `ysa")` - surround around quotes with parens: `"hello"` -> `("hello")`
+- `gsaiw)` - surround inner word with parens: `word` -> `(word)`
+- `gsaiw"` - surround inner word with quotes: `word` -> `"word"`
+- `gsc'"` - change single quotes to double: `'hello'` -> `"hello"`
+- `gsd(` - delete parens: `(hello)` -> `hello`
+- `gsaa")` - surround around quotes with parens: `"hello"` -> `("hello")`
 
 ### Mini.ai - Enhanced text objects
 
@@ -537,10 +537,10 @@ Work through these exercises to build muscle memory. Do each drill until it feel
 6. `Space du` to open DAP UI, `Space di` to step into
 
 ### Drill 6: Editing efficiency (10 min)
-1. Practice surround: put cursor on a word, `ysiw"` to quote it
-2. Change the quotes: `cs"'` (double to single)
-3. Delete the quotes: `ds'`
-4. Select a block visually, `S(` to wrap in parens
+1. Practice surround: put cursor on a word, `gsaiw"` to quote it
+2. Change the quotes: `gsc"'` (double to single)
+3. Delete the quotes: `gsd'`
+4. Select a block visually, `gs(` to wrap in parens
 5. Use `gcc` to comment a line, undo with `gcc` again
 6. Select 5 lines, `gc` to comment them all
 7. Use `Space f` to format the buffer
