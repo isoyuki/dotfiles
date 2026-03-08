@@ -25,5 +25,10 @@
         }, 
       }
     }
+  },
+  "permission": {
+    "read": {
+      "*.env*": "deny"
+    }
   }
 }
