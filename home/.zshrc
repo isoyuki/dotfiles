@@ -45,6 +45,7 @@ source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
+source <(COMPLETE=zsh tms)
 
 alias vi="nvim"
 export PATH="$HOME/.local/bin:$PATH"
