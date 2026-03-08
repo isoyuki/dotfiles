@@ -34,6 +34,8 @@ plugins=(
     zsh-autosuggestions
     fast-syntax-highlighting
     zsh-vi-mode
+    fzf-tab
+    forgit
 )
 
 # Workaround to get zsh-vi-mode to not conflict with fzf
@@ -45,6 +47,23 @@ source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
+
+# ── fzf defaults (use fd + bat) ──────────────────────────────────────
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --info=inline'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+export FZF_ALT_C_OPTS="--preview 'ls -la --color=always {}'"
+
+# ── fzf-tab: preview for tab completions ─────────────────────────────
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -la --color=always $realpath'
+zstyle ':fzf-tab:complete:cat:*' fzf-preview 'bat --color=always --style=numbers $realpath 2>/dev/null || ls -la --color=always $realpath'
+zstyle ':fzf-tab:complete:ssh:*' fzf-preview 'awk "/^Host $word/,/^Host /" ~/.ssh/config 2>/dev/null'
+zstyle ':fzf-tab:complete:docker-*:*' fzf-preview 'docker inspect $word 2>/dev/null | head -40'
+zstyle ':fzf-tab:complete:kubectl-*:*' fzf-preview 'kubectl describe $word 2>/dev/null | head -40'
+zstyle ':fzf-tab:complete:kill:*' fzf-preview 'ps -p $word -o pid,user,%cpu,%mem,command 2>/dev/null'
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'systemctl status $word 2>/dev/null'
 # source <(COMPLETE=zsh tms)
 
 alias vi="nvim"

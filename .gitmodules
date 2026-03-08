@@ -43,3 +43,15 @@
 [submodule "config/oh-my-zsh/custom/plugins/forgit"]
 	path = config/oh-my-zsh/custom/plugins/forgit
 	url = https://github.com/wfxr/forgit
+[submodule "config/tmux/plugins/nord-tmux"]
+	path = config/tmux/plugins/nord-tmux
+	url = https://github.com/arcticicestudio/nord-tmux
+[submodule "config/tmux/plugins/tmux-mighty-scroll"]
+	path = config/tmux/plugins/tmux-mighty-scroll
+	url = https://github.com/noscript/tmux-mighty-scroll
+[submodule "config/tmux/plugins/tmux-prefix-highlight"]
+	path = config/tmux/plugins/tmux-prefix-highlight
+	url = https://github.com/tmux-plugins/tmux-prefix-highlight
+[submodule "config/tmux/plugins/tmux-yank"]
+	path = config/tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank
