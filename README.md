@@ -55,3 +55,25 @@ to link configs into place via home-manager:
 - **~/nix-darwin** — macOS (nix-darwin + home-manager)
 
 You can use either Stow (`make all`) or the Nix repos to deploy these files.
+
+## Troubleshooting
+
+### vim-tmux-navigator: "server exited unexpectedly"
+
+If `TmuxNavigateDown` (or any direction) works from a zsh pane but not from inside nvim, the cause is likely a **tmux version mismatch** between the running server and the client binary in `$PATH`.
+
+The vim-tmux-navigator plugin shells out to `tmux select-pane` to switch panes. If the tmux server was started with one version (e.g. Nix's 3.6a) but nvim resolves `tmux` to a different version (e.g. Fedora's 3.5a via `/usr/bin/tmux`), the client can't communicate with the server and silently fails.
+
+Navigation from zsh panes still works because tmux handles those keybindings internally (via `if-shell` in `tmux.conf`) without spawning a client process.
+
+**Diagnosis:**
+
+```bash
+# Check which tmux the server is running
+ls -la /proc/$(pgrep -f "tmux new")/exe
+
+# Check which tmux is first in PATH
+which tmux
+```
+
+**Fix:** Remove the duplicate tmux so only one version exists, or ensure PATH ordering puts the correct one first.
