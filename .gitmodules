@@ -19,3 +19,6 @@
 [submodule "config/oh-my-zsh/custom/themes/powerlevel10k"]
 	path = config/oh-my-zsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "config/alacritty/themes"]
+	path = config/alacritty/themes
+	url = https://github.com/alacritty/alacritty-theme
