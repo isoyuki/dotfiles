@@ -23,6 +23,29 @@ make config    # Links config/ -> ~/.config/
 make system    # Links system/ -> / (requires sudo)
 ```
 
+## Submodules
+
+This repo uses git submodules for zsh plugins, themes, and alacritty color schemes.
+
+**Clone with submodules:**
+
+```bash
+git clone --recurse-submodules <repo-url>
+```
+
+**Already cloned? Initialize submodules after the fact:**
+
+```bash
+git submodule init
+git submodule update
+```
+
+**Update all submodules to latest upstream:**
+
+```bash
+git submodule update --remote
+```
+
 ## Nix integration
 
 These dotfiles are referenced by separate Nix repos that use `mkOutOfStoreSymlink`
