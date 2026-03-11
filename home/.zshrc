@@ -1,6 +1,5 @@
 # Uncomment below if profiling the zsh startup
 # zmodload zsh/zprof
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -68,6 +67,7 @@ zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'systemctl status $word 2>/
 
 alias vi="nvim"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH='/Users/ykume/.duckdb/cli/latest':$PATH
 
 # opencode
 export PATH=/Users/ykume/.opencode/bin:$PATH
@@ -79,10 +79,14 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+source <(jj util completion zsh)
+
 # gcloud auto completion
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+# eval "$(ssh-agent -s)" > 
 
 [ -f ~/.env.sh ] && source ~/.env.sh
 
