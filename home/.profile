@@ -5,3 +5,5 @@ export PATH="$PATH:/home/wren/.local/share/JetBrains/Toolbox/scripts"
 export PATH=$PATH:/usr/local/go/bin
 
 . "$HOME/.cargo/env"
+
+export GTK_THEME=Adwaita:dark

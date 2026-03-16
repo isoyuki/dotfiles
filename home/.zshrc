@@ -42,6 +42,8 @@ source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 
+setopt HIST_IGNORE_ALL_DUPS
+
 # ── fzf defaults (use fd + bat) ──────────────────────────────────────
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --info=inline'
@@ -90,3 +92,4 @@ compinit -C
 
 # Uncomment below if profiling the zsh startup
 # zprof
+
