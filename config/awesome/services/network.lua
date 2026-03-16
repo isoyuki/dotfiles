@@ -7,7 +7,7 @@ local gears = require("gears")
 local network_service = {
 	config = {
 		interval = 2,
-		interface = "wlp9s0",
+		interface = "eth0",
 	},
 	last_data = {
 		time = 0,
@@ -37,9 +37,11 @@ local function read_data()
 	local connected = read_file(format("/sys/class/net/%s/operstate", network_service.config.interface), "l") == "up"
 	local download, upload
 	if connected then
-		download = read_file(format("/sys/class/net/%s/statistics/rx_bytes", network_service.config.interface), "n")
-			or 0
-		upload = read_file(format("/sys/class/net/%s/statistics/tx_bytes", network_service.config.interface), "n") or 0
+		download = read_file(format("/sys/class/net/%s/statistics/rx_bytes", network_service.config.interface),
+			    "n")
+		    or 0
+		upload = read_file(format("/sys/class/net/%s/statistics/tx_bytes", network_service.config.interface), "n") or
+		0
 	end
 	return connected, download, upload
 end
@@ -54,9 +56,9 @@ local function update()
 		if connected then
 			local diff = now - last_data.time
 			local is_valid = diff > 0
-				and diff < 3 * network_service.config.interval
-				and last_data.download
-				and last_data.upload
+			    and diff < 3 * network_service.config.interval
+			    and last_data.download
+			    and last_data.upload
 			if is_valid then
 				status.download = (download - last_data.download) / diff
 				status.upload = (upload - last_data.upload) / diff
@@ -83,11 +85,11 @@ end
 
 function network_service.watch()
 	network_service.timer = network_service.timer
-		or gears.timer({
-			timeout = network_service.config.interval,
-			call_now = true,
-			callback = update,
-		})
+	    or gears.timer({
+		    timeout = network_service.config.interval,
+		    call_now = true,
+		    callback = update,
+	    })
 	network_service.timer:again()
 end
 
