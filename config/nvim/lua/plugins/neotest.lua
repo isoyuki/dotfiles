@@ -8,7 +8,7 @@ return {
 		"nvim-neotest/neotest-python",
 		{
 			"fredrikaverpil/neotest-golang",
-			version = "*",
+			tag = "v2.9.0",
 			build = function()
 				vim.system({ "go", "install", "gotest.tools/gotestsum@latest" }):wait()
 			end,
