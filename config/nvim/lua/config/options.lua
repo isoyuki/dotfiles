@@ -4,6 +4,13 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+do
+  local lua_parsers = vim.api.nvim_get_runtime_file("parser/lua.so", true)
+  if lua_parsers[1] then
+    pcall(vim.treesitter.language.add, "lua", { path = lua_parsers[1] })
+  end
+end
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
