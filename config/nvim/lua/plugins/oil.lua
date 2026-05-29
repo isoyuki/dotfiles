@@ -1,7 +1,7 @@
 return {
 	{
 		"stevearc/oil.nvim",
-		tag = "v2.13.0",
+		tag = "v2.16.0",
 		opts = {},
 		-- Optional dependencies
 		dependencies = { { "echasnovski/mini.icons", opts = {} } },
@@ -11,4 +11,3 @@ return {
 		end,
 	},
 }
-

@@ -1,5 +1,5 @@
 return {
 	"mrcjkb/rustaceanvim",
-	version = "^6", -- Recommended
+	tag = "v9.0.4",
 	lazy = false,
 }

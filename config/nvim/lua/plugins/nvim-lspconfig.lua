@@ -140,13 +140,23 @@ return {
 						"clangd",
 						"--offset-encoding=utf-16",
 					},
+					filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 				},
-				gopls = {},
+				bashls = {
+					filetypes = { "sh", "bash", "zsh" },
+				},
+				gopls = {
+					filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				},
 				pyright = {
-					filetypes = { "python", "py", "pyw", "sage" },
+					filetypes = { "python" },
 				},
-				texlab = {},
-				terraformls = {},
+				texlab = {
+					filetypes = { "tex", "plaintex", "bib" },
+				},
+				terraformls = {
+					filetypes = { "terraform", "terraform-vars", "hcl" },
+				},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
@@ -157,6 +167,7 @@ return {
 				--
 
 				lua_ls = {
+					filetypes = { "lua" },
 					format = {
 						enable = true,
 						defaultConfig = {
@@ -164,9 +175,6 @@ return {
 							indent_size = "2",
 						},
 					},
-					-- cmd = {...},
-					-- filetypes = { ...},
-					-- capabilities = {},
 					settings = {
 						Lua = {
 							completion = {
@@ -196,13 +204,13 @@ return {
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-			require("mason-lspconfig").setup()
-
 			for server_name, server_config in pairs(servers) do
 				server_config.capabilities = vim.tbl_deep_extend("force", {}, capabilities,
 					server_config.capabilities or {})
 				vim.lsp.config(server_name, server_config)
 			end
+
+			require("mason-lspconfig").setup({ automatic_enable = false })
 			vim.lsp.enable(vim.tbl_keys(servers))
 		end,
 	},
