@@ -17,7 +17,7 @@ config.features = {
 	torrent_widget = false,
 	weather_widget = false,
 	redshift_widget = false,
-	wallpaper_menu = true,
+	wallpaper_menu = false,
 }
 
 config.wm = {
@@ -31,8 +31,8 @@ config.apps = {
 	shell = "zsh",
 	terminal = terminal,
 	editor = terminal_execute .. "micro",
-	browser = "firefox",
-	private_browser = "firefox --private-window",
+	browser = "flatpak run app.zen_browser.zen",
+	private_browser = "flatpak run app.zen_browser.zen --private-window",
 	file_manager = terminal_execute .. "thunar",
 	calculator = "speedcrunch",
 	mixer = terminal_execute .. "pulsemixer",
