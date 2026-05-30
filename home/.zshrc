@@ -1,33 +1,28 @@
 # Uncomment below if profiling the zsh startup
 # zmodload zsh/zprof
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# ── Platform detection ────────────────────────────────────────────────
+case "$(uname)" in
+  Darwin) IS_MACOS=true  ;;
+  *)      IS_MACOS=false ;;
+esac
+
+# ── macOS: Homebrew ───────────────────────────────────────────────────
+if $IS_MACOS && [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.config/oh-my-zsh/custom"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
 plugins=(
     git
     zsh-autosuggestions
@@ -47,6 +42,8 @@ source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 
+setopt HIST_IGNORE_ALL_DUPS
+
 # ── fzf defaults (use fd + bat) ──────────────────────────────────────
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --info=inline'
@@ -63,15 +60,24 @@ zstyle ':fzf-tab:complete:docker-*:*' fzf-preview 'docker inspect $word 2>/dev/n
 zstyle ':fzf-tab:complete:kubectl-*:*' fzf-preview 'kubectl describe $word 2>/dev/null | head -40'
 zstyle ':fzf-tab:complete:kill:*' fzf-preview 'ps -p $word -o pid,user,%cpu,%mem,command 2>/dev/null'
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'systemctl status $word 2>/dev/null'
-# source <(COMPLETE=zsh tms)
 
 alias vi="nvim"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH='/Users/ykume/.duckdb/cli/latest':$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
 
-# opencode
-export PATH=/Users/ykume/.opencode/bin:$PATH
-# autoload -U compinit; compinit
+# ── macOS-only paths & completions ───────────────────────────────────
+if $IS_MACOS; then
+  export PATH="$HOME/.duckdb/cli/latest:$PATH"
+
+  # gcloud via homebrew
+  if (( $+commands[brew] )); then
+    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+  fi
+fi
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # Optimisation for compinit
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
@@ -79,14 +85,8 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-source <(jj util completion zsh)
-
-# gcloud auto completion
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-
-# eval "$(ssh-agent -s)" > 
+# Tool completions (guarded)
+(( $+commands[jj] )) && source <(jj util completion zsh)
 
 [ -f ~/.env.sh ] && source ~/.env.sh
 

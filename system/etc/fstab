@@ -1,0 +1,3 @@
+10.10.20.10:/mnt/tank/scratch/torrents /home/wren/torrents nfs default 0 0
+10.10.20.10:/mnt/tank/literature /home/wren/tank/literature nfs default 0 0
+10.10.20.10:/mnt/tank/scratch/backup /home/wren/tank/backup nfs default 0 0
