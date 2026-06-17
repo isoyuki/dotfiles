@@ -5,11 +5,36 @@ return {
 			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{ "folke/lazydev.nvim",      opts = {} },
+			{
+				"folke/lazydev.nvim",
+				ft = "lua",
+				opts = {
+					library = {
+						-- Load luvit types when `vim.uv` is referenced
+						{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+					},
+				},
+			},
 			"hrsh7th/cmp-nvim-lsp",
 			"nvim-telescope/telescope.nvim",
 		},
 		config = function()
+			-- Diagnostics presentation (defaults show no icons and don't sort by severity)
+			vim.diagnostic.config({
+				severity_sort = true,
+				update_in_insert = false,
+				float = { border = "rounded", source = "if_many" },
+				virtual_text = { spacing = 2, source = "if_many" },
+				signs = vim.g.have_nerd_font and {
+					text = {
+						[vim.diagnostic.severity.ERROR] = "󰅚 ",
+						[vim.diagnostic.severity.WARN] = "󰀪 ",
+						[vim.diagnostic.severity.INFO] = "󰋽 ",
+						[vim.diagnostic.severity.HINT] = "󰌶 ",
+					},
+				} or {},
+			})
+
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 				callback = function(event)
@@ -57,8 +82,10 @@ return {
 					end, { buffer = event.buf, desc = "LSP: [R]e[n]ame", expr = true })
 
 					-- Execute a code action, usually your cursor needs to be on top of an error
-					-- or a suggestion from your LSP for this to activate.
-					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+					-- or a suggestion from your LSP for this to activate. Works in visual
+					-- mode too, where it offers range code actions for the selection.
+					vim.keymap.set({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action,
+						{ buffer = event.buf, desc = "LSP: [C]ode [A]ction" })
 
 					-- Opens a popup that displays documentation about the word under your cursor
 					--  See `:help K` for why this keymap.
@@ -74,7 +101,7 @@ return {
 					--
 					-- When you move your cursor, the highlights will be cleared (the second autocommand).
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.server_capabilities.documentHighlightProvider then
+					if client and client:supports_method("textDocument/documentHighlight", event.buf) then
 						local highlight_augroup =
 						    vim.api.nvim_create_augroup("kickstart-lsp-highlight",
 							    { clear = false })
@@ -108,7 +135,7 @@ return {
 					-- code, if the language server you are using supports them
 					--
 					-- This may be unwanted, since they displace some of your code
-					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+					if client and client:supports_method("textDocument/inlayHint", event.buf) then
 						vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
@@ -157,6 +184,14 @@ return {
 				terraformls = {
 					filetypes = { "terraform", "terraform-vars", "hcl" },
 				},
+				ts_ls = {
+					filetypes = {
+						"javascript",
+						"javascriptreact",
+						"typescript",
+						"typescriptreact",
+					},
+				},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
@@ -168,17 +203,17 @@ return {
 
 				lua_ls = {
 					filetypes = { "lua" },
-					format = {
-						enable = true,
-						defaultConfig = {
-							indent_style = "space",
-							indent_size = "2",
-						},
-					},
 					settings = {
 						Lua = {
 							completion = {
 								callSnippet = "Replace",
+							},
+							format = {
+								enable = true,
+								defaultConfig = {
+									indent_style = "space",
+									indent_size = "2",
+								},
 							},
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
 							-- diagnostics = { disable = { 'missing-fields' } },
@@ -199,8 +234,29 @@ return {
 			-- for you, so that they are available from within Neovim.
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
-				"stylua", -- Used to format Lua code
+				-- Formatters (conform.nvim)
+				"stylua",
+				"clang-format",
+				"goimports",
+				"shfmt",
+				-- Linters (nvim-lint) / ruff also formats
 				"ruff",
+				"golangci-lint",
+				"cpplint",
+				-- TypeScript/JavaScript toolchain (ts_ls server is added via `servers`).
+				-- NOTE: prettierd / eslint_d / js-debug-adapter install through npm and
+				-- may be blocked by the corporate registry proxy (like markdownlint).
+				-- If so, install manually (e.g. `npm i -g @fsouza/prettierd`); the
+				-- plugins pick them up from PATH automatically.
+				"prettierd",
+				"eslint_d",
+				"js-debug-adapter",
+				-- NOTE: "markdownlint" is omitted: it installs via npm and the
+				-- corporate registry proxy rejects it. Install with
+				-- `brew install markdownlint-cli` if needed; nvim-lint picks
+				-- it up from PATH automatically.
+				-- Needed by nvim-treesitter (main) to compile parsers
+				"tree-sitter-cli",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

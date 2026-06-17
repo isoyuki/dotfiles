@@ -1,6 +1,20 @@
 return {
   {
     "tpope/vim-fugitive",
+    cmd = {
+      "Git",
+      "G",
+      "Gdiffsplit",
+      "Gvdiffsplit",
+      "Gread",
+      "Gwrite",
+      "Ggrep",
+      "GMove",
+      "GRename",
+      "GDelete",
+      "GBrowse",
+    },
   },
-  { "tpope/vim-rhubarb" },
+  -- GitHub :GBrowse handler and #issue omni-completion for commit messages
+  { "tpope/vim-rhubarb", dependencies = { "tpope/vim-fugitive" } },
 }

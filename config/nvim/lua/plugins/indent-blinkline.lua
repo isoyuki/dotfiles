@@ -2,6 +2,25 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		opts = {},
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {
+			indent = { char = "│" },
+			scope = {
+				show_start = false,
+				show_end = false,
+			},
+			exclude = {
+				filetypes = {
+					"help",
+					"lazy",
+					"mason",
+					"neo-tree",
+					"notify",
+					"oil",
+					"trouble",
+					"undotree",
+				},
+			},
+		},
 	},
 }

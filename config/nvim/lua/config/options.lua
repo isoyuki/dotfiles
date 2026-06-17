@@ -4,13 +4,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-do
-  local lua_parsers = vim.api.nvim_get_runtime_file("parser/lua.so", true)
-  if lua_parsers[1] then
-    pcall(vim.treesitter.language.add, "lua", { path = lua_parsers[1] })
-  end
-end
-
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -79,3 +72,11 @@ vim.opt.expandtab = true
 
 -- Tmux alacritty true color
 vim.o.termguicolors = true
+
+-- Treesitter-based folding; buffers without a parser get no folds ('0').
+-- Folds start fully open.
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99

@@ -10,9 +10,20 @@ return {
   },
   keys = {
     {
-      "<leader>dpr",
-      function() require("dap-python").run_python() end,
-      desc = "Run Python debugger"
+      "<leader>dpm",
+      function() require("dap-python").test_method() end,
+      desc = "DAP Python: Debug nearest test method",
+    },
+    {
+      "<leader>dpc",
+      function() require("dap-python").test_class() end,
+      desc = "DAP Python: Debug nearest test class",
+    },
+    {
+      "<leader>dps",
+      function() require("dap-python").debug_selection() end,
+      mode = "v",
+      desc = "DAP Python: Debug selection",
     },
   },
 }
