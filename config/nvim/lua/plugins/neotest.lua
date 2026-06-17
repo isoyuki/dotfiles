@@ -8,12 +8,16 @@ return {
 		"nvim-neotest/neotest-python",
 		{
 			"fredrikaverpil/neotest-golang",
-			tag = "v2.9.0",
+			-- version pinned in versions.lua
 			build = function()
 				vim.system({ "go", "install", "gotest.tools/gotestsum@latest" }):wait()
 			end,
 		},
-		"rouge8/neotest-rust",
+		-- Rust tests run through rustaceanvim's bundled neotest adapter
+		-- (replaces rouge8/neotest-rust, which needed cargo-nextest)
+		"mrcjkb/rustaceanvim",
+		-- JS/TS tests via jest (requires jest installed in the project's node_modules)
+		"nvim-neotest/neotest-jest",
 	},
 	keys = {
 		{ "<leader>tn", function() require("neotest").run.run() end, desc = "Neotest: Run nearest" },
@@ -30,14 +34,23 @@ return {
 		{ "[T", function() require("neotest").jump.prev({ status = "failed" }) end, desc = "Previous failed test" },
 	},
 	config = function()
+		local adapters = {
+			require("neotest-golang")({
+				runner = "gotestsum",
+			}),
+			require("neotest-python")({
+				dap = { justMyCode = false },
+			}),
+			require("rustaceanvim.neotest"),
+		}
+		-- jest adapter is optional: only added if the plugin is present
+		local ok_jest, neotest_jest = pcall(require, "neotest-jest")
+		if ok_jest then
+			table.insert(adapters, neotest_jest({ jestCommand = "npm test --" }))
+		end
+
 		require("neotest").setup({
-			adapters = {
-				require("neotest-golang")({
-					runner = "gotestsum",
-				}),
-				require("neotest-python"),
-				require("neotest-rust"),
-			},
+			adapters = adapters,
 			status = { virtual_text = true },
 			output = { open_on_run = true },
 		})

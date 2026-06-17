@@ -8,6 +8,38 @@ return {
 			"MunifTanjim/nui.nvim",
 			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
+		cmd = "Neotree",
+		opts = {
+			close_if_last_window = true,
+			filesystem = {
+				follow_current_file = { enabled = true, leave_dirs_open = true },
+				use_libuv_file_watcher = true,
+				filtered_items = {
+					hide_dotfiles = false,
+					hide_gitignored = true,
+					never_show = { ".DS_Store", "thumbs.db" },
+				},
+				-- oil.nvim is the directory editor; don't fight over `nvim <dir>`
+				hijack_netrw_behavior = "disabled",
+			},
+			window = {
+				width = 34,
+			},
+			default_component_configs = {
+				git_status = {
+					symbols = {
+						added = "✚",
+						modified = "",
+						deleted = "✖",
+						renamed = "󰁕",
+						untracked = "",
+						ignored = "",
+						unstaged = "󰄱",
+						staged = "",
+						conflict = "",
+					},
+				},
+			},
+		},
 	},
 }
-

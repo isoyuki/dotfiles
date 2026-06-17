@@ -17,6 +17,12 @@ return {
       { "<leader>dO", function() require("dap").step_out() end,                                             desc = "DAP: Step Out" },
       { "<leader>dr", function() require("dap").repl.open() end,                                            desc = "DAP: Open Repl" },
       { "<leader>dq", function() require("dap").terminate() end,                                            desc = "DAP: Quit" },
+      { "<leader>dl", function() require("dap").run_last() end,                                             desc = "DAP: Run Last" },
+      { "<leader>dP", function() require("dap").pause() end,                                                desc = "DAP: Pause" },
+      { "<leader>dj", function() require("dap").down() end,                                                 desc = "DAP: Frame Down" },
+      { "<leader>dk", function() require("dap").up() end,                                                   desc = "DAP: Frame Up" },
+      { "<leader>dh", function() require("dap.ui.widgets").hover() end,                  mode = { "n", "v" }, desc = "DAP: Hover/Inspect" },
+      { "<leader>de", function() require("dapui").eval(nil, { enter = true }) end,       mode = { "n", "v" }, desc = "DAP: Evaluate" },
     },
   },
   {
@@ -77,8 +83,11 @@ return {
       { "<leader>gu",  "<cmd>Gitsigns undo_stage_hunk<CR>",                            desc = "Undo Stage Hunk" },
       { "<leader>gB",  function() require("gitsigns").blame_line({ full = true }) end, desc = "Gitsigns: Blame Line" },
       { "<leader>gD",  "<cmd>Gitsigns diffthis '~'<CR>",                               desc = "Gitsigns: Diff This" },
-      { "]h",          "<cmd>Gitsigns next_hunk<CR>",                                  desc = "Next Hunk" },
-      { "[h",          "<cmd>Gitsigns prev_hunk<CR>",                                  desc = "Previous Hunk" },
+      { "<leader>gp",  "<cmd>Gitsigns preview_hunk_inline<CR>",                        desc = "Preview Hunk Inline" },
+      { "<leader>gtb", "<cmd>Gitsigns toggle_current_line_blame<CR>",                  desc = "Toggle Line Blame" },
+      -- next_hunk/prev_hunk are deprecated in gitsigns v2; nav_hunk also wraps
+      { "]h",          function() require("gitsigns").nav_hunk("next") end,            desc = "Next Hunk" },
+      { "[h",          function() require("gitsigns").nav_hunk("prev") end,            desc = "Previous Hunk" },
     },
   },
   {
@@ -322,6 +331,13 @@ return {
         end,
         desc = "[S]earch [G]it [B]ranches",
       },
+      {
+        "<leader>sc",
+        function()
+          require("telescope.builtin").commands()
+        end,
+        desc = "[S]earch [C]ommands",
+      },
     },
   },
   {
@@ -369,6 +385,11 @@ return {
         "<leader>xQ",
         "<cmd>Trouble qflist toggle<cr>",
         desc = "Quickfix List (Trouble)",
+      },
+      {
+        "<leader>xt",
+        "<cmd>Trouble todo toggle<cr>",
+        desc = "Todo (Trouble)",
       },
     },
   },

@@ -10,9 +10,12 @@ return {
     },
     event = 'VeryLazy',
     config = function()
-      -- REQUIRED
-      require('harpoon'):setup()
-      -- REQUIRED
+      require('harpoon'):setup {
+        settings = {
+          save_on_toggle = true,
+          sync_on_ui_close = true,
+        },
+      }
     end,
   },
 }
