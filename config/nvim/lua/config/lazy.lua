@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
     'git',
     'clone',
@@ -12,4 +12,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load plugins
-require('lazy').setup 'plugins'
+require('lazy').setup('plugins', {
+  install = { colorscheme = { 'kanagawa' } },
+  -- Versions are pinned (lazy-lock.json + versions.lua); don't poll for updates
+  checker = { enabled = false },
+  change_detection = { notify = false },
+  performance = {
+    rtp = {
+      -- netrw stays enabled for fugitive/rhubarb's :GBrowse
+      disabled_plugins = {
+        'gzip',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
+      },
+    },
+  },
+})
