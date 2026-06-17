@@ -1,6 +1,18 @@
 # Uncomment below if profiling the zsh startup
 # zmodload zsh/zprof
 
+# ── Cached eval helper ───────────────────────────────────────────────
+# Caches command output to a file, regenerates when the binary is updated.
+_cached_eval() {
+  local name="$1"; shift
+  local cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh-eval-cache/$name"
+  if [[ ! -s "$cache" || "${commands[$1]}" -nt "$cache" ]]; then
+    command mkdir -p "${cache:h}"
+    "$@" > "$cache"
+  fi
+  builtin source "$cache"
+}
+
 # ── Platform detection ────────────────────────────────────────────────
 case "$(uname)" in
   Darwin) IS_MACOS=true  ;;
@@ -22,6 +34,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.config/oh-my-zsh/custom"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_DISABLE_COMPFIX=true
 
 plugins=(
     git
@@ -38,9 +51,10 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source <(fzf --zsh)
-eval "$(zoxide init zsh)"
-eval "$(mise activate zsh)"
+_cached_eval fzf fzf --zsh
+_cached_eval zoxide zoxide init zsh
+_cached_eval mise mise activate zsh
+_cached_eval direnv direnv hook zsh
 
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -62,6 +76,12 @@ zstyle ':fzf-tab:complete:kill:*' fzf-preview 'ps -p $word -o pid,user,%cpu,%mem
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'systemctl status $word 2>/dev/null'
 
 alias vi="nvim"
+alias lsd="lsd --icon=never"
+alias l='lsd -l'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
+
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.opencode/bin:$PATH"
 
@@ -71,22 +91,27 @@ if $IS_MACOS; then
 
   # gcloud via homebrew
   if (( $+commands[brew] )); then
-    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+    local _brew_prefix="${HOMEBREW_PREFIX:-$(brew --prefix)}"
+    source "$_brew_prefix/share/google-cloud-sdk/path.zsh.inc"
+    source "$_brew_prefix/share/google-cloud-sdk/completion.zsh.inc"
   fi
 fi
 
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
-# Optimisation for compinit
-autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-  compinit
-done
-compinit -C
+export GOPRIVATE=github.com/kouzoh/*
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# export SRC_ACCESS_TOKEN=(your access token)
 
 # Tool completions (guarded)
-(( $+commands[jj] )) && source <(jj util completion zsh)
+(( $+commands[jj] )) && _cached_eval jj-completion jj util completion zsh
+if [[ -x /opt/homebrew/bin/wizcli ]]; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C /opt/homebrew/bin/wizcli wizcli
+fi
 
 [ -f ~/.env.sh ] && source ~/.env.sh
 
