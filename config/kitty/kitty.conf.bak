@@ -48,6 +48,6 @@ map ctrl+. layout_action bias 80
 
 
 # BEGIN_KITTY_THEME
-# N0tch2k
+# Phanes
 include current-theme.conf
 # END_KITTY_THEME
