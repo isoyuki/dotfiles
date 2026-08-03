@@ -73,6 +73,10 @@ vim.opt.expandtab = true
 -- Tmux alacritty true color
 vim.o.termguicolors = true
 
+-- Global border for every floating window (hover, signature help, lazy, mason,
+-- diagnostics). Native since 0.11; replaces per-plugin `border = "rounded"`.
+vim.o.winborder = "rounded"
+
 -- Treesitter-based folding; buffers without a parser get no folds ('0').
 -- Folds start fully open.
 vim.opt.foldmethod = "expr"

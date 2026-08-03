@@ -15,6 +15,7 @@ return {
         { '<leader>l', group = '[L]int' },
         { '<leader>m', group = '[M]arkdown' },
         { '<leader>n', group = '[N]oice' },
+        { '<leader>o', group = '[O]cto (GitHub)' },
         { '<leader>r', group = '[R]efactor / Rename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>sg', group = '[S]earch [G]it' },

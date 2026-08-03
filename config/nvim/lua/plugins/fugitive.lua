@@ -16,5 +16,6 @@ return {
     },
   },
   -- GitHub :GBrowse handler and #issue omni-completion for commit messages
-  { "tpope/vim-rhubarb", dependencies = { "tpope/vim-fugitive" } },
+  -- Root spec with no trigger would load at startup (and drag fugitive in).
+  { "tpope/vim-rhubarb", event = "VeryLazy", dependencies = { "tpope/vim-fugitive" } },
 }
