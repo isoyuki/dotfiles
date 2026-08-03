@@ -6,7 +6,7 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"lewis6991/async.nvim",
 		},
-		lazy = false,
+		-- Keymaps live in keymaps.lua; they are the load trigger.
 		config = function()
 			require("refactoring").setup()
 		end,

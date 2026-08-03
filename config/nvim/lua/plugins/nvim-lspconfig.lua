@@ -1,8 +1,11 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		-- Nothing here is needed before a real buffer exists; loading eagerly
+		-- cost ~56ms plus telescope's ~16ms on every start.
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
+			{ "williamboman/mason.nvim", cmd = "Mason", config = true }, -- NOTE: Must be loaded before dependants
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			{
@@ -152,6 +155,10 @@ return {
 			capabilities = vim.tbl_deep_extend("force", capabilities,
 				require("cmp_nvim_lsp").default_capabilities())
 
+			-- Apply to every server, including ones enabled automatically via
+			-- Mason below without an explicit entry in `servers`.
+			vim.lsp.config("*", { capabilities = capabilities })
+
 			-- Enable the following language servers
 			--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 			--
@@ -174,6 +181,32 @@ return {
 				},
 				gopls = {
 					filetypes = { "go", "gomod", "gowork", "gotmpl" },
+					settings = {
+						gopls = {
+							-- staticcheck and these analysers are off by default
+							staticcheck = true,
+							analyses = {
+								unusedparams = true,
+								unusedwrite = true,
+								nilness = true,
+								useany = true,
+								shadow = true,
+							},
+							-- Search vendor/ and build-tag-excluded files too
+							directoryFilters = { "-.git", "-node_modules" },
+							-- Fill in struct fields / function params on completion
+							usePlaceholders = true,
+							hints = {
+								assignVariableTypes = true,
+								compositeLiteralFields = true,
+								compositeLiteralTypes = true,
+								constantValues = true,
+								functionTypeParameters = true,
+								parameterNames = true,
+								rangeVariableTypes = true,
+							},
+						},
+					},
 				},
 				pyright = {
 					filetypes = { "python" },
@@ -261,13 +294,12 @@ return {
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			for server_name, server_config in pairs(servers) do
-				server_config.capabilities = vim.tbl_deep_extend("force", {}, capabilities,
-					server_config.capabilities or {})
 				vim.lsp.config(server_name, server_config)
 			end
 
-			require("mason-lspconfig").setup({ automatic_enable = false })
-			vim.lsp.enable(vim.tbl_keys(servers))
+			-- Auto-enable every Mason-installed server (not just the ones with
+			-- overrides above), so new servers attach without editing this file.
+			require("mason-lspconfig").setup({ automatic_enable = true })
 		end,
 	},
 }
