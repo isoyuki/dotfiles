@@ -191,7 +191,7 @@
        ;;(wanderlust +gmail)
 
        :app
-       calendar
+       ;;calendar        ; org-gcal; the morning brief covers the calendar
        ;;emms
        ;;everywhere        ; *leave* Emacs!? You must be joking
        ;;irc               ; how neckbeards socialize
