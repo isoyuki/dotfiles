@@ -1,0 +1,25 @@
+{
+  "type": "group",
+  "actions": [
+    {
+      "key": "o",
+      "type": "group",
+      "label": "Open",
+      "actions": [
+        { "key": "e", "type": "application", "value": "/Applications/Emacs.app" },
+        { "key": "b", "type": "application", "value": "/Applications/Google Chrome.app" },
+        { "key": "l", "type": "url", "value": "https://linear.app" }
+      ]
+    },
+    {
+      "key": "g",
+      "type": "group",
+      "label": "Go",
+      "actions": [
+        { "key": "p", "type": "url", "value": "https://github.com/pulls/review-requested" },
+        { "key": "i", "type": "url", "value": "https://linear.app" },
+        { "key": "d", "type": "url", "value": "http://127.0.0.1:7777/" }
+      ]
+    }
+  ]
+}

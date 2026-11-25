@@ -5,3 +5,4 @@ result
 # Local secrets/config
 *.local.nix
 .gitconfig.local
+config/doom/local.el

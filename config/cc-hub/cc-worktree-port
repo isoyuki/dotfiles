@@ -1,0 +1,12 @@
+#!/bin/sh
+# SessionStart hook: give each Claude worktree a stable PORT in .env.local (worktrunk hash_port idea).
+# Writes only when .env.local is git-ignored, so the agent cannot commit it.
+cwd=$(jq -r '.cwd // empty' 2>/dev/null)
+case "$cwd" in */.claude/worktrees/*) ;; *) exit 0 ;; esac
+cd "$cwd" 2>/dev/null || exit 0
+git check-ignore -q .env.local 2>/dev/null || exit 0
+grep -q '^PORT=' .env.local 2>/dev/null && exit 0
+name=$(basename "$cwd")
+port=$((${CC_PORT_BASE:-3000} + $(printf '%s' "$name" | cksum | cut -d' ' -f1) % ${CC_PORT_RANGE:-1000}))
+printf 'PORT=%s\n' "$port" >>.env.local
+exit 0

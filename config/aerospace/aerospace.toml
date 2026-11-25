@@ -1,0 +1,79 @@
+# Hyper = cmd-alt-ctrl-shift (held Caps Lock via Karabiner), Meh = alt-ctrl-shift.
+# Workspaces: E Emacs (home base), B browser, S Slack, M meetings.
+# Ghostty runs only as the quick terminal (Hyper+`, set in ghostty/config).
+# Every alt-* stays unbound so Meta reaches Emacs, the shell and Claude Code.
+# Stop yabai and skhd before you start AeroSpace: they fight over windows.
+
+start-at-login = false
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[gaps]
+inner.horizontal = 6
+inner.vertical = 6
+outer.left = 6
+outer.right = 6
+outer.top = 6
+outer.bottom = 6
+
+[mode.main.binding]
+cmd-alt-ctrl-shift-h = 'focus left'
+cmd-alt-ctrl-shift-j = 'focus down'
+cmd-alt-ctrl-shift-k = 'focus up'
+cmd-alt-ctrl-shift-l = 'focus right'
+
+alt-ctrl-shift-h = 'move left'
+alt-ctrl-shift-j = 'move down'
+alt-ctrl-shift-k = 'move up'
+alt-ctrl-shift-l = 'move right'
+
+cmd-alt-ctrl-shift-e = 'workspace E'
+cmd-alt-ctrl-shift-b = 'workspace B'
+cmd-alt-ctrl-shift-s = 'workspace S'
+cmd-alt-ctrl-shift-m = 'workspace M'
+
+alt-ctrl-shift-e = 'move-node-to-workspace E'
+alt-ctrl-shift-b = 'move-node-to-workspace B'
+alt-ctrl-shift-s = 'move-node-to-workspace S'
+alt-ctrl-shift-m = 'move-node-to-workspace M'
+
+cmd-alt-ctrl-shift-tab = 'workspace-back-and-forth'
+cmd-alt-ctrl-shift-f = 'fullscreen'
+cmd-alt-ctrl-shift-slash = 'layout tiles horizontal vertical'
+cmd-alt-ctrl-shift-comma = 'layout accordion horizontal vertical'
+cmd-alt-ctrl-shift-semicolon = 'mode service'
+
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
+alt-ctrl-shift-h = ['join-with left', 'mode main']
+alt-ctrl-shift-j = ['join-with down', 'mode main']
+alt-ctrl-shift-k = ['join-with up', 'mode main']
+alt-ctrl-shift-l = ['join-with right', 'mode main']
+minus = 'resize smart -50'
+equal = 'resize smart +50'
+
+[[on-window-detected]]
+if.app-id = 'org.gnu.Emacs'
+run = 'move-node-to-workspace E'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'layout floating'

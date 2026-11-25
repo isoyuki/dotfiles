@@ -56,3 +56,10 @@
 (package! org-roam
   :recipe (:host github :repo "org-roam/org-roam"
            :files (:defaults "extensions/*")))
+
+;; Agent cockpit (lisp/cc-hub.el)
+(package! claude-code :recipe (:host github :repo "stevemolitor/claude-code.el"))
+(package! ghostel)
+(package! evil-ghostel)
+(package! svg-lib)
+(package! ob-d2)
