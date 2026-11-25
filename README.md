@@ -150,3 +150,43 @@ OS layer: Karabiner `caps-hyper.json` (Caps tap Esc, hold Hyper), AeroSpace
 workspaces E (Emacs), B (browser), S (Slack), M (meetings), and Ghostty only as
 the Hyper+`` ` `` quick terminal.
 
+## Neovim inside Doom Emacs
+
+Neovim edits code. Doom stays the command centre. Each project root gets one
+terminal buffer, `*nvim:<project>*`, that runs
+`nvim --listen $TMPDIR/nvim-<project>-<hash>.sock` with `NVIM_IN_EMACS=1`.
+The hash keeps two repos with the same name apart. Emacs side:
+`config/doom/lisp/nvim-bridge.el`. Neovim side: `config/nvim/lua/emacs_bridge.lua`,
+loaded only when `NVIM_IN_EMACS` is set. Outside Emacs, Neovim is unchanged.
+
+The Neovim buffer uses ghostel `ghostel-char-mode` in evil Emacs state. Char
+mode sends every key to Neovim, `Esc`, `C-c`, `C-x` and `C-h` too. Doom's
+`M-SPC` leader still works, because it lives in an emulation keymap. `M-RET`
+leaves char mode, and `C-z` switches the buffer to evil normal state. With
+`cc-hub-terminal` set to `vterm`, a buffer-local map sends `C-h/j/k/l`, `C-c`,
+`C-x`, `C-u`, `C-g`, `M-x` and `M-:` to Neovim instead.
+
+| Where | Key | Action |
+|-------|-----|--------|
+| Emacs | `SPC o n` | Show this project's Neovim, start it when needed |
+| Emacs | `SPC f n` | Open the current file in Neovim at point |
+| Emacs | `SPC l e` | Open the `file:line[:col]` at point in Neovim (logs, traces, org) |
+| Magit / Forge diffs | `C-RET` | Open the worktree file at the hunk line (`RET` still visits in Emacs) |
+| `SPC l a` | `e` | Neovim in the agent's worktree |
+| `SPC l m` | `e` | Open the `file:line` on the monitor row |
+| consult-ripgrep, `SPC s p` | `C-;` then `n` | Embark: open the match in Neovim |
+| Embark on a file | `n` | Open the file in Neovim |
+| Emacs normal state | `C-h/j/k/l` | `windmove`. Help is still on `SPC h` |
+| Neovim | `C-h/j/k/l` | Move between splits, into the Emacs window at the edge |
+| Neovim | `M-SPC` | Doom leader, for example `M-SPC l a` |
+| Neovim | `<leader>hg` | Magit status for the cwd |
+| Neovim | `<leader>ha` | Agent list (`SPC l a`) |
+| Neovim | `<leader>hr` | Review queue (`SPC l r`) |
+| Neovim | `<leader>hc` | Insert `@file` (normal) or `@file#La-Lb` (visual) in this project's Claude Code prompt, not submitted |
+
+`my/nvim-lsp-off-modes` lists the major modes that Neovim edits. Doom starts
+no LSP client in them.
+
+To restart a stuck Neovim buffer, kill it with `SPC b k` and press `SPC o n`.
+`SPC o n` also restarts Neovim when the process is gone or the socket is stale.
+`<leader>e` stays the diagnostic float, so the hand-off maps use `<leader>h`.

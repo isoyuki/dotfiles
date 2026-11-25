@@ -124,6 +124,7 @@
 ;; Agent cockpit: Claude Code supervisor + cc-hubd (see ~/dotfiles/tmp_emacs.md)
 (load! "local" doom-user-dir t)
 (load! "lisp/cc-hub")
+(load! "lisp/nvim-bridge")
 
 (use-package! claude-code
   :commands (claude-code claude-code-transient)
