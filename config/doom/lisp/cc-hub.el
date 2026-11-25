@@ -301,14 +301,25 @@ PROC is stored as `cc-hub-proc'. SHOW non-nil displays the buffer."
                                (equal (file-name-as-directory (buffer-local-value 'default-directory b)) dir)))
               (buffer-list))))
 
+(defun cc-hub--tmux-pane (pid)
+  "The tmux pane ID whose terminal runs PID, or nil."
+  (when-let* ((tty (car (process-lines-ignore-status "ps" "-o" "tty=" "-p" (number-to-string pid))))
+              (tty (concat "/dev/" (string-trim tty))))
+    (cl-loop for line in (process-lines-ignore-status "tmux" "list-panes" "-a" "-F" "#{pane_tty} #{pane_id}")
+             for (ptty pane) = (split-string line)
+             when (equal ptty tty) return pane)))
+
 (defun cc-hub-agent-attach (s)
-  "Attach to session S. Background sessions open in a terminal buffer."
+  "Attach to session S. Background sessions and tmux panes open in a terminal buffer."
   (interactive (list (cc-hub--row)))
-  (if (equal (alist-get 'kind s) "background")
-      (cc-hub--attach s)
-    (if-let ((buf (cc-hub--interactive-buffer s)))
-        (switch-to-buffer buf)
-      (user-error "%s runs in a terminal outside Emacs (cwd %s)" (cc-hub--label s) (alist-get 'cwd s)))))
+  (cond
+   ((equal (alist-get 'kind s) "background") (cc-hub--attach s))
+   ((cc-hub--interactive-buffer s) (switch-to-buffer (cc-hub--interactive-buffer s)))
+   ((when-let ((pane (cc-hub--tmux-pane (string-to-number (format "%s" (alist-get 'id s))))))
+      (cc-hub--term (format "*tmux:%s*" (cc-hub--label s)) "tmux"
+                    (list "attach" "-t" pane ";" "select-window" "-t" pane ";" "select-pane" "-t" pane)
+                    (alist-get 'cwd s) nil t)))
+   (t (user-error "%s runs in a terminal outside Emacs and tmux (cwd %s)" (cc-hub--label s) (alist-get 'cwd s)))))
 
 (defun cc-hub--transcript (sid)
   (car (file-expand-wildcards (expand-file-name (format "~/.claude/projects/*/%s.jsonl" sid)))))

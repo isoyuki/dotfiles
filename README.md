@@ -108,7 +108,7 @@ loads it before `cc-hub`. Set at least the MCP tool prefix for `SPC l s` and
 
 | Key | Command | Keys in the buffer |
 |---|---|---|
-| `SPC l a` | Agents | `RET` attach, `p` peek logs, `d` Magit diff, `r` PR in Forge, `s` stop, `x` rm, `n` dispatch |
+| `SPC l a` | Agents | `RET` attach (background, claude-code.el or tmux pane), `p` peek logs, `d` Magit diff, `r` PR in Forge, `s` stop, `x` rm, `n` dispatch |
 | `SPC l .` | Jump to the session that waited longest, at its prompt | |
 | `SPC l n` | Dispatch `claude --bg --permission-mode plan --name KEY --worktree KEY` | |
 | `SPC l r` | Review queue: finished agents and PRs for my review | `RET` Forge, `d` diff, `a` approve, `c` request changes, `o` browser |
