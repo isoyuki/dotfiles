@@ -19,8 +19,8 @@ and the text in `*Messages*` (`SPC h e`).
 1. [ ] Tap Caps Lock. Expect `Esc`.
 2. [ ] Hold Caps Lock and press `E`, `B`, `S`, `M`. Expect AeroSpace to show the Emacs, browser, Slack and meetings workspaces.
 3. [ ] Press Hyper+`` ` ``. Expect the Ghostty quick terminal. Press it again to hide it.
-4. [ ] Open Leader Key and press `o e`. Expect Emacs to come to the front.
-5. [ ] In Leader Key, press `g d`. Expect the cc-hub dashboard at `127.0.0.1:7777` in the browser.
+4. [ ] Press Hyper+`Space`, then `e`. Expect Emacs to come to the front.
+5. [ ] Press Hyper+`Space`, then `d`. Expect the cc-hub dashboard at `127.0.0.1:7777` in the browser.
 6. [ ] In Ghostty, run `tmux`, then press `C-Space T`. Expect the sesh picker.
 
 ## 2. Agents

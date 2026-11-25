@@ -148,7 +148,8 @@ it starts the `:auto` entries:
 
 OS layer: Karabiner `caps-hyper.json` (Caps tap Esc, hold Hyper), AeroSpace
 workspaces E (Emacs), B (browser), S (Slack), M (meetings), and Ghostty only as
-the Hyper+`` ` `` quick terminal.
+the Hyper+`` ` `` quick terminal. Hyper+`Space` starts the AeroSpace `launch` mode: `e`
+Emacs, `b` browser, `l` Linear, `p` PRs for review, `d` dashboard, `Esc` cancel.
 
 ## Neovim inside Doom Emacs
 
