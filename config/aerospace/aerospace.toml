@@ -4,7 +4,7 @@
 # Every alt-* stays unbound so Meta reaches Emacs, the shell and Claude Code.
 # Stop yabai and skhd before you start AeroSpace: they fight over windows.
 
-start-at-login = false
+start-at-login = true
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 default-root-container-layout = 'tiles'
