@@ -310,18 +310,48 @@ PROC is stored as `cc-hub-proc'. SHOW non-nil displays the buffer."
         (switch-to-buffer buf)
       (user-error "%s runs in a terminal outside Emacs (cwd %s)" (cc-hub--label s) (alist-get 'cwd s)))))
 
+(defun cc-hub--transcript (sid)
+  (car (file-expand-wildcards (expand-file-name (format "~/.claude/projects/*/%s.jsonl" sid)))))
+
+(defun cc-hub--transcript-text (file n)
+  "The last N text and tool messages of the transcript FILE."
+  (let (msgs)
+    (with-temp-buffer
+      (insert-file-contents file)
+      (goto-char (point-min))
+      (while (not (eobp))
+        (let* ((e (ignore-errors (json-parse-string (buffer-substring-no-properties (point) (line-end-position))
+                                                    :object-type 'alist :array-type 'list :null-object nil)))
+               (who (alist-get 'type e))
+               (c (alist-get 'content (alist-get 'message e))))
+          (when (member who '("user" "assistant"))
+            (dolist (part (if (stringp c) `(((type . "text") (text . ,c))) c))
+              (pcase (alist-get 'type part)
+                ("text" (push (format "%s: %s" who (alist-get 'text part)) msgs))
+                ("tool_use" (push (format "%s: [%s]" who (alist-get 'name part)) msgs))))))
+        (forward-line 1)))
+    (string-join (nreverse (seq-take msgs n)) "\n\n")))
+
+(defun cc-hub--show-logs (text)
+  (with-current-buffer (get-buffer-create "*cc-hub logs*")
+    (let ((inhibit-read-only t))
+      (erase-buffer)
+      (insert text)
+      (goto-char (point-max)))
+    (special-mode)
+    (display-buffer (current-buffer))))
+
 (defun cc-hub-agent-peek (s)
-  "Show the recent output of session S."
+  "Show the recent output of session S.
+Reads the saved transcript, so it works when the background daemon is gone."
   (interactive (list (cc-hub--row)))
-  (cc-hub--run "claude logs" (list "claude" "logs" (cc-hub--background-id s))
-               (lambda (out)
-                 (with-current-buffer (get-buffer-create "*cc-hub logs*")
-                   (let ((inhibit-read-only t))
-                     (erase-buffer)
-                     (insert (ansi-color-apply out))
-                     (goto-char (point-max)))
-                   (special-mode)
-                   (display-buffer (current-buffer))))))
+  (if-let ((file (cc-hub--transcript (alist-get 'sid s))))
+      (cc-hub--show-logs (let ((text (cc-hub--transcript-text file 40)))
+                           (if (string-empty-p text)
+                               (format "No messages in %s.\nThe session ended before its first message." file)
+                             text)))
+    (cc-hub--run "claude logs" (list "claude" "logs" (cc-hub--background-id s))
+                 (lambda (out) (cc-hub--show-logs (ansi-color-apply out))))))
 
 (defun cc-hub-agent-diff (s)
   "Magit diff of the worktree branch of S against origin/HEAD."
