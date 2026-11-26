@@ -56,3 +56,6 @@
 (package! org-roam
   :recipe (:host github :repo "org-roam/org-roam"
            :files (:defaults "extensions/*")))
+
+;; Neovim inside Emacs (lisp/nvim-bridge.el)
+(package! ghostel)

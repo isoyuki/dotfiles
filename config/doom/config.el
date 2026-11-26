@@ -120,3 +120,6 @@
    :config
    (evil-ex-define-cmd "q" 'kill-this-buffer)
    (evil-ex-define-cmd "wq" 'doom/save-and-kill-buffer))
+
+;; Neovim inside Emacs: one ghostel buffer per project.
+(load! "lisp/nvim-bridge")
