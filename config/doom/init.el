@@ -100,7 +100,7 @@
        lookup              ; navigate your code and its documentation
        ;;llm               ; when I said you needed friends, I didn't mean...
        ;;lsp               ; M-x vscode
-       (magit +forge)    ; a git porcelain for Emacs
+       magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        ;;pdf               ; pdf enhancements
@@ -191,7 +191,7 @@
        ;;(wanderlust +gmail)
 
        :app
-       ;;calendar        ; org-gcal; the morning brief covers the calendar
+       calendar
        ;;emms
        ;;everywhere        ; *leave* Emacs!? You must be joking
        ;;irc               ; how neckbeards socialize

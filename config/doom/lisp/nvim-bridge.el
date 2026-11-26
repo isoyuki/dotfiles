@@ -8,23 +8,15 @@
 (require 'cl-lib)
 (require 'subr-x)
 
-(declare-function cc-hub--term "cc-hub")
-(declare-function cc-hub--run "cc-hub")
-(declare-function cc-hub--live-p "cc-hub")
-(declare-function cc-hub--row "cc-hub")
-(declare-function cc-hub-agents "cc-hub")
-(declare-function cc-hub-review "cc-hub")
 (declare-function doom-project-root "doom-lib")
+(declare-function ghostel-exec "ghostel")
 (declare-function ghostel-char-mode "ghostel")
-(declare-function evil-ghostel-mode "evil-ghostel")
 (declare-function evil-emacs-state "evil")
-(declare-function vterm--self-insert "vterm")
+(declare-function persp-add-buffer "persp-mode")
 (declare-function magit-status "magit")
 (declare-function magit-diff-visit-worktree-file "magit-diff")
-(declare-function claude-code--find-claude-buffers-for-directory "claude-code")
-(declare-function claude-code--term-send-string "claude-code")
-(defvar claude-code-terminal-backend)
-(defvar evil-ghostel-mode)
+(defvar ghostel--process)
+(defvar ghostel-kill-buffer-on-exit)
 (defvar embark-keymap-alist)
 (defvar embark-general-map)
 (defvar embark-file-map)
@@ -74,23 +66,15 @@ Doom starts no LSP client (lsp-mode or eglot) in them.")
 
 (defun my/nvim--live-p (buf root)
   "Non-nil when BUF runs Neovim and its socket exists or it started under 5 s ago."
-  (and buf (cc-hub--live-p buf)
+  (and (buffer-live-p buf)
+       (process-live-p (buffer-local-value 'ghostel--process buf))
        (or (file-exists-p (my/nvim--socket root))
            (< (float-time (time-since (buffer-local-value 'my/nvim-started buf))) 5))))
 
 (defun my/nvim--passthrough ()
   "Send every key to Neovim, except emulation-map keys such as Doom's `M-SPC'."
-  (cond ((derived-mode-p 'ghostel-mode)
-         ;; Char mode binds every key, C-c, C-x, C-h and ESC too. M-RET exits it.
-         (when (bound-and-true-p evil-ghostel-mode) (evil-ghostel-mode -1))
-         (ghostel-char-mode))
-        ((derived-mode-p 'vterm-mode)
-         ;; `vterm-keymap-exceptions' builds the global map once, so override per buffer.
-         (let ((map (make-sparse-keymap)))
-           (set-keymap-parent map (current-local-map))
-           (dolist (k '("C-h" "C-j" "C-k" "C-l" "C-c" "C-x" "C-u" "C-g" "M-x" "M-:"))
-             (define-key map (kbd k) #'vterm--self-insert))
-           (use-local-map map))))
+  ;; Char mode binds every key, C-c, C-x, C-h and ESC too. M-RET exits it.
+  (ghostel-char-mode)
   (when (fboundp 'evil-emacs-state) (evil-emacs-state)))
 
 (defun my/nvim--start (root &optional file line col)
@@ -103,13 +87,17 @@ Doom starts no LSP client (lsp-mode or eglot) in them.")
     (when (buffer-live-p old)
       (let ((kill-buffer-query-functions nil)) (kill-buffer old)))
     (when (file-exists-p sock) (delete-file sock))
-    (let ((buf (cc-hub--term name "env"
-                             `("-u" "TMUX" "NVIM_IN_EMACS=1" "nvim" "--listen" ,sock
-                               ,@(when file
-                                   (list (format "+call cursor(%d,%d)" (or line 1) (or col 1))
-                                         "+normal! zz" "--" file)))
-                             root)))
+    (require 'ghostel)
+    (let ((buf (get-buffer-create name))
+          (default-directory root))
+      (ghostel-exec buf "env"
+                    `("-u" "TMUX" "NVIM_IN_EMACS=1" "nvim" "--listen" ,sock
+                      ,@(when file
+                          (list (format "+call cursor(%d,%d)" (or line 1) (or col 1))
+                                "+normal! zz" "--" file))))
+      (when (bound-and-true-p persp-mode) (persp-add-buffer buf))
       (with-current-buffer buf
+        (setq-local ghostel-kill-buffer-on-exit t)
         (setq my/nvim-root root
               my/nvim-started (current-time))
         (my/nvim--passthrough))
@@ -139,11 +127,9 @@ Doom starts no LSP client (lsp-mode or eglot) in them.")
     (when (string-match-p "[\n\r]" file) (user-error "File name has a newline: %S" file))
     (if (not (my/nvim--live-p buf root))
         (my/nvim--show (my/nvim--start root file line col))
-      (cc-hub--run "nvim --remote-expr"
-                   (list "nvim" "--server" (my/nvim--socket root) "--remote-expr"
-                         (format "v:lua.EmacsBridge.open(%s,%d,%d)"
-                                 (my/nvim--vimstr file) (or line 1) (or col 1)))
-                   #'ignore)
+      (call-process "nvim" nil 0 nil "--server" (my/nvim--socket root) "--remote-expr"
+                    (format "v:lua.EmacsBridge.open(%s,%d,%d)"
+                            (my/nvim--vimstr file) (or line 1) (or col 1)))
       (my/nvim--show buf))))
 
 ;;; Open-in-Neovim actions
@@ -196,11 +182,6 @@ Without a reference, open the file name at point."
                 (save-excursion (goto-char (window-point)) (1+ (current-column))))))
     (my/nvim-open file line col)))
 
-(defun my/nvim-agent-open (s)
-  "Open Neovim in the worktree of agent session S."
-  (interactive (list (cc-hub--row)))
-  (my/nvim (alist-get 'cwd s)))
-
 (defun my/nvim-embark-grep (cand)
   "Open the consult grep candidate CAND in Neovim."
   ;; Same split as `consult--grep-position': the file ends where the face changes.
@@ -233,28 +214,10 @@ Without a reference, open the file name at point."
                                        (window-list))
                        (split-window-right)))))
 
-(defun my/nvim-handoff (what dir)
-  "Run the Emacs side of WHAT (magit, agents or review) for DIR."
-  (let ((default-directory (file-name-as-directory dir)))
-    (my/nvim--leave-nvim-window)
-    (pcase what
-      ('magit (magit-status default-directory))
-      ('agents (cc-hub-agents))
-      ('review (cc-hub-review)))))
-
-(defun my/nvim-claude-send (file &optional beg end)
-  "Insert `@FILE#LBEG-LEND' in the Claude Code session of the project of FILE.
-The prompt is not submitted."
-  (let* ((root (my/nvim--root file))
-         (buf (car (claude-code--find-claude-buffers-for-directory root)))
-         (rel (file-relative-name file root)))
-    (if (not buf)
-        (message "No Claude session for %s. Start one with SPC o c" (abbreviate-file-name root))
-      (with-current-buffer buf
-        (claude-code--term-send-string claude-code-terminal-backend
-                                       (if beg (format "@%s#L%d-L%d " rel beg end) (format "@%s " rel))))
-      (my/nvim--leave-nvim-window)
-      (pop-to-buffer buf))))
+(defun my/nvim-magit (dir)
+  "Show Magit status for DIR outside the Neovim window."
+  (my/nvim--leave-nvim-window)
+  (magit-status (file-name-as-directory dir)))
 
 ;;; Keys
 
@@ -268,8 +231,6 @@ The prompt is not submitted."
       :desc "file:line in Neovim" "l e" #'my/nvim-open-at-point)
 
 (map! :after magit :map magit-mode-map :n "C-<return>" #'my/nvim-magit-open)
-(map! :map cc-hub-agents-mode-map :n "e" #'my/nvim-agent-open)
-(map! :map cc-hub-monitors-mode-map :n "e" #'my/nvim-open-at-point)
 
 (provide 'nvim-bridge)
 ;;; nvim-bridge.el ends here

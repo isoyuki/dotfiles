@@ -121,24 +121,5 @@
    (evil-ex-define-cmd "q" 'kill-this-buffer)
    (evil-ex-define-cmd "wq" 'doom/save-and-kill-buffer))
 
-;; Agent cockpit: Claude Code supervisor + cc-hubd (see ~/dotfiles/tmp_emacs.md)
-(load! "local" doom-user-dir t)
-(load! "lisp/cc-hub")
+;; Neovim inside Emacs: one ghostel buffer per project.
 (load! "lisp/nvim-bridge")
-
-(use-package! claude-code
-  :commands (claude-code claude-code-transient)
-  :init
-  (map! :leader :desc "Claude (project)" "o c" #'claude-code)
-  :config
-  (setq claude-code-terminal-backend 'ghostel)
-  (claude-code-mode))
-
-;; Terminals live in Emacs: ghostel first, vterm as fallback (`cc-hub-terminal').
-(after! ghostel
-  (setq ghostel-max-scrollback (* 2 1024 1024)))
-(use-package! evil-ghostel
-  :hook (ghostel-mode . evil-ghostel-mode))
-
-;; The dashboard keeps its own keys; see `cc-hub-web'.
-(set-evil-initial-state! 'xwidget-webkit-mode 'emacs)

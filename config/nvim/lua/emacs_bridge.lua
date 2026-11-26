@@ -58,31 +58,9 @@ for key, dir in pairs({ h = "left", j = "down", k = "up", l = "right" }) do
 	end, { desc = "Window " .. dir .. " (Emacs at the edge)" })
 end
 
-local function handoff(what)
-	return function()
-		emacs(("(my/nvim-handoff '%s %s)"):format(what, elisp_str(vim.fn.getcwd())))
-	end
-end
-
-local function claude_send()
-	local file = vim.api.nvim_buf_get_name(0)
-	if file == "" then
-		return vim.notify("Buffer has no file", vim.log.levels.WARN)
-	end
-	local form = ("(my/nvim-claude-send %s)"):format(elisp_str(file))
-	local mode = vim.fn.mode()
-	if mode == "v" or mode == "V" or mode == "\22" then
-		local a, b = vim.fn.line("v"), vim.fn.line(".")
-		form = ("(my/nvim-claude-send %s %d %d)"):format(elisp_str(file), math.min(a, b), math.max(a, b))
-		vim.api.nvim_feedkeys(vim.keycode("<Esc>"), "n", false)
-	end
-	emacs(form)
-end
-
-vim.keymap.set("n", "<leader>hg", handoff("magit"), { desc = "Magit status (Emacs)" })
-vim.keymap.set("n", "<leader>ha", handoff("agents"), { desc = "Agent list (Emacs SPC l a)" })
-vim.keymap.set("n", "<leader>hr", handoff("review"), { desc = "Review queue (Emacs SPC l r)" })
-vim.keymap.set({ "n", "x" }, "<leader>hc", claude_send, { desc = "Send @file#L to Claude (Emacs)" })
+vim.keymap.set("n", "<leader>hg", function()
+	emacs(("(my/nvim-magit %s)"):format(elisp_str(vim.fn.getcwd())))
+end, { desc = "Magit status (Emacs)" })
 pcall(function()
 	require("which-key").add({ { "<leader>h", group = "[H]and off to Emacs" } })
 end)
